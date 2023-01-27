@@ -1,195 +1,180 @@
-# Monophase <!-- omit in toc -->
+---
+layout: home
+title: Jekyll Gitbook Theme
+permalink: /
+---
 
-Monophase is *a one-column minimal responsive Jekyll blog theme*.
+Make Jelly site have a GitBook look!
 
-One of the purposes of Monophase is to be an alternative option to the default theme of Jekyll—[Minima](https://github.com/jekyll/minima). Monophase is still keeping minimal, but meanwhile, more beautiful and mellow, and doesn't lose some useful basic features, such as archive.
+## Demo
 
-Check the *[live demo](https://zivlog.io/monophase/)*.
+Live demo on Github Pages: [https://sighingnow.github.io/jekyll-gitbook](https://sighingnow.github.io/jekyll-gitbook)
 
-![Screenshot Light](screenshot-light.png)
-![Screenshot Dark](screenshot-dark.png)
+[![Jekyll Themes](https://img.shields.io/badge/featured%20on-JekyllThemes-red.svg)](https://jekyll-themes.com/jekyll-gitbook/)
 
-## Highlight Features <!-- omit in toc -->
+## Why Jekyll with GitBook
 
-- [Normalize.css](https://github.com/necolas/normalize.css)
-- [Open Color](https://github.com/yeun/open-color)
-- [Font Awesome](https://fontawesome.com/)
-- [Disqus](https://disqus.com/)
-- [MathJax](https://www.mathjax.org/)
-- [Google Analytics 4](https://support.google.com/analytics/answer/10089681?hl=en)
-- [Jekyll Feed](https://github.com/jekyll/jekyll-feed/)
-- [Jekyll Paginate](https://github.com/jekyll/jekyll-paginate)
-- [Jekyll SEO Tag](https://github.com/jekyll/jekyll-seo-tag/)
-- Related posts (time-based, because Jekyll) below each post
-- Dark mode, via [`prefers-color-scheme`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme)
-- Archive implemented by pure [Liquid](https://shopify.github.io/liquid/)
+GitBook is an amazing frontend style to present and organize contents (such as book chapters
+and blogs) on Web. The typical to deploy GitBook at [Github Pages][1]
+is building HTML files locally and then push to Github repository, usually to the `gh-pages`
+branch. It's quite annoying to repeat such workload and make it hard for people do version
+control via git for when there are generated HTML files to be staged in and out.
 
-## Table of Contents <!-- omit in toc -->
+This theme takes style definition out of generated GitBook site and provided the template
+for Jekyll to rendering markdown documents to HTML, thus the whole site can be deployed
+to [Github Pages][1] without generating and uploading HTML bundle every time when there are
+changes to the original repo.
 
-- [Installation](#installation)
-- [Usage](#usage)
-  - [Global Configuration](#global-configuration)
-  - [Post Configuration](#post-configuration)
-  - [Homepage](#homepage)
-  - [Custom Head](#custom-head)
-  - [Navigation](#navigation)
-  - [Social Links](#social-links)
-  - [Alert Messages](#alert-messages)
-  - [Alignment](#alignment)
-  - [Google Analytics 4](#google-analytics-4)
-  - [Archive](#archive)
-- [Contributing](#contributing)
-- [Development](#development)
-- [License](#license)
+## How to Get Started
 
-## Installation
+This theme can be used just as other [Jekyll themes][1] and support [remote theme][12],
+see [the official guide][13] as well.
 
-Add this line to your Jekyll site's `Gemfile`:
+You can introduce this jekyll theme into your own site by either
 
-```ruby
-gem "monophase"
-```
-
-And add this line to your Jekyll site's `_config.yml`:
+- [Fork][3] this repository and add your markdown posts to the `_posts` folder.
+- Use as a remote theme in your [`_config.yml`][14](just like what we do for this
+  site itself),
 
 ```yaml
-theme: monophase
+remote_theme: sighingnow/jekyll-gitbook
 ```
 
-And then execute:
+### Deploy Locally with Jekyll Serve
 
-```shell
-bundle
+This theme can be ran locally using Ruby and Gemfiles.
+
+[Testing your GitHub Pages site locally with Jekyll](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll) - GitHub
+
+## Full-text search
+
+The search functionality in jekyll-gitbook theme is powered by the [gitbook-plugin-search-pro][5] plugin and is enabled by default.
+
+[https://sighingnow.github.io/jekyll-gitbook/?q=generated](https://sighingnow.github.io/jekyll-gitbook/?q=generated)
+
+## Code highlight
+
+The code highlight style is configurable the following entry in `_config.yaml`:
+
+```yaml
+syntax_highlighter_style: colorful
 ```
 
-Or install it yourself as:
+The default code highlight style is `colorful`, the full supported styles can be found from [the rouge repository][6]. Customized
+style can be added to [./assets/gitbook/rouge/](./assets/gitbook/rouge/).
 
-```shell
-gem install monophase
+## How to generate TOC
+
+The jekyll-gitbook theme leverages [jekyll-toc][4] to generate the *Contents* for the page.
+The TOC feature is not enabled by default. To use the TOC feature, modify the TOC
+configuration in `_config.yml`:
+
+```yaml
+toc:
+    enabled: true
+    h_min: 1
+    h_max: 3
 ```
 
-You can also install the latest code via [`jekyll-remote-theme`](https://github.com/benbalter/jekyll-remote-theme):
+## Google Analytics, etc.
 
-1. Add this line to your Jekyll site's `Gemfile`:
+The jekyll-gitboook theme supports embedding the [Google Analytics][7], [CNZZ][8] and [Application Insights][9] website analytical tools with the following
+minimal configuration in `_config.yaml`:
 
-    ```ruby
-    gem "jekyll-remote-theme"
-    ```
-
-2. Add these lines to your Jekyll site's `_config.yml`:
-
-    ```ruby
-    plugins:
-      - jekyll-remote-theme
-
-    remote_theme: zivhub/monophase@main
-    ```
-
-## Usage
-
-### Global Configuration
-
-| Variable | Type | Default | Specification |
-| -------- | ---- | ------- | ------------- |
-| `title` | String | --- | The title of the website |
-| `tagline` | String | --- | The tagline of the website |
-| `lang` | String | `en` | The language of pages; The value can be overwritten by the `lang` variable on each page |
-| `author.name` | String | --- | The name of the website author |
-| `author.url` | String | --- | A URL of the website author |
-| `tags_path` | String | --- | A path to the archive-by-tags page; It is used by tags on each post |
-| `categories_path` | String | --- | A path to the archive-by-categories page; It is used by categories on each post |
-| `disqus` | String | --- | Disqus short name |
-| `google_analytics` | String | --- | Google Analytics 4 Measurement ID |
-
-### Post Configuration
-
-| Variable | Type | Default | Specification |
-| -------- | ---- | ------- | ------------- |
-| `description` | String | --- | A description of the current post |
-| `last_modified_at` | String | --- | The date of the last modification you made on a post after its publishing |
-| `author` | String or Array | --- | The author name(s) of the post |
-| `comments` | Boolean | `true` | Does enable the Disqus comment system |
-| `math` | Boolean | `false` | Does enable MathJax on this page |
-
-### Homepage
-
-You can create a homepage for your blog by setting `layout: home` in your `index.html`.
-
-### Custom Head
-
-Monophase leaves a placeholder to allow defining custom head. All you need to do is putting data into `_includes/custom-head.html`, and they would be automatically included in `<head>`.
-
-### Navigation
-
-The navigation bar of Monophase is configurable. You just need to specify titles and URLs in the file `_data/navigation.yml`, for example,
-
-```yml
-- title: About
-  url: /about/
-- title: Archive
-  url: /archive/
-- title: Categories
-  url: /categories/
+```yaml
+tracker:
+  google_analytics: "<YOUR GOOGLE ANALYTICS KEY, e.g, UA-xxxxxx-x>"
 ```
 
-### Social Links
+Similarly, CNZZ can be added with the following configuration in `_config.yaml`
 
-Monophase allows you to show social links on the website. All you need to do is creating a file `_data/social.yml`, for example,
-
-```yml
-- title: Email
-  url: mailto:zivmsg@gmail.com
-  icon: fas fa-envelope
-- title: Twitter
-  url: https://twitter.com/zivtwt
-  icon: fab fa-twitter
-- title: GitHub
-  url: https://github.com/zivhub
-  icon: fab fa-github
+```yaml
+tracker:
+  cnzz: "<YOUR CNZZ ANALYTICS KEY, e.g., xxxxxxxx>"
 ```
 
-### Alert Messages
+Application Insights can be added with the following configuration in `_config.yaml`
 
-Monophase provides some predefined classes to specify different levels of **alert messages**. In order of tone from light to heavy, they are: `message-info`, `message-warning`, and `message-danger`. You may add it to single elements like a `<p>`, or to a parent if there are multiple elements to show.
-
-### Alignment
-
-Monophase also provides some predefined classes to specify the alignment of HTML elements—e.g. images. They are `align-center`, `align-left`, and `align-right`.
-
-### Google Analytics 4
-
-To enable [Google Analytics 4](https://support.google.com/analytics/answer/10089681?hl=en), you just need to set the [Measurement ID](https://support.google.com/analytics/answer/7372977?hl=en) in your `_config.yml`, for example,
-
-```yml
-google_analytics: G-XXXXXXX
+```yaml
+tracker:
+  application_insights: "<YOUR APPLICATION INSIGHTS CONNECTION STRING>"
 ```
 
-### Archive
+## Extra StyleSheet or Javascript elements
 
-Monophase provides some built-in archive pages. It is implemented in pure Liquid. If you want to archive posts by years, you can create a page and put these code in it:
+You can add extra CSS or JavaScript references using configuration collections:
 
-```yml
----
-layout: archive
-type: years
----
+- extra_css: for additional style sheets. If the url does not start by http, the path must be relative to the root of the site, without a starting `/`.
+- extra_header_js: for additional scripts to be included in the `<head>` tag, after the `extra_css` has been added. If the url does not start by http, the path must be relative to the root of the site, without a starting `/`.
+- extra_footer_js: for additional scripts to be included at the end of the HTML document, just before the site tracking script. If the url does not start by http, the path must be relative to the root of the site, without a starting `/`.
+
+## Customizing font settings
+
+The fonts can be customized by modifying the `.book.font-family-0` and `.book.font-family-1` entry in [`./assets/gitbook/custom.css`][10],
+
+```css
+.book.font-family-0 {
+    font-family: Georgia, serif;
+}
+.book.font-family-1 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 ```
 
-Similarly, if you want to archive posts by categories or tags, you can set the `type` property as `categories` or `tags`.
+## Tips, Warnings and Dangers blocks
 
-## Contributing
+The jekyll-gitbook theme supports customized kramdown attributes (`{: .block-tip }`, `{: .block-warning }`,
+`{: .block-danger }`) like that displayed in [the discord.js website][11]. The marker can be used like
 
-Bug reports and pull requests are welcome on GitHub at [https://github.com/zivhub/monophase](https://github.com/zivhub/monophase). This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+```markdown
+> ##### TIP
+>
+> This guide is last tested with @napi-rs/canvas^0.1.20, so make sure you have
+> this or a similar version after installation.
+{: .block-tip }
+```
 
-## Development
+Rendered page can be previewed from
 
-To set up your environment to develop this theme, run `bundle install`.
+[https://sighingnow.github.io/jekyll-gitbook/jekyll/2022-06-30-tips_warnings_dangers.html](https://sighingnow.github.io/jekyll-gitbook/jekyll/2022-06-30-tips_warnings_dangers.html)
 
-Your theme is setup just like a normal Jekyll site! To test your theme, run `bundle exec jekyll serve` and open your browser at `http://localhost:4000`. This starts a Jekyll server using your theme. Add pages, documents, data, etc. like normal to test your theme's contents. As you make modifications to your theme and to your content, your site will regenerate and you should see the changes in the browser after a refresh, just like normal.
+## Cover image inside pages
 
-When your theme is released, only the files in `_layouts`, `_includes`, `_sass` and `assets` tracked with Git will be bundled.
-To add a custom directory to your theme-gem, please edit the regexp in `monophase.gemspec` accordingly.
+The jekyll-gitbook theme supports adding a cover image to a specific page by adding
+a `cover` field to the page metadata:
+
+```diff
+  ---
+  title: Page with cover image
+  author: Tao He
+  date: 2022-05-24
+  category: Jekyll
+  layout: post
++ cover: /assets/jekyll-gitbook/dinosaur.gif
+  ---
+```
+
+The effect can be previewed from
+
+[https://sighingnow.github.io/jekyll-gitbook/jekyll/2022-05-24-page_cover.html](https://sighingnow.github.io/jekyll-gitbook/jekyll/2022-05-24-page_cover.html)
 
 ## License
 
-The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+This work is open sourced under the Apache License, Version 2.0.
+
+Copyright 2019 Tao He.
+
+[1]: https://pages.github.com
+[2]: https://pages.github.com/themes
+[3]: https://github.com/sighingnow/jekyll-gitbook/fork
+[4]: https://github.com/allejo/jekyll-toc
+[5]: https://github.com/gitbook-plugins/gitbook-plugin-search-pro
+[6]: https://github.com/rouge-ruby/rouge/tree/master/lib/rouge/themes
+[7]: https://analytics.google.com/analytics/web/
+[8]: https://www.cnzz.com/
+[9]: https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
+[10]: https://github.com/sighingnow/jekyll-gitbook/blob/master/gitbook/custom.css
+[11]: https://discordjs.guide/popular-topics/canvas.html#setting-up-napi-rs-canvas
+[12]: https://rubygems.org/gems/jekyll-remote-theme
+[13]: https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/adding-a-theme-to-your-github-pages-site-using-jekyll
+[14]: https://github.com/sighingnow/jekyll-gitbook/blob/master/_config.yml
