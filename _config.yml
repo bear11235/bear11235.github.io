@@ -3,7 +3,7 @@ logo_img: /assets/img/icons/BlogLogo.png
 favicon: /assets/img/icons/BlogLogo.png
 description: bear11235's blog
 global_tags: jekyll theme simplex golasblog responsive html5
-copyright: © bear11235 2023
+copyright: © bear11235 (2023)
 
 sass:
     style: compressed

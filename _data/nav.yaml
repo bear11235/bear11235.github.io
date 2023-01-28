@@ -5,7 +5,7 @@
   subnav: #Subnav. See note [2].
   
       - title: Fluid Mechanics #Submenu item title.
-        url: category/Study/Fluid_Mechanics_Study.html #Submenu item url.
+        url: category/Study/Fluid_Mechanics.html #Submenu item url.
         hue: "var(--c-themeHueOrange)" #Submenu item hue.
         subnav: #Another subnav
         
@@ -26,18 +26,13 @@
         subnav: #Another subnav
               
       - title: Turbomachinery #Submenu item title.
-        url: category/Paper_Turbomachinery/Review.html #Submenu item url.
+        url: category/Paper_Review/Turbomachinery.html #Submenu item url.
         hue: "var(--c-themeHueOrange)" #Submenu item hue.
 
         
       - title: Deep Learning #Submenu item title.
         url: category/Paper_Review/Deep_Learning.html #Submenu item url.
-        hue: "var(--c-themeHueOrange)" #Submenu item hue.
-        subnav: #Another subnav
-            - title: Libraries
-              url: libs.html
-              hue: "var(--c-themeHueBlue)"
-              
+        hue: "var(--c-themeHueOrange)" #Submenu item hue.              
 
 - title: Code
   url: category/Coding.html
