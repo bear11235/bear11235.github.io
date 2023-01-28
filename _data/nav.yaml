@@ -1,0 +1,45 @@
+- title: Study
+  url: category/Study.html
+  icon: assets/img/icons/Study.svg
+  hue: "var(--c-themeHueRed)"
+  subnav: #Subnav. See note [2].
+  
+      - title: Fluid Mechanics #Submenu item title.
+        url: category/Study/Fluid_Mechanics_Study.html #Submenu item url.
+        hue: "var(--c-themeHueOrange)" #Submenu item hue.
+        subnav: #Another subnav
+        
+            - title: Turbulent Flow
+              url: libs.html
+              hue: "var(--c-themeHueBlue)"
+  
+
+- title: Paper Review #Menu item title.
+  url: category/Paper_Review.html #Menu item url.
+  icon: assets/img/icons/PaperReview.svg #Menu item icon.
+  hue: "var(--c-themeHueRed)" #Menu item hue - see note [1].
+  subnav: #Subnav. See note [2].
+  
+      - title: Fluid Mechanics #Submenu item title.
+        url: category/Paper_Review/Fluid_Mechanics_Review.html #Submenu item url.
+        hue: "var(--c-themeHueOrange)" #Submenu item hue.
+        subnav: #Another subnav
+              
+      - title: Turbomachinery #Submenu item title.
+        url: category/Paper_Review/Turbomachinery_Review.html #Submenu item url.
+        hue: "var(--c-themeHueOrange)" #Submenu item hue.
+
+        
+      - title: Deep Learning #Submenu item title.
+        url: category/Paper_Review/Deep_Learning.html #Submenu item url.
+        hue: "var(--c-themeHueOrange)" #Submenu item hue.
+        subnav: #Another subnav
+            - title: Libraries
+              url: libs.html
+              hue: "var(--c-themeHueBlue)"
+              
+
+- title: Code
+  url: category/Coding.html
+  icon: assets/img/icons/Coding.svg
+  hue: "var(--c-themeHueRed)"

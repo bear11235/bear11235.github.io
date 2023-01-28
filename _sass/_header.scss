@@ -27,7 +27,7 @@
             }
             &__img{
                 filter: var(--c-headerImageFilter);
-                height: 2rem;
+                height: 5rem;
             }
         }
     }
@@ -155,7 +155,7 @@
 
                     @include for-size('tablet-up'){
                         a{
-                            padding: 0 4rem;
+                            padding: 0 1rem;
                         }
                     }
 
@@ -214,7 +214,7 @@
 
                 >.item{
 
-                    margin: 0 1rem;
+                    margin: 0 2rem;
 
                     >.item-controls>a{
                         

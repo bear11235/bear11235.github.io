@@ -1,9 +1,9 @@
-title: the Simplex theme
-logo_img: /assets/img/icons/golasblog_logo.svg
+title: 곰탱이의 이것저것
+logo_img: /assets/img/icons/BlogLogo.png
 favicon: /assets/favicon.ico
-description: description
+description: bear11235's blog
 global_tags: jekyll theme simplex golasblog responsive html5
-copyright: © Golasowski 2021
+copyright: © bear11235 2023
 
 sass:
     style: compressed
