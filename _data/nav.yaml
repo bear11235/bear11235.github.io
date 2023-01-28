@@ -10,7 +10,7 @@
         subnav: #Another subnav
         
             - title: Turbulent Flow
-              url: libs.html
+              url: category/Study/Fluid_Mechanics/Turbulent_Flow.html #Submenu item url.
               hue: "var(--c-themeHueBlue)"
   
 
@@ -21,12 +21,12 @@
   subnav: #Subnav. See note [2].
   
       - title: Fluid Mechanics #Submenu item title.
-        url: category/Paper_Review/Fluid_Mechanics_Review.html #Submenu item url.
+        url: category/Paper_Review/Fluid_Mechanics.html #Submenu item url.
         hue: "var(--c-themeHueOrange)" #Submenu item hue.
         subnav: #Another subnav
               
       - title: Turbomachinery #Submenu item title.
-        url: category/Paper_Review/Turbomachinery_Review.html #Submenu item url.
+        url: category/Paper_Turbomachinery/Review.html #Submenu item url.
         hue: "var(--c-themeHueOrange)" #Submenu item hue.
 
         
