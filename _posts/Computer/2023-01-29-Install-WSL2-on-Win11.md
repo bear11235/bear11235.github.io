@@ -40,8 +40,8 @@ fb_app_id: example
  - console 창에 아래의 command 입력하면 자동으로 필요한 기능을 켜주고 프로그램들을 설치
  - 현재 온라인에 배포되어 있는 WSL 배포판을 검색하여 설치 가능 (Distro 미지정 시  Ubuntu가 설치)
     ```
-     wsl --list --online         # 설치할 수 있는 유효한 배포판 목록
-     wsl --install <Distro>      # <Distro>를 설치
+wsl --list --online         # 설치할 수 있는 유효한 배포판 목록
+wsl --install <Distro>      # <Distro>를 설치
     ```
     
 <div class="sx-center row">
