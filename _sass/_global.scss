@@ -79,12 +79,8 @@ table:not([class]){
 
     margin: 2rem 0;
     transition: $t-smooth;
-    box-shadow: inset 0px 0px 14px -4px var(--c-codeShadow);
-
-    &:hover{
-        box-shadow: inset 0px 0px 14px -4px var(--c-codeShadowHover);
-    }
-
+    box-shadow: inset calc(100vw - 2rem) 10px 0px 0px var(--c-CodeBlock);
+    
     max-width: calc(100vw - 2rem);
     overflow-x: auto;
 

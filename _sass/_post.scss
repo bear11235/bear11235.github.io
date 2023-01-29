@@ -106,11 +106,17 @@
             font-size: 1.4rem;
         }
         p,ol,ul,dl{
-        	font-size: 1.2rem;
+            font-size: 1.2rem;
         }
         img{
             max-width: 100%;
         }
+        code{
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bolder;
+            color: var(--c-Black);
+        }
+
     }
 
     &__navigator{
