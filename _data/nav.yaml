@@ -38,3 +38,15 @@
   url: category/Coding.html
   icon: assets/img/icons/Coding.svg
   hue: "var(--c-themeHueRed)"
+
+
+- title: Computer
+  url: category/Computer.html
+  icon: assets/img/icons/Computer.svg
+  hue: "var(--c-themeHueRed)"
+  subnav: #Subnav. See note [2].
+  
+      - title: Linux #Submenu item title.
+        url: category/Computer/Linux.html #Submenu item url.
+        hue: "var(--c-themeHueOrange)" #Submenu item hue.
+        subnav: #Another subnav
