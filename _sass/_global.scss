@@ -49,6 +49,8 @@ a{
     
     &:link{
         color: var(--c-link);
+        text-decoration: none;
+        cursor: pointer;
     }
 
     &:visited{
@@ -56,11 +58,11 @@ a{
     }
 
     &:hover{
-        color: var(--c-linkHover);
+        text-decoration: underline;
     }
 
     &:active{
-        color: var(--c-linkActive);
+        text-decoration: none;
     }
 }
 

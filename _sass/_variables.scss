@@ -34,6 +34,10 @@
     --c-Black: #000000;
     --c-White: #ffffff;
 	
+    --c-link: #0563C1;
+    --c-linkVisited: #c27ea0;
+    --c-linkHover: #2040a0;
+    --c-linkActive: #ff9a67;
 	
 }
 
@@ -68,11 +72,6 @@
     --c-pageText: var(--c-themePrimaryDark);
 
     --c-feed-title: var(--c-themePrimaryDark);
-
-    --c-link: var(--c-themeTerniaryDark);
-    --c-linkVisited: var(--c-themeQuaternaryDark);
-    --c-linkHover: var(--c-themePrimaryDark);
-    --c-linkActive: var(--c-themePrimaryDark);
 
     --c-footerText: var(--c-themePrimaryDark);
     --c-footerImageFilter: none;
