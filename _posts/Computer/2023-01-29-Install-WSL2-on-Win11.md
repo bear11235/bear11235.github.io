@@ -26,12 +26,12 @@ fb_app_id: example
 <div class="sx-center row">
     <a href="/assets/img/posts/Computer/window-update.jpg" data-lity>
         <img    src="/assets/img/posts/Computer/window-update.jpg"
-                height="400"/>
+                width="500"/>
     </a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="/assets/img/posts/Computer/store-update.jpg" data-lity>
         <img    src="/assets/img/posts/Computer/store-update.jpg"
-                height="400"/>
+                width="500"/>
     </a>
 </div>
 
@@ -39,20 +39,21 @@ fb_app_id: example
  - Window 키를 눌러 Powershell을 관리자 권한으로 실행
  - console 창에 아래의 command 입력하면 자동으로 필요한 기능을 켜주고 프로그램들을 설치
  - 현재 온라인에 배포되어 있는 WSL 배포판을 검색하여 설치 가능 (Distro 미지정 시  Ubuntu가 설치)
-    ```
+ - 필자는 현재 Ubuntu와 CentOS7을 설치했다. CentOS7 같은 경우는 인터넷에서 프로그램을 다운받아서 설치 가능하다. <a href="https://8ugust-dev.tistory.com/4"> WSL2에서 CentOS7 설치하기</a>
+```
 wsl --list --online         # 설치할 수 있는 유효한 배포판 목록
 wsl --install <Distro>      # <Distro>를 설치
-    ```
+```
     
 <div class="sx-center row">
     <a href="/assets/img/posts/Computer/powershell-admin.jpg" data-lity>
         <img    src="/assets/img/posts/Computer/powershell-admin.jpg"
-                height="500"/>
+                width="500"/>
     </a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="/assets/img/posts/Computer/wsl-install.jpg" data-lity>
         <img    src="/assets/img/posts/Computer/wsl-install.jpg"
-                height="500"/>
+                width="500"/>
     </a>
 </div>
 
