@@ -1,7 +1,7 @@
 ---
 layout: post #Do not change.
-category: [Paper_Review] #One, more categories or no at all.
-title:  "Paper Review Templete"
+category: [Computer, Linux] #One, more categories or no at all.
+title:  "Computer Templete"
 date:   2000-01-01 00:00:00 +0900
 author: bear11235 #Author's nick.
 #nextPart: _posts/2021-06-16-syntax-example.md #Next part.
