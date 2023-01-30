@@ -35,7 +35,7 @@ fb_app_id: example
     </a>
 </div>
 
-## 2.2. Powershell에서 WSL 설치
+## 2.2. Powershell에서 WSL2 설치
  - Window 키를 눌러 Powershell을 관리자 권한으로 실행
  - console 창에 아래의 command 입력하면 자동으로 필요한 기능을 켜주고 프로그램들을 설치
  - 현재 온라인에 배포되어 있는 WSL 배포판을 검색하여 설치 가능 (Distro 미지정 시  Ubuntu가 설치)
@@ -57,7 +57,7 @@ wsl --install <Distro>      # <Distro>를 설치
     </a>
 </div>
 
-
+## 2.3. WSL2 실행
 
 
 
