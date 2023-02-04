@@ -11,3 +11,14 @@ og_description: "Jekyll example post." #Open Graph description.
 fb_app_id: example
 ---
 
+
+그림 
+<div class="sx-center row">
+    <a href="image_link" data-lity>
+        <img    src="image_link"
+                width="500"/>
+    </a>
+</div>
+
+링크
+<a href="link">text name</a>
