@@ -50,3 +50,8 @@
         url: category/Computer/Linux.html #Submenu item url.
         hue: "var(--c-themeHueOrange)" #Submenu item hue.
         subnav: #Another subnav
+
+      - title: HTML #Submenu item title.
+        url: category/Computer/HTML.html #Submenu item url.
+        hue: "var(--c-themeHueOrange)" #Submenu item hue.
+        subnav: #Another subnav
