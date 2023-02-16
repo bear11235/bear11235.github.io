@@ -9,9 +9,19 @@
         hue: "var(--c-themeHueOrange)" #Submenu item hue.
         subnav: #Another subnav
         
-            - title: Turbulent Flow
-              url: category/Study/Fluid_Mechanics/Turbulent_Flow.html #Submenu item url.
-              hue: "var(--c-themeHueBlue)"
+            # - title: Turbulent Flow
+            #   url: category/Study/Fluid_Mechanics/Turbulent_Flow.html #Submenu item url.
+            #   hue: "var(--c-themeHueBlue)"
+
+      - title: Machine Learning #Submenu item title.
+        url: category/Study/Machine_Learning.html #Submenu item url.
+        hue: "var(--c-themeHueOrange)" #Submenu item hue.
+        subnav: #Another subnav
+
+      - title: Deep Learning #Submenu item title.
+        url: category/Study/Deep_Learning.html #Submenu item url.
+        hue: "var(--c-themeHueOrange)" #Submenu item hue.
+        subnav: #Another subnav
   
 
 - title: Paper Review #Menu item title.
