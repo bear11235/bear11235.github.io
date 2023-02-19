@@ -1,0 +1,16 @@
+1. vscode python X11 forward
+ - vcxsrv 설치 후 설정
+ - 윈도우 계정 환경 변수 --> DISPLAY=127.0.0.1:0 설졍
+ - cmd에서 echo %DISPLAY%로 확인
+ 
+ - window ~/.ssh/config 에서 아래 추가
+	ForwardX11 yes
+	ForwardX11Trusted yes
+	ForwardAgent yes
+	
+ - ssh server 에서도 ForwardX11 yes
+ 
+ - jupyter에서 %matplotlib qt5 로 gui backend 사용
+ 
+ 
+ UsageError: Invalid GUI request 'svg', valid ones are:dict_keys(['inline', 'nbagg', 'webagg', 'notebook', 'ipympl', 'widget', None, 'qt4', 'qt', 'qt5', 'wx', 'tk', 'gtk', 'gtk3', 'osx', 'asyncio'])
