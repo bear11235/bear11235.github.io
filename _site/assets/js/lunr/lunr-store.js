@@ -1,4 +1,10 @@
-var store = [,{
+var store = [{
+        "title": "Research Note",
+        "excerpt":"2023-04-11 (화)     두 개의 난류 유동이 있을 때, 그 둘의 유사성을 어떻게 판단할 것인가?  ","categories": ["research"],
+        "tags": [],
+        "url": "/research/research-note/",
+        "teaser": null
+      },{
     "title": "Page Not Found",
     "excerpt":"Sorry, but the page you were trying to view does not exist.  ","url": "http://localhost:4000/404.html"
   },{
@@ -9,7 +15,7 @@ var store = [,{
     "excerpt":" ","url": "http://localhost:4000/categories/"
   },{
     "title": "Posts by Collection",
-    "excerpt":"         ","url": "http://localhost:4000/collection-archive/"
+    "excerpt":"                 ","url": "http://localhost:4000/collection-archive/"
   },{
     "title": "Edge Case",
     "excerpt":"Sample post listing for the category Edge Case.  ","url": "http://localhost:4000/categories/edge-case/"
@@ -73,6 +79,9 @@ var store = [,{
   },{
     "title": "Posts by Year",
     "excerpt":"","url": "http://localhost:4000/year-archive/"
+  },{
+    "title": "research",
+    "excerpt":"","url": "http://localhost:4000/categories/research/"
   },{
     "title": null,
     "excerpt":"{% if page.xsl %} {% endif %} {% assign collections = site.collections | where_exp:'collection','collection.output != false' %}{% for collection in collections %}{% assign docs = collection.docs | where_exp:'doc','doc.sitemap != false' %}{% for doc in docs %} {{ doc.url | replace:'/index.html','/' | absolute_url | xml_escape }} {% if doc.last_modified_at or doc.date...","url": "http://localhost:4000/sitemap.xml"
