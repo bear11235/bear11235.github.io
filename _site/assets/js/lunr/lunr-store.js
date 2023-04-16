@@ -5,6 +5,18 @@ var store = [{
         "url": "/research/research-note/",
         "teaser": null
       },{
+        "title": "Query an Ansys license status",
+        "excerpt":"problem ANSYS client host에서 server host로 license status 요청하기 Solution lmutil lmstat -c PORT@SERVER -a 모든 프로그램에 대한 현재 라이센스 상태를 보여준다. [root@master ~]$ /nopt/ansys_inc/v202/licensingclient/linx64/lmutil lmstat -c 1055@license.tml -a lmutil - Copyright (c) 1989-2015 Flexera Software LLC. All Rights Reserved. Flexible License Manager status on Sun 4/16/2023 14:03 License server...","categories": ["linux","ansys"],
+        "tags": ["linux","ansys","license"],
+        "url": "/linux/ansys/query-ansys-license/",
+        "teaser": null
+      },{
+        "title": "Query a TecPlot license status",
+        "excerpt":"problem TecPlot client host에서 server host로 license status 요청하기 Solution rlmutil rlmstat -c PORT@SERVER [root@master bin]# /opt/tecplot/360ex_2022r2/bin/rlmutil rlmstat -a -c 27100@license.tml Setting license file path to 27100@license.tml rlmutil v12.4 Copyright (C) 2006-2018, Reprise Software, Inc. All rights reserved. rlm status on license.tml (port 27100), up 00:28:24 rlm software version v12.4...","categories": ["linux","tecplot"],
+        "tags": ["linux","tecplot","license"],
+        "url": "/linux/tecplot/query-tecplot-license/",
+        "teaser": null
+      },{
     "title": "Page Not Found",
     "excerpt":"Sorry, but the page you were trying to view does not exist.  ","url": "http://localhost:4000/404.html"
   },{
@@ -15,7 +27,7 @@ var store = [{
     "excerpt":" ","url": "http://localhost:4000/categories/"
   },{
     "title": "Posts by Collection",
-    "excerpt":"                 ","url": "http://localhost:4000/collection-archive/"
+    "excerpt":"                                 ","url": "http://localhost:4000/collection-archive/"
   },{
     "title": "Edge Case",
     "excerpt":"Sample post listing for the category Edge Case.  ","url": "http://localhost:4000/categories/edge-case/"
@@ -80,8 +92,29 @@ var store = [{
     "title": "Posts by Year",
     "excerpt":"","url": "http://localhost:4000/year-archive/"
   },{
+    "title": "linux",
+    "excerpt":"","url": "http://localhost:4000/tags/linux/"
+  },{
+    "title": "ansys",
+    "excerpt":"","url": "http://localhost:4000/tags/ansys/"
+  },{
+    "title": "license",
+    "excerpt":"","url": "http://localhost:4000/tags/license/"
+  },{
+    "title": "tecplot",
+    "excerpt":"","url": "http://localhost:4000/tags/tecplot/"
+  },{
     "title": "research",
     "excerpt":"","url": "http://localhost:4000/categories/research/"
+  },{
+    "title": "linux",
+    "excerpt":"","url": "http://localhost:4000/categories/linux/"
+  },{
+    "title": "ansys",
+    "excerpt":"","url": "http://localhost:4000/categories/ansys/"
+  },{
+    "title": "tecplot",
+    "excerpt":"","url": "http://localhost:4000/categories/tecplot/"
   },{
     "title": null,
     "excerpt":"{% if page.xsl %} {% endif %} {% assign collections = site.collections | where_exp:'collection','collection.output != false' %}{% for collection in collections %}{% assign docs = collection.docs | where_exp:'doc','doc.sitemap != false' %}{% for doc in docs %} {{ doc.url | replace:'/index.html','/' | absolute_url | xml_escape }} {% if doc.last_modified_at or doc.date...","url": "http://localhost:4000/sitemap.xml"

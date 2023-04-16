@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Research Note - bear11235’s blog</title>
-<meta name="description" content="2023-04-11 (화)    두 개의 난류 유동이 있을 때, 그 둘의 유사성을 어떻게 판단할 것인가?">
+<!-- begin _includes/seo.html --><title>Query a TecPlot license status - bear11235’s blog</title>
+<meta name="description" content="problem    TecPlot client host에서 server host로 license status 요청하기">
 
 
   <meta name="author" content="bear11235">
@@ -22,30 +22,30 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="bear11235's blog">
-<meta property="og:title" content="Research Note">
-<meta property="og:url" content="http://localhost:4000/research/research-note/">
+<meta property="og:title" content="Query a TecPlot license status">
+<meta property="og:url" content="http://localhost:4000/linux/tecplot/query-tecplot-license/">
 
 
-  <meta property="og:description" content="2023-04-11 (화)    두 개의 난류 유동이 있을 때, 그 둘의 유사성을 어떻게 판단할 것인가?">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2023-04-01T00:00:00+09:00">
+  <meta property="og:description" content="problem    TecPlot client host에서 server host로 license status 요청하기">
 
 
 
 
 
-  
+
+
+  <meta property="article:published_time" content="2023-04-16T00:00:00+09:00">
+
+
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/research/research-note/">
+
+<link rel="canonical" href="http://localhost:4000/linux/tecplot/query-tecplot-license/">
 
 
 
@@ -282,16 +282,16 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Research Note">
-    <meta itemprop="description" content="2023-04-11 (화)  두 개의 난류 유동이 있을 때, 그 둘의 유사성을 어떻게 판단할 것인가?">
-    <meta itemprop="datePublished" content="2023-04-01T00:00:00+09:00">
+    <meta itemprop="headline" content="Query a TecPlot license status">
+    <meta itemprop="description" content="problem  TecPlot client host에서 server host로 license status 요청하기">
+    <meta itemprop="datePublished" content="2023-04-16T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/research/research-note/" class="u-url" itemprop="url">Research Note
+            <a href="http://localhost:4000/linux/tecplot/query-tecplot-license/" class="u-url" itemprop="url">Query a TecPlot license status
 </a>
           </h1>
           
@@ -302,7 +302,7 @@
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2023-04-01T00:00:00+09:00">April 1, 2023</time>
+        <time datetime="2023-04-16T00:00:00+09:00">April 16, 2023</time>
       </span>
     
 
@@ -315,7 +315,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          최대 1 분 소요
+          2 분 소요
         
       </span>
     
@@ -327,9 +327,111 @@
 
       <section class="page__content e-content" itemprop="text">
         
-        <h2 id="2023-04-11-화">2023-04-11 (화)</h2>
+        <h1 id="problem">problem</h1>
 <ul>
-  <li>두 개의 난류 유동이 있을 때, 그 둘의 유사성을 어떻게 판단할 것인가?</li>
+  <li>TecPlot client host에서 server host로 license status 요청하기</li>
+</ul>
+
+<h1 id="solution">Solution</h1>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">rlmutil rlmstat -c PORT@SERVER</code>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@master bin]# /opt/tecplot/360ex_2022r2/bin/rlmutil rlmstat <span class="nt">-a</span> <span class="nt">-c</span> 27100@license.tml
+Setting license file path to 27100@license.tml
+rlmutil v12.4
+Copyright <span class="o">(</span>C<span class="o">)</span> 2006-2018, Reprise Software, Inc. All rights reserved.
+
+
+rlm status on license.tml <span class="o">(</span>port 27100<span class="o">)</span>, up 00:28:24
+rlm software version v12.4 <span class="o">(</span>build:2<span class="o">)</span>
+rlm <span class="nb">comm </span>version: v1.2
+Startup <span class="nb">time</span>: Sun Apr 16 13:06:01 2023
+Todays Statistics <span class="o">(</span>00:28:23<span class="o">)</span>, init <span class="nb">time</span>: Sun Apr 16 13:06:02 2023
+Recent Statistics <span class="o">(</span>00:28:23<span class="o">)</span>, init <span class="nb">time</span>: Sun Apr 16 13:06:02 2023
+
+             Recent Stats         Todays Stats         Total Stats
+              00:28:23             00:28:23             00:28:24
+Messages:    71 <span class="o">(</span>0/sec<span class="o">)</span>           71 <span class="o">(</span>0/sec<span class="o">)</span>          71 <span class="o">(</span>0/sec<span class="o">)</span>
+Connections: 52 <span class="o">(</span>0/sec<span class="o">)</span>           52 <span class="o">(</span>0/sec<span class="o">)</span>          52 <span class="o">(</span>0/sec<span class="o">)</span>
+
+<span class="nt">---------</span> ISV servers <span class="nt">----------</span>
+   Name           Port Running Restarts
+teclmd           27101   Yes      2
+
+<span class="nt">------------------------</span>
+
+teclmd ISV server status on license.tml <span class="o">(</span>port 27101<span class="o">)</span>, up 00:03:37
+teclmd software version v12.4 <span class="o">(</span>build: 2<span class="o">)</span>
+teclmd <span class="nb">comm </span>version: v1.2
+teclmd Debug log filename: +./teclmd.log
+teclmd Report log filename: ./report.log
+Startup <span class="nb">time</span>: Sun Apr 16 13:30:48 2023
+Todays Statistics <span class="o">(</span>00:03:37<span class="o">)</span>, init <span class="nb">time</span>: Sun Apr 16 13:30:48 2023
+Recent Statistics <span class="o">(</span>00:03:37<span class="o">)</span>, init <span class="nb">time</span>: Sun Apr 16 13:30:48 2023
+
+             Recent Stats         Todays Stats         Total Stats
+              00:03:37             00:03:37             00:03:37
+Messages:    37 <span class="o">(</span>0/sec<span class="o">)</span>           37 <span class="o">(</span>0/sec<span class="o">)</span>          37 <span class="o">(</span>0/sec<span class="o">)</span>
+Connections: 17 <span class="o">(</span>0/sec<span class="o">)</span>           17 <span class="o">(</span>0/sec<span class="o">)</span>          17 <span class="o">(</span>0/sec<span class="o">)</span>
+Checkouts:   1 <span class="o">(</span>0/sec<span class="o">)</span>           1 <span class="o">(</span>0/sec<span class="o">)</span>          1 <span class="o">(</span>0/sec<span class="o">)</span>
+Denials:     1 <span class="o">(</span>0/sec<span class="o">)</span>           1 <span class="o">(</span>0/sec<span class="o">)</span>          1 <span class="o">(</span>0/sec<span class="o">)</span>
+Removals:    0 <span class="o">(</span>0/sec<span class="o">)</span>           0 <span class="o">(</span>0/sec<span class="o">)</span>          0 <span class="o">(</span>0/sec<span class="o">)</span>
+
+
+<span class="nt">------------------------</span>
+
+teclmd license pool status on license.tml <span class="o">(</span>port 27101<span class="o">)</span>
+
+360ex v2024.04
+    count: 1, <span class="c"># reservations: 0, inuse: 0, exp: 30-apr-2024</span>
+    obsolete: 0, min_remove: 120, total checkouts: 1
+rs v2024.04
+    count: 1, <span class="c"># reservations: 0, inuse: 0, exp: 30-apr-2024</span>
+    obsolete: 0, min_remove: 120, total checkouts: 0
+chorus v2024.04
+    count: 1, <span class="c"># reservations: 0, inuse: 0, exp: 30-apr-2024</span>
+    obsolete: 0, min_remove: 120, total checkouts: 0
+batch v2024.04
+    count: 1, <span class="c"># reservations: 0, inuse: 0, exp: 30-apr-2024</span>
+    obsolete: 0, min_remove: 120, total checkouts: 0
+fv v2024.04
+    count: 1, <span class="c"># reservations: 0, inuse: 0, exp: 30-apr-2024</span>
+    obsolete: 0, min_remove: 120, total checkouts: 0
+360 v2013.1
+    Token-based license
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h1 id="issues">Issues</h1>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">rlmutil</code> 도움말을 보면 아래와 같이 나오는데, 문제는 일반 사용자도 rlmdown, rlmreread 같은 명령어를 사용하여 lisence server에 명령을 내릴 수 있다는 것.
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@master bin]# /opt/tecplot/360ex_2022r2/bin/rlmutil <span class="nt">-h</span>
+Usage: rlmutil program &lt;args&gt;, <span class="nt">-OR-</span>
+          program &lt;args&gt;
+ where program is one of:
+ 	rlmdebug   rlmdown    rlmhostid
+ 	rlmnewlog  rlmremove  rlmreread
+ 	rlmstat    rlmswitch  rlmswitchr
+ args are:
+ <span class="nt">-c</span> license_file | port@host - to specify license
+ <span class="nt">-dat</span> - use <span class="k">*</span>.dat instead of <span class="k">*</span>.lic <span class="k">for </span>license file
+ <span class="nt">-h</span> - print usage information and <span class="nb">exit</span>
+ <span class="nt">-q</span> - don<span class="s1">'t prompt on rlmdown/rlmremove/rlmswitch(r)
+  and don'</span>t check license checksums
+ <span class="nt">-v</span> - print version and <span class="nb">exit</span>
+ <span class="nt">-z</span> password - specify license password
+  rlmdebug <span class="o">[</span>product]
+  rlmdown <span class="o">[</span>isv] <span class="o">[</span>RLM]
+  rlmhostid <span class="nt">-q</span> <span class="o">[[</span>-]32|disksn|ether|gc|ip|internet|host|user|rlmid1]
+  rlmnewlog isv log-file-name
+  rlmremove server_host port isv handle
+  rlmreread <span class="o">[</span>isv]
+  rlmstat <span class="o">[</span><span class="nt">-a</span><span class="o">]</span> <span class="o">[</span><span class="nt">-i</span> <span class="o">[</span>isv]] <span class="nt">-I</span> <span class="o">[</span><span class="nt">-l</span> <span class="o">[</span>isv]] <span class="o">[</span><span class="nt">-n</span> <span class="o">[</span>node]] <span class="o">[</span><span class="nt">-p</span> <span class="o">[</span>product]] <span class="o">[</span><span class="nt">-u</span> <span class="o">[</span>user]] 
+  rlmstat <span class="nt">-avail</span> <span class="o">[</span><span class="nt">-b</span><span class="o">]</span> <span class="o">[</span><span class="nt">-i</span> isv] <span class="o">[</span><span class="nt">-p</span> product]
+  rlmswitch isv new-file
+  rlmswitchr isv new-file
+</code></pre></div>    </div>
+  </li>
 </ul>
 
         
@@ -338,6 +440,25 @@
       <footer class="page__meta">
         
         
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/license" class="page__taxonomy-item p-category" rel="tag">license</a><span class="sep">, </span>
+    
+      <a href="/tags/linux" class="page__taxonomy-item p-category" rel="tag">linux</a><span class="sep">, </span>
+    
+      <a href="/tags/tecplot" class="page__taxonomy-item p-category" rel="tag">tecplot</a>
+    
+    </span>
+  </p>
+
+
 
 
   
@@ -349,7 +470,9 @@
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/research" class="page__taxonomy-item p-category" rel="tag">research</a>
+      <a href="/categories/linux" class="page__taxonomy-item p-category" rel="tag">linux</a><span class="sep">, </span>
+    
+      <a href="/categories/tecplot" class="page__taxonomy-item p-category" rel="tag">tecplot</a>
     
     </span>
   </p>
@@ -357,7 +480,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-04-01T00:00:00+09:00">April 1, 2023</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-04-16T00:00:00+09:00">April 16, 2023</time></p>
 
       </footer>
 
@@ -366,11 +489,11 @@
       
   <nav class="pagination">
     
-      <a href="#" class="pagination--pager disabled">이전</a>
-    
-    
       <a href="/linux/ansys/query-ansys-license/" class="pagination--pager" title="Query an Ansys license status
-">다음</a>
+">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
     
   </nav>
 
@@ -384,56 +507,6 @@
     <div class="page__related">
       <h2 class="page__related-title">참고</h2>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/linux/tecplot/query-tecplot-license/" rel="permalink">Query a TecPlot license status
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2023-04-16T00:00:00+09:00">April 16, 2023</time>
-      </span>
-    
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
-        
-          2 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">problem
-
-  TecPlot client host에서 server host로 license status 요청하기
-
-</p>
-  </article>
-</div>
-
         
           
 
@@ -479,6 +552,56 @@
     <p class="archive__item-excerpt" itemprop="description">problem
 
   ANSYS client host에서 server host로 license status 요청하기
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/research/research-note/" rel="permalink">Research Note
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-04-01T00:00:00+09:00">April 1, 2023</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">2023-04-11 (화)
+
+  두 개의 난류 유동이 있을 때, 그 둘의 유사성을 어떻게 판단할 것인가?
 
 </p>
   </article>
