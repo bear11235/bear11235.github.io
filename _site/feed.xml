@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-04-16T14:16:45+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">bear11235’s blog</title><subtitle>An amazing website.</subtitle><author><name>bear11235</name></author><entry><title type="html">Query an Ansys license status</title><link href="http://localhost:4000/linux/ansys/query-ansys-license/" rel="alternate" type="text/html" title="Query an Ansys license status" /><published>2023-04-16T00:00:00+09:00</published><updated>2023-04-16T00:00:00+09:00</updated><id>http://localhost:4000/linux/ansys/query-ansys-license</id><content type="html" xml:base="http://localhost:4000/linux/ansys/query-ansys-license/"><![CDATA[<h1 id="problem">problem</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-04-16T17:11:14+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">bear11235’s blog</title><subtitle>An amazing website.</subtitle><author><name>bear11235</name></author><entry><title type="html">Query an Ansys license status</title><link href="http://localhost:4000/linux/ansys/query-ansys-license/" rel="alternate" type="text/html" title="Query an Ansys license status" /><published>2023-04-16T00:00:00+09:00</published><updated>2023-04-16T00:00:00+09:00</updated><id>http://localhost:4000/linux/ansys/query-ansys-license</id><content type="html" xml:base="http://localhost:4000/linux/ansys/query-ansys-license/"><![CDATA[<h1 id="problem">problem</h1>
 <ul>
   <li>ANSYS client host에서 server host로 license status 요청하기</li>
 </ul>
@@ -279,7 +279,29 @@ Usage: rlmutil program &lt;args&gt;, <span class="nt">-OR-</span>
   rlmswitchr isv new-file
 </code></pre></div>    </div>
   </li>
-</ul>]]></content><author><name>bear11235</name></author><category term="linux" /><category term="tecplot" /><category term="linux" /><category term="tecplot" /><category term="license" /><summary type="html"><![CDATA[problem TecPlot client host에서 server host로 license status 요청하기]]></summary></entry><entry><title type="html">Research Note</title><link href="http://localhost:4000/research/research-note/" rel="alternate" type="text/html" title="Research Note" /><published>2023-04-01T00:00:00+09:00</published><updated>2023-04-01T00:00:00+09:00</updated><id>http://localhost:4000/research/research-note</id><content type="html" xml:base="http://localhost:4000/research/research-note/"><![CDATA[<h2 id="2023-04-11-화">2023-04-11 (화)</h2>
+</ul>]]></content><author><name>bear11235</name></author><category term="linux" /><category term="tecplot" /><category term="linux" /><category term="tecplot" /><category term="license" /><summary type="html"><![CDATA[problem TecPlot client host에서 server host로 license status 요청하기]]></summary></entry><entry><title type="html">Bayesian Network 공부하기</title><link href="http://localhost:4000/study/machine%20learning/bayesian-network/" rel="alternate" type="text/html" title="Bayesian Network 공부하기" /><published>2023-04-16T00:00:00+09:00</published><updated>2023-04-16T00:00:00+09:00</updated><id>http://localhost:4000/study/machine%20learning/bayesian-network</id><content type="html" xml:base="http://localhost:4000/study/machine%20learning/bayesian-network/"><![CDATA[<h1 id="bayesian-networkbn-란">Bayesian Network(BN) 란?</h1>
+<ul>
+  <li><strong>Bayesian Network</strong> = <strong>Graph</strong> + <strong>Conditional Probability Table</strong></li>
+  <li>확률 변수 사이의 상관관계를 그래프로 표현하고, 변수 사이의 조건부 확률 분포를 학습</li>
+  <li>그래프는 node와 edge로 표현된다. BN은 확률 변수를 node로, 확률 변수 사이 직접적인 의존성(direct dependency)을 edge로 표현한다.</li>
+  <li>BN에서 사용하는 그래프 모델은 Directed Acyclic Graph (DAG), 즉 비순환-방향성 그래프로 표현된다.
+    <ul>
+      <li>Directed: 노드 간 연결은 단순 선분이 아니라 방향성이 있는 화살표로 표현된다.</li>
+      <li>Acyclic: a-&gt;b-&gt;c-&gt;a 와 같이 순환적인 구조가 없다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="/assets/images/posts/MLDL/bayesian-network-01.png" alt="" /></p>]]></content><author><name>bear11235</name></author><category term="study" /><category term="machine learning" /><category term="study" /><category term="machine learning" /><category term="bayesian network" /><summary type="html"><![CDATA[Bayesian Network(BN) 란? Bayesian Network = Graph + Conditional Probability Table 확률 변수 사이의 상관관계를 그래프로 표현하고, 변수 사이의 조건부 확률 분포를 학습 그래프는 node와 edge로 표현된다. BN은 확률 변수를 node로, 확률 변수 사이 직접적인 의존성(direct dependency)을 edge로 표현한다. BN에서 사용하는 그래프 모델은 Directed Acyclic Graph (DAG), 즉 비순환-방향성 그래프로 표현된다. Directed: 노드 간 연결은 단순 선분이 아니라 방향성이 있는 화살표로 표현된다. Acyclic: a-&gt;b-&gt;c-&gt;a 와 같이 순환적인 구조가 없다.]]></summary></entry><entry><title type="html">Research Note</title><link href="http://localhost:4000/research/research-note/" rel="alternate" type="text/html" title="Research Note" /><published>2023-04-01T00:00:00+09:00</published><updated>2023-04-01T00:00:00+09:00</updated><id>http://localhost:4000/research/research-note</id><content type="html" xml:base="http://localhost:4000/research/research-note/"><![CDATA[<h2 id="2023-04-11-화">2023-04-11 (화)</h2>
 <ul>
   <li>두 개의 난류 유동이 있을 때, 그 둘의 유사성을 어떻게 판단할 것인가?</li>
+</ul>
+
+<h2 id="2023-04-13-목">2023-04-13 (목)</h2>
+<ul>
+  <li>난류 유동의 순간적인(?) time scale은 어떻게 구할 것인가?
+    <ul>
+      <li></li>
+    </ul>
+  </li>
 </ul>]]></content><author><name>bear11235</name></author><category term="research" /><summary type="html"><![CDATA[2023-04-11 (화) 두 개의 난류 유동이 있을 때, 그 둘의 유사성을 어떻게 판단할 것인가?]]></summary></entry></feed>

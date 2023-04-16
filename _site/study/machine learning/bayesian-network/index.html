@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Research Note - bear11235’s blog</title>
-<meta name="description" content="2023-04-11 (화)    두 개의 난류 유동이 있을 때, 그 둘의 유사성을 어떻게 판단할 것인가?">
+<!-- begin _includes/seo.html --><title>Bayesian Network 공부하기 - bear11235’s blog</title>
+<meta name="description" content="Bayesian Network(BN) 란?    Bayesian Network = Graph + Conditional Probability Table   확률 변수 사이의 상관관계를 그래프로 표현하고, 변수 사이의 조건부 확률 분포를 학습   그래프는 node와 edge로 표현된다. BN은 확률 변수를 node로, 확률 변수 사이 직접적인 의존성(direct dependency)을 edge로 표현한다.   BN에서 사용하는 그래프 모델은 Directed Acyclic Graph (DAG), 즉 비순환-방향성 그래프로 표현된다.            Directed: 노드 간 연결은 단순 선분이 아니라 방향성이 있는 화살표로 표현된다.       Acyclic: a-&gt;b-&gt;c-&gt;a 와 같이 순환적인 구조가 없다.">
 
 
   <meta name="author" content="bear11235">
@@ -22,30 +22,30 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="bear11235's blog">
-<meta property="og:title" content="Research Note">
-<meta property="og:url" content="http://localhost:4000/research/research-note/">
+<meta property="og:title" content="Bayesian Network 공부하기">
+<meta property="og:url" content="http://localhost:4000/study/machine%20learning/bayesian-network/">
 
 
-  <meta property="og:description" content="2023-04-11 (화)    두 개의 난류 유동이 있을 때, 그 둘의 유사성을 어떻게 판단할 것인가?">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2023-04-01T00:00:00+09:00">
+  <meta property="og:description" content="Bayesian Network(BN) 란?    Bayesian Network = Graph + Conditional Probability Table   확률 변수 사이의 상관관계를 그래프로 표현하고, 변수 사이의 조건부 확률 분포를 학습   그래프는 node와 edge로 표현된다. BN은 확률 변수를 node로, 확률 변수 사이 직접적인 의존성(direct dependency)을 edge로 표현한다.   BN에서 사용하는 그래프 모델은 Directed Acyclic Graph (DAG), 즉 비순환-방향성 그래프로 표현된다.            Directed: 노드 간 연결은 단순 선분이 아니라 방향성이 있는 화살표로 표현된다.       Acyclic: a-&gt;b-&gt;c-&gt;a 와 같이 순환적인 구조가 없다.">
 
 
 
 
 
-  
+
+
+  <meta property="article:published_time" content="2023-04-16T00:00:00+09:00">
+
+
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/research/research-note/">
+
+<link rel="canonical" href="http://localhost:4000/study/machine%20learning/bayesian-network/">
 
 
 
@@ -282,16 +282,16 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Research Note">
-    <meta itemprop="description" content="2023-04-11 (화)  두 개의 난류 유동이 있을 때, 그 둘의 유사성을 어떻게 판단할 것인가?">
-    <meta itemprop="datePublished" content="2023-04-01T00:00:00+09:00">
+    <meta itemprop="headline" content="Bayesian Network 공부하기">
+    <meta itemprop="description" content="Bayesian Network(BN) 란?  Bayesian Network = Graph + Conditional Probability Table  확률 변수 사이의 상관관계를 그래프로 표현하고, 변수 사이의 조건부 확률 분포를 학습  그래프는 node와 edge로 표현된다. BN은 확률 변수를 node로, 확률 변수 사이 직접적인 의존성(direct dependency)을 edge로 표현한다.  BN에서 사용하는 그래프 모델은 Directed Acyclic Graph (DAG), 즉 비순환-방향성 그래프로 표현된다.          Directed: 노드 간 연결은 단순 선분이 아니라 방향성이 있는 화살표로 표현된다.      Acyclic: a-&gt;b-&gt;c-&gt;a 와 같이 순환적인 구조가 없다.      ">
+    <meta itemprop="datePublished" content="2023-04-16T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/research/research-note/" class="u-url" itemprop="url">Research Note
+            <a href="http://localhost:4000/study/machine%20learning/bayesian-network/" class="u-url" itemprop="url">Bayesian Network 공부하기
 </a>
           </h1>
           
@@ -302,7 +302,7 @@
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2023-04-01T00:00:00+09:00">April 1, 2023</time>
+        <time datetime="2023-04-16T00:00:00+09:00">April 16, 2023</time>
       </span>
     
 
@@ -327,19 +327,20 @@
 
       <section class="page__content e-content" itemprop="text">
         
-        <h2 id="2023-04-11-화">2023-04-11 (화)</h2>
+        <h1 id="bayesian-networkbn-란">Bayesian Network(BN) 란?</h1>
 <ul>
-  <li>두 개의 난류 유동이 있을 때, 그 둘의 유사성을 어떻게 판단할 것인가?</li>
-</ul>
-
-<h2 id="2023-04-13-목">2023-04-13 (목)</h2>
-<ul>
-  <li>난류 유동의 순간적인(?) time scale은 어떻게 구할 것인가?
+  <li><strong>Bayesian Network</strong> = <strong>Graph</strong> + <strong>Conditional Probability Table</strong></li>
+  <li>확률 변수 사이의 상관관계를 그래프로 표현하고, 변수 사이의 조건부 확률 분포를 학습</li>
+  <li>그래프는 node와 edge로 표현된다. BN은 확률 변수를 node로, 확률 변수 사이 직접적인 의존성(direct dependency)을 edge로 표현한다.</li>
+  <li>BN에서 사용하는 그래프 모델은 Directed Acyclic Graph (DAG), 즉 비순환-방향성 그래프로 표현된다.
     <ul>
-      <li></li>
+      <li>Directed: 노드 간 연결은 단순 선분이 아니라 방향성이 있는 화살표로 표현된다.</li>
+      <li>Acyclic: a-&gt;b-&gt;c-&gt;a 와 같이 순환적인 구조가 없다.</li>
     </ul>
   </li>
 </ul>
+
+<p><img src="/assets/images/posts/MLDL/bayesian-network-01.png" alt="" /></p>
 
         
       </section>
@@ -347,6 +348,25 @@
       <footer class="page__meta">
         
         
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/bayesian-network" class="page__taxonomy-item p-category" rel="tag">bayesian network</a><span class="sep">, </span>
+    
+      <a href="/tags/machine-learning" class="page__taxonomy-item p-category" rel="tag">machine learning</a><span class="sep">, </span>
+    
+      <a href="/tags/study" class="page__taxonomy-item p-category" rel="tag">study</a>
+    
+    </span>
+  </p>
+
+
 
 
   
@@ -358,7 +378,9 @@
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/research" class="page__taxonomy-item p-category" rel="tag">research</a>
+      <a href="/categories/machine-learning" class="page__taxonomy-item p-category" rel="tag">machine learning</a><span class="sep">, </span>
+    
+      <a href="/categories/study" class="page__taxonomy-item p-category" rel="tag">study</a>
     
     </span>
   </p>
@@ -366,7 +388,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-04-01T00:00:00+09:00">April 1, 2023</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-04-16T00:00:00+09:00">April 16, 2023</time></p>
 
       </footer>
 
@@ -375,11 +397,11 @@
       
   <nav class="pagination">
     
-      <a href="#" class="pagination--pager disabled">이전</a>
+      <a href="/linux/tecplot/query-tecplot-license/" class="pagination--pager" title="Query a TecPlot license status
+">이전</a>
     
     
-      <a href="/linux/ansys/query-ansys-license/" class="pagination--pager" title="Query an Ansys license status
-">다음</a>
+      <a href="#" class="pagination--pager disabled">다음</a>
     
   </nav>
 
@@ -393,56 +415,6 @@
     <div class="page__related">
       <h2 class="page__related-title">참고</h2>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/study/machine%20learning/bayesian-network/" rel="permalink">Bayesian Network 공부하기
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2023-04-16T00:00:00+09:00">April 16, 2023</time>
-      </span>
-    
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
-        
-          최대 1 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">Bayesian Network(BN) 란?
-
-  Bayesian Network = Graph + Conditional Probability Table
-  확률 변수 사이의 상관관계를 그래프로 표현하고, 변수 사이의 조건부 확률 분포를 학습
-  그래프는 node와 edge로 표현된다...</p>
-  </article>
-</div>
-
         
           
 
@@ -538,6 +510,56 @@
     <p class="archive__item-excerpt" itemprop="description">problem
 
   ANSYS client host에서 server host로 license status 요청하기
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/research/research-note/" rel="permalink">Research Note
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-04-01T00:00:00+09:00">April 1, 2023</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">2023-04-11 (화)
+
+  두 개의 난류 유동이 있을 때, 그 둘의 유사성을 어떻게 판단할 것인가?
 
 </p>
   </article>

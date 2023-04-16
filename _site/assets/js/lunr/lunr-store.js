@@ -1,6 +1,6 @@
 var store = [{
         "title": "Research Note",
-        "excerpt":"2023-04-11 (화)     두 개의 난류 유동이 있을 때, 그 둘의 유사성을 어떻게 판단할 것인가?  ","categories": ["research"],
+        "excerpt":"2023-04-11 (화)     두 개의 난류 유동이 있을 때, 그 둘의 유사성을 어떻게 판단할 것인가?   2023-04-13 (목)     난류 유동의 순간적인(?) time scale은 어떻게 구할 것인가?                      ","categories": ["research"],
         "tags": [],
         "url": "/research/research-note/",
         "teaser": null
@@ -17,6 +17,12 @@ var store = [{
         "url": "/linux/tecplot/query-tecplot-license/",
         "teaser": null
       },{
+        "title": "Bayesian Network 공부하기",
+        "excerpt":"Bayesian Network(BN) 란? Bayesian Network = Graph + Conditional Probability Table 확률 변수 사이의 상관관계를 그래프로 표현하고, 변수 사이의 조건부 확률 분포를 학습 그래프는 node와 edge로 표현된다. BN은 확률 변수를 node로, 확률 변수 사이 직접적인 의존성(direct dependency)을 edge로 표현한다. BN에서 사용하는 그래프 모델은 Directed Acyclic Graph (DAG), 즉 비순환-방향성 그래프로...","categories": ["study","machine learning"],
+        "tags": ["study","machine learning","bayesian network"],
+        "url": "/study/machine%20learning/bayesian-network/",
+        "teaser": null
+      },{
     "title": "Page Not Found",
     "excerpt":"Sorry, but the page you were trying to view does not exist.  ","url": "http://localhost:4000/404.html"
   },{
@@ -27,7 +33,7 @@ var store = [{
     "excerpt":" ","url": "http://localhost:4000/categories/"
   },{
     "title": "Posts by Collection",
-    "excerpt":"                                 ","url": "http://localhost:4000/collection-archive/"
+    "excerpt":"                                         ","url": "http://localhost:4000/collection-archive/"
   },{
     "title": "Edge Case",
     "excerpt":"Sample post listing for the category Edge Case.  ","url": "http://localhost:4000/categories/edge-case/"
@@ -104,6 +110,15 @@ var store = [{
     "title": "tecplot",
     "excerpt":"","url": "http://localhost:4000/tags/tecplot/"
   },{
+    "title": "study",
+    "excerpt":"","url": "http://localhost:4000/tags/study/"
+  },{
+    "title": "machine learning",
+    "excerpt":"","url": "http://localhost:4000/tags/machine-learning/"
+  },{
+    "title": "bayesian network",
+    "excerpt":"","url": "http://localhost:4000/tags/bayesian-network/"
+  },{
     "title": "research",
     "excerpt":"","url": "http://localhost:4000/categories/research/"
   },{
@@ -115,6 +130,12 @@ var store = [{
   },{
     "title": "tecplot",
     "excerpt":"","url": "http://localhost:4000/categories/tecplot/"
+  },{
+    "title": "study",
+    "excerpt":"","url": "http://localhost:4000/categories/study/"
+  },{
+    "title": "machine learning",
+    "excerpt":"","url": "http://localhost:4000/categories/machine-learning/"
   },{
     "title": null,
     "excerpt":"{% if page.xsl %} {% endif %} {% assign collections = site.collections | where_exp:'collection','collection.output != false' %}{% for collection in collections %}{% assign docs = collection.docs | where_exp:'doc','doc.sitemap != false' %}{% for doc in docs %} {{ doc.url | replace:'/index.html','/' | absolute_url | xml_escape }} {% if doc.last_modified_at or doc.date...","url": "http://localhost:4000/sitemap.xml"
