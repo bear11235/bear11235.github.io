@@ -23,10 +23,10 @@ var store = [{
         "url": "/study/machine%20learning/bayesian-network/",
         "teaser": null
       },{
-        "title": "Markov Chain 공부하기",
-        "excerpt":"Markov Property     Markov 성질은 현재에 대한 조건부로 미래와 과거가 독립인 확률 과정을 의미한다.   $ f(x) = x^2 $  ","categories": ["study","machine learning"],
+        "title": "Hidden Markov Model 공부하기",
+        "excerpt":"Markov Chain Markov Property Markov 성질은 현재 시점의 상태는 바로 직전 시점의 상태에만 의존한다는 것이다. 즉 $ P(X_{n} \\vert X_{n-1}, X_{n-2}, \\cdots, X_{1}) = P(X_{n} \\vert X_{n-1}) $ 이것은 다가오는 미래는 과거에 영향 받지 않고 온전히 현재 상태에만 의존함을 의미한다. Definition A Markov process is a stochastic process that satisfies...","categories": ["study","machine learning"],
         "tags": ["study","machine learning","markov","bayesian network"],
-        "url": "/study/machine%20learning/markov-chain/",
+        "url": "/study/machine%20learning/hidden-markov-model/",
         "teaser": null
       },{
     "title": "Page Not Found",
