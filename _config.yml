@@ -306,6 +306,7 @@ defaults:
       related: true
       show_date: true
       date_format: "%Y-%m-%d"
+      use_math: true
 
   # _pages
   - scope:
@@ -314,3 +315,13 @@ defaults:
     values:
       layout: single
       author_profile: true
+
+
+# Minimal-Mistakes에서 수식 쓰기
+# 출처: https://happy-jihye.github.io/blog/blog-1/
+# Conversion
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false

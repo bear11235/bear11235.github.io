@@ -23,6 +23,12 @@ var store = [{
         "url": "/study/machine%20learning/bayesian-network/",
         "teaser": null
       },{
+        "title": "Markov Chain 공부하기",
+        "excerpt":"Markov Property     Markov 성질은 현재에 대한 조건부로 미래와 과거가 독립인 확률 과정을 의미한다.   $ f(x) = x^2 $  ","categories": ["study","machine learning"],
+        "tags": ["study","machine learning","markov","bayesian network"],
+        "url": "/study/machine%20learning/markov-chain/",
+        "teaser": null
+      },{
     "title": "Page Not Found",
     "excerpt":"Sorry, but the page you were trying to view does not exist.  ","url": "http://localhost:4000/404.html"
   },{
@@ -33,7 +39,7 @@ var store = [{
     "excerpt":" ","url": "http://localhost:4000/categories/"
   },{
     "title": "Posts by Collection",
-    "excerpt":"                                         ","url": "http://localhost:4000/collection-archive/"
+    "excerpt":"                                                 ","url": "http://localhost:4000/collection-archive/"
   },{
     "title": "Edge Case",
     "excerpt":"Sample post listing for the category Edge Case.  ","url": "http://localhost:4000/categories/edge-case/"
@@ -118,6 +124,9 @@ var store = [{
   },{
     "title": "bayesian network",
     "excerpt":"","url": "http://localhost:4000/tags/bayesian-network/"
+  },{
+    "title": "markov",
+    "excerpt":"","url": "http://localhost:4000/tags/markov/"
   },{
     "title": "research",
     "excerpt":"","url": "http://localhost:4000/categories/research/"
