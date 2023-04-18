@@ -29,6 +29,18 @@ var store = [{
         "url": "/study/machine%20learning/hidden-markov-model/",
         "teaser": null
       },{
+        "title": "EM 알고리즘 공부하기",
+        "excerpt":" ","categories": ["study","machine learning"],
+        "tags": ["study","machine learning","EM","GMM"],
+        "url": "/study/machine%20learning/expectation-maximization/",
+        "teaser": null
+      },{
+        "title": "Undirected model 공부하기",
+        "excerpt":"Directed vs Undirected 적용하고자 하는 application에서 변수 간 order가 있을 수도 있고 없을 수도 있음. 오늘의 날씨와 내일의 날씨는 order가 있음. 이미지의 픽셀 정보는 order가 없음. 순서가 있는 경우에는 DAG 모델을 주로 사용하고, 순서가 없는 경우에는 Undirected Graphical Model(UG, UGM) 혹은 Markov Random Fields(MRF)를 사용한다. BN에서는 Conditional Probability Table(CPT)를 사용하여...","categories": ["study","machine learning"],
+        "tags": ["study","machine learning","graph model","bayesian network","UG","DAG"],
+        "url": "/study/machine%20learning/undirected-graphical-model/",
+        "teaser": null
+      },{
     "title": "Page Not Found",
     "excerpt":"Sorry, but the page you were trying to view does not exist.  ","url": "http://localhost:4000/404.html"
   },{
@@ -39,7 +51,7 @@ var store = [{
     "excerpt":" ","url": "http://localhost:4000/categories/"
   },{
     "title": "Posts by Collection",
-    "excerpt":"                                                 ","url": "http://localhost:4000/collection-archive/"
+    "excerpt":"                                                                 ","url": "http://localhost:4000/collection-archive/"
   },{
     "title": "Edge Case",
     "excerpt":"Sample post listing for the category Edge Case.  ","url": "http://localhost:4000/categories/edge-case/"
@@ -128,6 +140,21 @@ var store = [{
     "title": "markov",
     "excerpt":"","url": "http://localhost:4000/tags/markov/"
   },{
+    "title": "EM",
+    "excerpt":"","url": "http://localhost:4000/tags/em/"
+  },{
+    "title": "GMM",
+    "excerpt":"","url": "http://localhost:4000/tags/gmm/"
+  },{
+    "title": "graph model",
+    "excerpt":"","url": "http://localhost:4000/tags/graph-model/"
+  },{
+    "title": "UG",
+    "excerpt":"","url": "http://localhost:4000/tags/ug/"
+  },{
+    "title": "DAG",
+    "excerpt":"","url": "http://localhost:4000/tags/dag/"
+  },{
     "title": "research",
     "excerpt":"","url": "http://localhost:4000/categories/research/"
   },{
@@ -145,6 +172,9 @@ var store = [{
   },{
     "title": "machine learning",
     "excerpt":"","url": "http://localhost:4000/categories/machine-learning/"
+  },{
+    "title": null,
+    "excerpt":"","url": "http://localhost:4000/page2/"
   },{
     "title": null,
     "excerpt":"{% if page.xsl %} {% endif %} {% assign collections = site.collections | where_exp:'collection','collection.output != false' %}{% for collection in collections %}{% assign docs = collection.docs | where_exp:'doc','doc.sitemap != false' %}{% for doc in docs %} {{ doc.url | replace:'/index.html','/' | absolute_url | xml_escape }} {% if doc.last_modified_at or doc.date...","url": "http://localhost:4000/sitemap.xml"
