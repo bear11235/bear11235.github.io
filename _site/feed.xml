@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-04-18T17:51:35+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">bear11235’s blog</title><subtitle>An amazing website.</subtitle><author><name>bear11235</name></author><entry><title type="html">EM 알고리즘 공부하기</title><link href="http://localhost:4000/study/machine%20learning/expectation-maximization/" rel="alternate" type="text/html" title="EM 알고리즘 공부하기" /><published>2023-04-18T00:00:00+09:00</published><updated>2023-04-18T00:00:00+09:00</updated><id>http://localhost:4000/study/machine%20learning/expectation-maximization</id><content type="html" xml:base="http://localhost:4000/study/machine%20learning/expectation-maximization/"><![CDATA[]]></content><author><name>bear11235</name></author><category term="study" /><category term="machine learning" /><category term="study" /><category term="machine learning" /><category term="EM" /><category term="GMM" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Undirected model 공부하기</title><link href="http://localhost:4000/study/machine%20learning/undirected-graphical-model/" rel="alternate" type="text/html" title="Undirected model 공부하기" /><published>2023-04-18T00:00:00+09:00</published><updated>2023-04-18T00:00:00+09:00</updated><id>http://localhost:4000/study/machine%20learning/undirected-graphical-model</id><content type="html" xml:base="http://localhost:4000/study/machine%20learning/undirected-graphical-model/"><![CDATA[<h1 id="directed-vs-undirected">Directed vs Undirected</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-04-18T18:34:46+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">bear11235’s blog</title><subtitle>An amazing website.</subtitle><author><name>bear11235</name></author><entry><title type="html">EM 알고리즘 공부하기</title><link href="http://localhost:4000/study/machine%20learning/expectation-maximization/" rel="alternate" type="text/html" title="EM 알고리즘 공부하기" /><published>2023-04-18T00:00:00+09:00</published><updated>2023-04-18T00:00:00+09:00</updated><id>http://localhost:4000/study/machine%20learning/expectation-maximization</id><content type="html" xml:base="http://localhost:4000/study/machine%20learning/expectation-maximization/"><![CDATA[]]></content><author><name>bear11235</name></author><category term="study" /><category term="machine learning" /><category term="study" /><category term="machine learning" /><category term="EM" /><category term="GMM" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Undirected model 공부하기</title><link href="http://localhost:4000/study/machine%20learning/undirected-graphical-model/" rel="alternate" type="text/html" title="Undirected model 공부하기" /><published>2023-04-18T00:00:00+09:00</published><updated>2023-04-18T00:00:00+09:00</updated><id>http://localhost:4000/study/machine%20learning/undirected-graphical-model</id><content type="html" xml:base="http://localhost:4000/study/machine%20learning/undirected-graphical-model/"><![CDATA[<h1 id="directed-vs-undirected">Directed vs Undirected</h1>
 <ul>
   <li>적용하고자 하는 application에서 변수 간 order가 있을 수도 있고 없을 수도 있음.</li>
   <li>오늘의 날씨와 내일의 날씨는 order가 있음.</li>
@@ -26,33 +26,74 @@
 
 <h2 id="정의">정의</h2>
 <ul>
-  <li>Clique
+  <li><strong>Clique</strong>
     <ul>
       <li>어떤 그래프 \(G\)가 주어져 있을 때, 그것의 subgraph 중 complete graph를 의미한다.</li>
       <li>즉 부분 그래프 중 완전그래프를 clique라고 정의.</li>
+      <li>노드의 개수가 0개인 경우 또한 clique</li>
+      <li>노드의 개수가 1개인 경우 또한 clique</li>
+      <li>Maximal Clique: 모든 clique 중에 가장 큰 clique. 가장 크다는 것은 어떤 노드를 추가하더라도 clique이 되지 못하는 경우를 의미.</li>
     </ul>
   </li>
-  <li>Potential Function</li>
-</ul>
-
-<p>\(\psi_c(x_c)\): ㅁㄴㅇㄹ</p>
-
-<ul>
-  <li>Partition Function
+  <li><strong>Potential Function</strong>, \(\psi_c(\mathbf{x}_c)\)
+    <ul>
+      <li>\(c\)라는 clique 안의 x에 대해 \(\mathbf{x}_c\)가 얼마나 그럴듯한지 (확률이 높은지) 의미하는 함수.</li>
+    </ul>
+  </li>
+  <li><strong>Partition Function</strong>, Z
     <ul>
       <li>Normalize를 위한 상수.</li>
-      <li>
-\[Z = \sum_{x_1, \cdots, x_n} \prod_{c\in C} \psi_c(x_c)\]
-      </li>
+      <li>\(Z = \sum_{x_1, \cdots, x_n} \prod_{c\in C} \psi_c(x_c)\): 모든 clique에 대한 potential function 값을 모두 곱한 뒤, 가능한 모든 x의 경우에 대해 더한다.</li>
     </ul>
   </li>
+</ul>
+
+<h2 id="표현">표현</h2>
+<ul>
   <li>n개의 노드를 가진 undirected graph, \(H\)를 생각하자. n개 변수들의 확률 분포는 \(P(X_1, \cdots, X_n)\)으로 표현할 수 있다.</li>
-  <li>확률 분포는 아래와 같이 potential functions의 곱으로 표현됨.</li>
+  <li>확률 분포는 아래와 같이 potential functions의 곱으로 표현됨. (이처럼 될 수 있다는 정리는 뒷부분에)</li>
   <li>
 \[P(x_1, \cdots, x_n) = \frac{1}{Z} \prod_{c\in C}\psi_c(x_c)\]
   </li>
-  <li>Z</li>
-</ul>]]></content><author><name>bear11235</name></author><category term="study" /><category term="machine learning" /><category term="study" /><category term="machine learning" /><category term="graph model" /><category term="bayesian network" /><category term="UG" /><category term="DAG" /><summary type="html"><![CDATA[Directed vs Undirected 적용하고자 하는 application에서 변수 간 order가 있을 수도 있고 없을 수도 있음. 오늘의 날씨와 내일의 날씨는 order가 있음. 이미지의 픽셀 정보는 order가 없음. 순서가 있는 경우에는 DAG 모델을 주로 사용하고, 순서가 없는 경우에는 Undirected Graphical Model(UG, UGM) 혹은 Markov Random Fields(MRF)를 사용한다. BN에서는 Conditional Probability Table(CPT)를 사용하여 변수 간 관계를 정했다면, UG에서는 각 변수 노드간 연결이 “얼마나 잘 어울리는가”, “그럴듯한 조합이다”의 정도를 판단한다. (?)]]></summary></entry><entry><title type="html">Query an Ansys license status</title><link href="http://localhost:4000/linux/ansys/query-ansys-license/" rel="alternate" type="text/html" title="Query an Ansys license status" /><published>2023-04-16T00:00:00+09:00</published><updated>2023-04-16T00:00:00+09:00</updated><id>http://localhost:4000/linux/ansys/query-ansys-license</id><content type="html" xml:base="http://localhost:4000/linux/ansys/query-ansys-license/"><![CDATA[<h1 id="problem">problem</h1>
+  <li>clique을 이용하여 UG의 확률분포를 표현할 수 있는데, maximal clique만 사용할 수도 있고, 모든 clique을 다 사용할 수도 있다.
+    <ul>
+      <li>
+\[P(x_1, x_2, x_3, x_4) = 
+\frac{1}{Z} \psi_{124}(\mathbf{x}_{124}) \psi_{234}(\mathbf{x}_{234})\]
+      </li>
+      <li>만약 3개 clique만을 사용한다면 변수 2개 사이 관계는 못 보지 않을까?</li>
+      <li>즉 확률 분포를 어떤 clique들의 조합으로 보는지 또한 모델링 과정 중 하나일 듯.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="interpretation-of-clique-potentials">Interpretation of clique potentials</h2>
+<p>X-Y-Z 라는 모델은 X와 Z의 Y에 대한 조건부 확률을 의미한다: \(X \mathrel{\unicode{x2AEB}} Z \vert Y\) (일단 지금 단계에서는 받아들이자.) 확률 분포는 아래와 같이 주어져야 한다.</p>
+
+\[p(x,y,z) = p(y) p(x \vert y) p(z \vert y)\]
+
+<p>또한 위에서 살펴본 것처럼, 확률 분포는 potential functions의 곱으로 표현된다.</p>
+
+\[p(x,y,z) = \psi_{xy} \psi_{yz}\]
+
+<p>그렇다면 여기서 potential function의 의미는?</p>
+<ul>
+  <li>\(p(x,y,z) = p(x,y) p(z \vert y)\) 혹은 \(p(x,y,z) = p(z,y) p(x \vert y)\)로도 표현할 수 있지만, 그렇게 되면 각각의 potential은 marginalize 혹은 conditionalize 될 수 없다. (?)</li>
+  <li>따라서 potential function을 확률로서 생각하지 말고, 그 값이 높으면 확률이 높으므로 서로 연결된 값이 얼마나 그럴듯한 값들을 가지고 있는지 정도로 생각하자.</li>
+</ul>
+
+<h2 id="clique-potentials-in-exponential-form">Clique Potentials in Exponential Form</h2>
+<p>clique potential이 항상 양수가 되게끔 하는 것이 불편한 경우가 있다. 예를 들어 분자의 극성을 표현할 때는 +/-로 표현하는 것이 편하겠지. 그렇기 때문에 실수 범위에서 정의되는 함수를 하나 생각하고 그 함수에 expotential 함수를 취해 양수 범위로 mapping하자.</p>
+
+\[\psi_c(x_c) = \exp\{ -\phi_c(x_c) \}\]
+
+<p>그렇게 되면 확률 분포는 Gibbs distribution을 따르게 된다.</p>
+
+\[p(x) = 
+\frac{1}{Z} \prod_{c\in C} \psi_c(x_c) = 
+\frac{1}{Z} \exp\left( -\sum_{c\in C} \phi_c(x_c) \right)\]
+
+<h1 id="왜-clique를-이용하여-확률-분포를-생각하는가">왜 clique를 이용하여 확률 분포를 생각하는가?</h1>]]></content><author><name>bear11235</name></author><category term="study" /><category term="machine learning" /><category term="study" /><category term="machine learning" /><category term="graph model" /><category term="bayesian network" /><category term="UG" /><category term="DAG" /><summary type="html"><![CDATA[Directed vs Undirected 적용하고자 하는 application에서 변수 간 order가 있을 수도 있고 없을 수도 있음. 오늘의 날씨와 내일의 날씨는 order가 있음. 이미지의 픽셀 정보는 order가 없음. 순서가 있는 경우에는 DAG 모델을 주로 사용하고, 순서가 없는 경우에는 Undirected Graphical Model(UG, UGM) 혹은 Markov Random Fields(MRF)를 사용한다. BN에서는 Conditional Probability Table(CPT)를 사용하여 변수 간 관계를 정했다면, UG에서는 각 변수 노드간 연결이 “얼마나 잘 어울리는가”, “그럴듯한 조합이다”의 정도를 판단한다. (?)]]></summary></entry><entry><title type="html">Query an Ansys license status</title><link href="http://localhost:4000/linux/ansys/query-ansys-license/" rel="alternate" type="text/html" title="Query an Ansys license status" /><published>2023-04-16T00:00:00+09:00</published><updated>2023-04-16T00:00:00+09:00</updated><id>http://localhost:4000/linux/ansys/query-ansys-license</id><content type="html" xml:base="http://localhost:4000/linux/ansys/query-ansys-license/"><![CDATA[<h1 id="problem">problem</h1>
 <ul>
   <li>ANSYS client host에서 server host로 license status 요청하기</li>
 </ul>
