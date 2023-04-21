@@ -18,9 +18,9 @@ minimal_mistakes_skin    : "air" # "air", "aqua", "contrast", "dark", "dirt", "n
 locale                   : "ko-KR"
 title                    : "bear11235's blog"
 title_separator          : "-"
-subtitle                 : "Version 0.0"# site tagline that appears below site title in masthead
+subtitle                 : "Version 0.0" # site tagline that appears below site title in masthead
 name                     : "bear11235"
-description              : "An amazing website."
+description              : "bear11235's study blog. "
 url                      : "https://bear11235.github.io" # the base hostname & protocol for your site.
 baseurl                  : "/" # the subpath of your site, e.g. "/blog"
 repository               : "bear11235/bear11235.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -106,7 +106,15 @@ analytics:
 author:
   name             : "bear11235"
   avatar           : "/assets/images/photo_sq.jpg"
-  bio              : "Student studying in SNU"
+  bio              : "
+  Ph.D Student in SNU. <br>
+  Topics of interest: <br>
+  &nbsp; - fluid mechanics <br>
+  &nbsp; - machine learning <br>
+  &nbsp; - deep learning <br>
+  
+  
+      "
   location         : "SNU, Seoul, South Korea"
   email            : #"bear11235@gmail.com"
   links:

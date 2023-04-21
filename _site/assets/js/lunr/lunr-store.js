@@ -41,6 +41,12 @@ var store = [{
         "url": "/study/machine%20learning/undirected-graphical-model/",
         "teaser": null
       },{
+        "title": "Kernel method 공부하기",
+        "excerpt":"Linear Regression with Non-linear Features 어떤 데이터 x를 다루고 싶을 때, 그 x를 그대로 모델의 입력값으로 사용할 수도 있지만, 어떤 \\(y=f(x)\\)라는 매핑을 통해 일차적으로 변환을 하고, 그 이후에 모델에 집어넣을 수 있다. 예를 들어 x를 n차 다항식 형태로 매핑을 한다고 생각해보자. \\[y = w_0x_0 + \\cdots w_nx_n = [w_0, \\cdots,...","categories": ["study","machine learning"],
+        "tags": ["study","machine learning","kernel"],
+        "url": "/study/machine%20learning/kernel-method/",
+        "teaser": null
+      },{
     "title": "Page Not Found",
     "excerpt":"Sorry, but the page you were trying to view does not exist.  ","url": "http://localhost:4000/404.html"
   },{
@@ -51,7 +57,7 @@ var store = [{
     "excerpt":" ","url": "http://localhost:4000/categories/"
   },{
     "title": "Posts by Collection",
-    "excerpt":"                                                                 ","url": "http://localhost:4000/collection-archive/"
+    "excerpt":"                                                                         ","url": "http://localhost:4000/collection-archive/"
   },{
     "title": "Edge Case",
     "excerpt":"Sample post listing for the category Edge Case.  ","url": "http://localhost:4000/categories/edge-case/"
@@ -154,6 +160,9 @@ var store = [{
   },{
     "title": "DAG",
     "excerpt":"","url": "http://localhost:4000/tags/dag/"
+  },{
+    "title": "kernel",
+    "excerpt":"","url": "http://localhost:4000/tags/kernel/"
   },{
     "title": "research",
     "excerpt":"","url": "http://localhost:4000/categories/research/"
