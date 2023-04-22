@@ -47,6 +47,18 @@ var store = [{
         "url": "/study/machine%20learning/kernel-method/",
         "teaser": null
       },{
+        "title": "여러 Boosting 알고리즘 공부하기",
+        "excerpt":"AdaBoost Adaptive Boost의 약자로, 이름에서 알 수 있다시피 적응형이다. AdaBoost도 Boosting이므로 classifier를 순차적으로 학습한다. 첫번째 데이터셋에 대해 학습을 진행하고, 그 결과에 따라 다음 데이터셋에 적절한 가중치를 부여하고 다음 모델을 학습한다. 이때 데이터셋에 가중치는 어떻게 부여하는가? 또한 n개의 모델을 학습한 후에 각 모델들에 가중치를 두어 최종 모델을 구해야하는데, 이때도 각 모델에...","categories": ["study","machine learning"],
+        "tags": ["study","machine learning","boosting","ensemble"],
+        "url": "/study/machine%20learning/boosting-algorthms/",
+        "teaser": null
+      },{
+        "title": "Ensemble Method 공부하기",
+        "excerpt":"Preliminary Knowledge Bootstrap 요약 Bootstrap (부트스트랩)은 데이터 내에서 반복적으로 샘플을 사용하는 resampling 방법 중 하나. Bootstrap sampling을 하면 애초에 한 개 밖에 없었던 우리들의 sample data set을 n개의 sample data set을 가지고 있는 것과 같은 효과를 누릴 수 있게 한다. 이를 통해 우리는 data의 variance를 상당히 잘 근사 할 수...","categories": ["study","machine learning"],
+        "tags": ["study","machine learning","boost","learning"],
+        "url": "/study/machine%20learning/ensemble-method/",
+        "teaser": null
+      },{
     "title": "Page Not Found",
     "excerpt":"Sorry, but the page you were trying to view does not exist.  ","url": "http://localhost:4000/404.html"
   },{
@@ -57,7 +69,7 @@ var store = [{
     "excerpt":" ","url": "http://localhost:4000/categories/"
   },{
     "title": "Posts by Collection",
-    "excerpt":"                                                                         ","url": "http://localhost:4000/collection-archive/"
+    "excerpt":"                                                                                         ","url": "http://localhost:4000/collection-archive/"
   },{
     "title": "Edge Case",
     "excerpt":"Sample post listing for the category Edge Case.  ","url": "http://localhost:4000/categories/edge-case/"
@@ -163,6 +175,18 @@ var store = [{
   },{
     "title": "kernel",
     "excerpt":"","url": "http://localhost:4000/tags/kernel/"
+  },{
+    "title": "boosting",
+    "excerpt":"","url": "http://localhost:4000/tags/boosting/"
+  },{
+    "title": "ensemble",
+    "excerpt":"","url": "http://localhost:4000/tags/ensemble/"
+  },{
+    "title": "boost",
+    "excerpt":"","url": "http://localhost:4000/tags/boost/"
+  },{
+    "title": "learning",
+    "excerpt":"","url": "http://localhost:4000/tags/learning/"
   },{
     "title": "research",
     "excerpt":"","url": "http://localhost:4000/categories/research/"
