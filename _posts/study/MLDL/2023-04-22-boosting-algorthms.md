@@ -31,6 +31,9 @@ $$J_m = fcn(\alpha_m, w_m, f_m) $$
 - boosting 자체가 데이터 노이즈에 취약한 점이 있다.
 - 데이터가 부족하면 큰 효과가 없다.
 
+# Gradient Boost
+
+Squared Loss에서 Gradient는 Residual(잔차)를 의미한다. 
 
 # XGBoost
 
