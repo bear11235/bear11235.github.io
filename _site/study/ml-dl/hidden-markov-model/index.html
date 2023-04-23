@@ -1,0 +1,900 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Hidden Markov Model 공부하기 - bear11235’s blog</title>
+<meta name="description" content="Markov Chain">
+
+
+  <meta name="author" content="bear11235">
+  
+  <meta property="article:author" content="bear11235">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="bear11235's blog">
+<meta property="og:title" content="Hidden Markov Model 공부하기">
+<meta property="og:url" content="http://localhost:4000/study/ml-dl/hidden-markov-model/">
+
+
+  <meta property="og:description" content="Markov Chain">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-04-16T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/study/ml-dl/hidden-markov-model/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "bear11235",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="bear11235's blog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+
+<!-- Mathjax Support -->
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/icons/favicon-16x16.png">
+<link rel="manifest" href="/assets/images/icons/site.webmanifest">
+<link rel="mask-icon" href="/assets/images/icons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/icons/bear_logo_wobg.png" alt="bear11235's blog"></a>
+        
+        <a class="site-title" href="/">
+          bear11235's blog
+          <span class="site-subtitle">Version 1.0</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/photo_sq.jpg" alt="bear11235" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">bear11235</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Have a Gooood Day!</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">SNU, Seoul, South Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:bear11235@gmail.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">bear11235@gmail.com</span></a></li>
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/bear11235/" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+          
+            <li><a href="/assets/files/shlee_CV.pdf" rel="nofollow noopener noreferrer me"><i class="far fa-fw fa-file-pdf" aria-hidden="true"></i><span class="label">My C.V.</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <li> 전체 글 수 (18)개 </li>
+  <ul class="nav__items">
+    
+      
+      <li>
+        
+          <span class="nav__sub-title">Study</span>
+        
+
+        
+        <ul>
+          
+          
+          
+          
+          
+
+            <li><a href="/study/ML-DL">ML / DL(9)</a></li>
+          
+          
+          
+          
+          
+
+            <li><a href="/study/fluid-mechanics">Fluid Mechanics(1)</a></li>
+          
+          
+          
+          
+          
+
+            <li><a href="/study/turbo-machines">Turbomachines(1)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      
+      <li>
+        
+          <span class="nav__sub-title">Research</span>
+        
+
+        
+        <ul>
+          
+          
+          
+          
+          
+
+            <li><a href="/research/research-1">research 1(1)</a></li>
+          
+          
+          
+          
+          
+
+            <li><a href="/research/research-2">research 2(1)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      
+      <li>
+        
+          <span class="nav__sub-title">Linux</span>
+        
+
+        
+        <ul>
+          
+          
+          
+          
+          
+
+            <li><a href="/linux/command">Command(1)</a></li>
+          
+          
+          
+          
+          
+
+            <li><a href="/linux/cluster">Cluster(4)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Hidden Markov Model 공부하기">
+    <meta itemprop="description" content="Markov Chain">
+    <meta itemprop="datePublished" content="2023-04-16T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/study/ml-dl/hidden-markov-model/" class="u-url" itemprop="url">Hidden Markov Model 공부하기
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-04-16T00:00:00+09:00">April 16, 2023</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
+              <ul class="toc__menu"><li><a href="#markov-chain">Markov Chain</a><ul><li><a href="#markov-property">Markov Property</a></li><li><a href="#definition">Definition</a></li><li><a href="#transition-matrix">Transition Matrix</a></li></ul></li><li><a href="#hidden-markov-model-hmm">Hidden Markov Model (HMM)</a><ul><li><a href="#definition-1">Definition</a></li><li><a href="#example">Example</a></li><li><a href="#hmm">HMM</a></li><li><a href="#tasks-in-hmm">Tasks in HMM</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h1 id="markov-chain">Markov Chain</h1>
+
+<h2 id="markov-property">Markov Property</h2>
+<ul>
+  <li>Markov 성질은 현재 시점의 상태는 바로 직전 시점의 상태에만 의존한다는 것이다.</li>
+  <li>즉 $ P(X_{n} \vert X_{n-1}, X_{n-2}, \cdots, X_{1}) = P(X_{n} \vert X_{n-1}) $</li>
+  <li>이것은 다가오는 미래는 과거에 영향 받지 않고 온전히 현재 상태에만 의존함을 의미한다.</li>
+</ul>
+
+<h2 id="definition">Definition</h2>
+<ul>
+  <li>A Markov process is a stochastic process that satisfies the Markov property (sometimes characterized as “memorylessness”). In simpler terms, it is a process for which predictions can be made regarding future outcomes based solely on its present state and—most importantly—such predictions are just as good as the ones that could be made knowing the process’s full history. In other words, conditional on the present state of the system, its future and past states are independent.</li>
+  <li>Markov chain은 Markov 성질을 만족하는 확률 과정이다. 쉽게 말해,, 한 상태에서 다른 상태로 상태가 전이될 때의 확률이 Markov property를 만족하는 chain을 의미한다. 다른 상태로 전이할 때 이전 상태의 history는 전혀 중요하지 않고 현재 상태만 고려하면 된다.</li>
+  <li>예를 들어, 날씨의 변화를 Markov chain을 통해 표현한다는 것은 오늘의 날씨는 바로 전날의 날씨에만 영향을 받으며, 또한 내일의 날씨는 오늘의 날씨에만 영향을 받는다는 것을 의미한다. 굉장히 강력한 가정이라 볼 수 있다.</li>
+</ul>
+
+<h2 id="transition-matrix">Transition Matrix</h2>
+<ul>
+  <li>n개의 상태 $(X_{1}, \cdot, X_{n})$ 로 구성된 Markov chain을 생각해보자.</li>
+  <li>$i$번째 상태 $X_{i}$에서 $j$번째 상태 $X_{j}$로 전이될 확률을 $P_{ij}$로 생각할 수 있다.</li>
+  <li>Transition Matrix $P$는 $P_{ij}$를 성분으로 갖는 $n \times n$ 크기의 행렬이다.</li>
+</ul>
+
+<h1 id="hidden-markov-model-hmm">Hidden Markov Model (HMM)</h1>
+
+<h2 id="definition-1">Definition</h2>
+<ul>
+  <li>A hidden Markov model (HMM) is a statistical Markov model in which the system being modeled is assumed to be a Markov process with unobservable (“hidden”) states.</li>
+  <li>관측가능한 변수 $(X)$와 관측이 불가능한 은닉 상태 $(Z)$로 이루어진 Markov 시스템을 의미한다.</li>
+  <li>우리가 관측하는 변수들끼리는 markov 성질을 만족하지 않지만, 그것들을 야기하는 은닉 상태는 markov chain을 이룬다.</li>
+  <li>HMM의 Joint Probability Distribution $P(X_1, \cdots, X_n, Z_1, \cdots, Z_n)$를 그래프로 표현하면 아래와 같이 표현할 수 있다. <br />
+<img src="/assets/images/posts/MLDL/hidden-markov-model/01.png" style="width:50%" /></li>
+</ul>
+
+<h2 id="example">Example</h2>
+<p><strong>Part-Of-Speech(POS) Tag</strong> <br />
+  <img src="/assets/images/posts/MLDL/hidden-markov-model/02.png" style="width:45%" />
+  <img src="/assets/images/posts/MLDL/hidden-markov-model/03.png" style="width:45%" /></p>
+<ul>
+  <li>“Janet will back the bill”이란 문장이 있다고 생각해보자.</li>
+  <li>여기서 우리가 관측한 변수는 Janet, will 등과 같은 단어 자체다.</li>
+  <li>이때 HMM은 상태의 전이 확률(A단어 다음 B단어가 등장할 확률)을 단어와 단어 사이의 직접적인 관계가 아닌 은닉 상태 Z를 통해 표현된다고 본다.</li>
+  <li>본 예시에서 은닉 상태 Z는 단어의 품사다. Janet이란 단어$(X_1)$ 뒤에 will이란 단어$(X_2)$가 등장할 확률은 각각의 품사와 함께 표현된다.</li>
+  <li>$P(X_2, X_1) = P(X_1, X_2, Z_1, Z_2) = P(Z_1)P(X_1 \vert Z_1)P(Z_2 \vert Z_1)P(X_2 \vert Z_2)$
+    <ul>
+      <li>$P(Z_1)$: $Z_1$(명사)의 품사가 등장할 확률</li>
+      <li>$P(X_1 \vert Z_1)$: 품사가 $Z_1$(명사)일 때, 단어가 $X_1$(Janet)일 확률</li>
+      <li>$P(Z_2 \vert Z_1)$: 이전 품사가 $Z_1$(명사)일 때, 다음 품사가 $Z_2$(조동사)일 확률</li>
+      <li>$P(X_2 \vert Z_2)$: 품사가 $Z_2$(조동사)일 때, 단어가 $X_2$(will)일 확률</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="hmm">HMM</h2>
+<p><img src="/assets/images/posts/MLDL/hidden-markov-model/01.png" style="width:70%" /> <br />
+위 그림과 같은 Hidden Markov Model를 생각해보자. 이때 편의를 위해 HMM이 다음의 조건을 만족한다 가정하자.</p>
+<ul>
+  <li>각각의 은닉 상태는 \(\{ 1, \cdots, m \}\) 중 하나를 갖는다: \(Z_i \in \{1, \cdots, m\}\)</li>
+  <li>초기 분포를 $\pi$라고 하자: $\pi_i = P(Z_1=i)$</li>
+  <li>Time-homogeneity를 만족한다. 전이확률 $T_{ij}=P(Z_{t+1}=j \vert Z_t=i)$이 time-index인 t에 대해 변하지 않는다. 즉 전이 확률은 시간에 대해 independent하다.</li>
+  <li>마찬가지로 emission distribution $\epsilon_{i}(x_t)=P(x_{t} \vert Z_{t}=i)$ 또한 time-independent하다.</li>
+</ul>
+
+<h2 id="tasks-in-hmm">Tasks in HMM</h2>
+<p><strong>1. Decoding</strong></p>
+<ul>
+  <li>Find $argmax_z P(z \vert x)$.</li>
+  <li>Given an HMM, what is the most likely sequence of states z to generate output x?</li>
+  <li>어떤 HMM에 대해 주어진 output $\mathbf{X}$를 생성해냈을 가장 그럴듯한 sequence of hidden state $\mathbf{Z}$ 가 무엇이냐?</li>
+</ul>
+
+<p><strong>2. Likelihood</strong></p>
+<ul>
+  <li>Compute $P(X)$</li>
+  <li>Given an HMM parametrized with \(\Theta = (\pi, T, \epsilon)\), compute the likelihood of the output sequence.</li>
+  <li>\(\Theta = (\pi, T, \epsilon)\)으로 parametrization 된 HMM이 주어졌을 때, output $\mathbf{X}$이 생성될 확률은?</li>
+</ul>
+
+<p><strong>3. Estimation</strong></p>
+<ul>
+  <li>Find $argmax_{\Theta} P(X;\Theta)$</li>
+  <li>Learning</li>
+  <li>Maximum Likelihood Estimation</li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/bayesian-network" class="page__taxonomy-item p-category" rel="tag">bayesian network</a><span class="sep">, </span>
+    
+      <a href="/tags/markov" class="page__taxonomy-item p-category" rel="tag">markov</a><span class="sep">, </span>
+    
+      <a href="/tags/ml-dl" class="page__taxonomy-item p-category" rel="tag">ML-DL</a><span class="sep">, </span>
+    
+      <a href="/tags/study" class="page__taxonomy-item p-category" rel="tag">study</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/ml-dl" class="page__taxonomy-item p-category" rel="tag">ML-DL</a><span class="sep">, </span>
+    
+      <a href="/categories/study" class="page__taxonomy-item p-category" rel="tag">study</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-04-16T00:00:00+09:00">April 16, 2023</time></p>
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/study/ml-dl/bayesian-network/" class="pagination--pager" title="Bayesian Network 공부하기
+">이전</a>
+    
+    
+      <a href="/study/turbo-machines/TM-test/" class="pagination--pager" title="test
+">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/ml-dl/explainable-AI/" rel="permalink">Explainable AI (LIME, SHAP) 공부하기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-04-23T00:00:00+09:00">April 23, 2023</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">AI의 모델
+
+  Rule-based system: 사람이 일일이 프로그램하여 컴퓨터는 주어진 규칙대로 계산만 수행.
+  Classic ML-DL: 사람이 feature를 디자인하고, 컴퓨터는 feature를 매핑한다.
+  Deep Learning: 더욱 복잡한 feature를 모...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/linux/cluster/remote-access-via-ssh-tunneling/" rel="permalink">Remote access with SSH tunneling
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-04-23T00:00:00+09:00">April 23, 2023</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/ml-dl/ensemble-method/" rel="permalink">Ensemble Method 공부하기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-04-22T00:00:00+09:00">April 22, 2023</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Preliminary Knowledge
+Bootstrap 요약
+Bootstrap (부트스트랩)은 데이터 내에서 반복적으로 샘플을 사용하는 resampling 방법 중 하나.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/ml-dl/boosting-algorthms/" rel="permalink">여러 Boosting 알고리즘 공부하기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-04-22T00:00:00+09:00">April 22, 2023</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">AdaBoost
+Adaptive Boost의 약자로, 이름에서 알 수 있다시피 적응형이다. 
+AdaBoost도 Boosting이므로 classifier를 순차적으로 학습한다. 첫번째 데이터셋에 대해 학습을 진행하고, 그 결과에 따라 다음 데이터셋에 적절한 가중치를 부여하고 다음 모...</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/bear11235/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 bear11235. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+<script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+    processEscapes: true
+    },
+    "HTML-CSS": { availableFonts: ["TeX"] }
+});
+</script>
+
+  </body>
+</html>

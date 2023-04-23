@@ -2,10 +2,10 @@
 title: "Kernel method 공부하기"
 categories:
   - study
-  - machine learning
+  - ML-DL
 tags:
   - study
-  - machine learning
+  - ML-DL
   - kernel
 ---
 

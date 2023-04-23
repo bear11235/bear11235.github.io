@@ -2,10 +2,10 @@
 title: "EM 알고리즘 공부하기"
 categories:
   - study
-  - machine learning
+  - ML-DL
 tags:
   - study
-  - machine learning
+  - ML-DL
   - EM
   - GMM
 ---

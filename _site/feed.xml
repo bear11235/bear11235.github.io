@@ -1,4 +1,130 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-04-22T17:22:40+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">bear11235’s blog</title><subtitle>bear11235&apos;s study blog. </subtitle><author><name>bear11235</name></author><entry><title type="html">여러 Boosting 알고리즘 공부하기</title><link href="http://localhost:4000/study/machine%20learning/boosting-algorthms/" rel="alternate" type="text/html" title="여러 Boosting 알고리즘 공부하기" /><published>2023-04-22T00:00:00+09:00</published><updated>2023-04-22T00:00:00+09:00</updated><id>http://localhost:4000/study/machine%20learning/boosting-algorthms</id><content type="html" xml:base="http://localhost:4000/study/machine%20learning/boosting-algorthms/"><![CDATA[<h1 id="adaboost">AdaBoost</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-04-23T21:12:37+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">bear11235’s blog</title><subtitle>bear11235&apos;s study blog. </subtitle><author><name>bear11235</name></author><entry><title type="html">Remote access with SSH tunneling</title><link href="http://localhost:4000/linux/cluster/remote-access-via-ssh-tunneling/" rel="alternate" type="text/html" title="Remote access with SSH tunneling" /><published>2023-04-23T00:00:00+09:00</published><updated>2023-04-23T00:00:00+09:00</updated><id>http://localhost:4000/linux/cluster/remote-access-via-ssh-tunneling</id><content type="html" xml:base="http://localhost:4000/linux/cluster/remote-access-via-ssh-tunneling/"><![CDATA[]]></content><author><name>bear11235</name></author><category term="linux" /><category term="cluster" /><category term="linux" /><category term="cluster" /><category term="firewall" /><category term="ssh" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Explainable AI (LIME, SHAP) 공부하기</title><link href="http://localhost:4000/study/ml-dl/explainable-AI/" rel="alternate" type="text/html" title="Explainable AI (LIME, SHAP) 공부하기" /><published>2023-04-23T00:00:00+09:00</published><updated>2023-04-23T00:00:00+09:00</updated><id>http://localhost:4000/study/ml-dl/explainable-AI</id><content type="html" xml:base="http://localhost:4000/study/ml-dl/explainable-AI/"><![CDATA[<p>AI의 모델</p>
+<ul>
+  <li>Rule-based system: 사람이 일일이 프로그램하여 컴퓨터는 주어진 규칙대로 계산만 수행.</li>
+  <li>Classic ML-DL: 사람이 feature를 디자인하고, 컴퓨터는 feature를 매핑한다.</li>
+  <li>Deep Learning: 더욱 복잡한 feature를 모델이 찾는다.</li>
+</ul>
+
+<p>일반적으로 explainability가 높다는 것은 모델의 complexity가 낮다는 것이고, 이는 모델의 capacity or performance가 낮음을 의미한다. 그래서 복잡한 DL의 경우, black-box처럼 생각되는 경우가 많다.</p>
+
+<p>Need for explainable AI</p>
+<ul>
+  <li>Explain to Justify: 시스템의 행동 이유에 대한 정당성.</li>
+  <li>Explain to Improve: 시스템의 성능 개선을 위해서.</li>
+  <li>Explain to Discover: DL은 사람이 찾지 못하는 패턴들을 잘 찾는다. 그 패턴을 이해하기 위해.</li>
+  <li>Explain to Control: 모델의 적절한 제어를 위해.</li>
+</ul>
+
+<p>설명가능한 AI를 통해 아래의 질문에 답하고자 함.</p>
+<ul>
+  <li>왜 그렇게 했는지?</li>
+  <li>왜 다른 행동은 안 했는지?</li>
+  <li>언제 성공/실패를 하는지?</li>
+  <li>언제 결과를 신뢰해도 괜찮은지?</li>
+  <li>어떻게 에러를 수정할지?</li>
+</ul>
+
+<h1 id="설명-가능성의-종류">설명 가능성의 종류</h1>
+<h2 id="설명-가능함의-시점">설명 가능함의 시점</h2>
+<ul>
+  <li>Ante-hoc (build a new learning model)
+    <ul>
+      <li>모델을 만들 때부터 설명가능하게끔 만든다.</li>
+    </ul>
+  </li>
+  <li>Post-hoc (explain the black-box)
+    <ul>
+      <li>블랙박스 형태의 모델을 생성한 후에, 그 블랙박스 모델을 새로운 방식을 통해 설명하고자 함.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="모델-제한적">모델 제한적</h2>
+<ul>
+  <li>Model-specific
+    <ul>
+      <li>어떤 구체적인 아키텍쳐의 모델에 대해 사용 가능</li>
+      <li>모델 자체가 설명 가능함을 지닌 경우</li>
+      <li>어떤 경우에는 모델 성능에 영향을 준다.</li>
+    </ul>
+  </li>
+  <li>Model-agnostic
+    <ul>
+      <li>일반적인 블랙박스 모델에 사용 가능</li>
+      <li>기존 모델은 그대로 두고, 추후 설명 가능함을 위한 모듈을 추가하는 형식이라 블랙박스 모델 성능에 영향을 주지 않음.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="국지성">국지성</h2>
+<ul>
+  <li>Global interpretability
+    <ul>
+      <li>모델 전체를 보고, 해당 모델이 전반적으로 어떤 행동을 할지 설명 가능함.</li>
+      <li>예를 들어, decisition tree를 보면 전체적인 모델의 행동 양상이 보인다.</li>
+    </ul>
+  </li>
+  <li>Local interpretability
+    <ul>
+      <li>어떤 입력값에 대한 모델의 결과를 설명 가능함.</li>
+      <li>예를 들어 복잡한 사진을 주고 물체를 구분하는 작업에서 사진 내 픽셀에 대한 각 카테고리 별 확률 분포 제시.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Sensitivity Analysis (SA)</strong></p>
+
+<p>모델에 영향을 많이 주는 입력값은, 출력값을 입력값으로 미분했을 때, gradient 값이 큰 입력값이다. 예를 들어 모델에 사진을 넣었고, 모델은 고양이라는 답을 주었다면 그 답에 영향을 많이 미치는 입력 픽셀은 큰 gradient를 가질 것이다(?) 진짜 그럴려나.. 만약 사진을 입력으로 넣은 경우를 생각해보자. 사진을 보고 카테고리를 분류하는 모델이 어떤 한 사진을 입력으로 받고 고양이라는 답을 내놓았다. 모델의 출력에 x라는 점들이 영향을 가장 크게 주었다면, 만약 x 점들이 이상한 값으로 될 경우, 모델이 고양이라는 답을 내놓지 않을 것이다.</p>
+
+<p><strong>Layerwise Relevance Propagation (LRP)</strong></p>
+
+<p>어떤 결과가 나왔을 때, 입력값을 기준으로 얼마나 contribution이 있는지 역추적하는 느낌? FCNN을 생각해볼 때, 마지막 hidden layer 내 노드 중, 출력값에 가장 큰 영향을 주는 노드를 찾을 수 있을 것이다. 또 해당 layer에 영향을 주는 정도를 이전 layer의 노드들에 대해 계산할 수 있을 것이고 이를 반복적으로 할 수 있을 것이다. 그렇게 출력값에 대한 입력값의 기여도를 계산할 수 있다.</p>
+
+<h1 id="lime">LIME</h1>
+<p>Local Interpretable Model-agnostic Explanations</p>
+
+<p>예시를 먼저 보자. 어떤 모델이 sneeze, weight, headache, no fatigue, age의 feature를 보고 flu를 판단한다고 하자. LIME이 하고 싶은 것은 flu라는 답에 대해 어떤 features가 얼마나 영향을 끼쳤는지를 보는 것이다.</p>
+
+<p>LIME은 다음 4개의 basic criteria를 만족해야 함:</p>
+<ol>
+  <li>Interpretable: 쉽게 설명 가능해야 한다.</li>
+  <li>Local fidelity: 임의의 instance에 대해서 설명을 할 때, local behavior를 잘 설명해야 한다.</li>
+  <li>Model-agnostic: 임의의 모델에 대해 잘 작동해야 한다.</li>
+  <li>Global perspective: 전체적인 거동도 어느 정도 설명해야 한다(?)</li>
+</ol>
+
+<h1 id="shap">SHAP</h1>
+<p>SHapley Additive exPlanation의 약자.</p>
+
+<h2 id="shapley-value">Shapley Value</h2>
+<p>게임 이론에서 등장하는 개념. Total payout을 도출하기 위한 각 개인의 기여도를 계산하는 방식. 예를 들어 A,B가 팀 과제를 하는 상황이다. A 혼자하면 70점을 맞고, B 혼자하면 80점을 맞고, A와 B가 같이 하면 100점을 맞는다고 하자. 둘이 같이 하여 100점을 맞았을 때 A, B의 기여도는 어떻게 되는 것인가? 이러한 질문에 사용되는 개념이다. 출력값에 대한 입력값의 영향이 비선형적으로 결합이 될텐데, 그것을 decompostion하는 방식이라고 보면 좋을 듯.</p>]]></content><author><name>bear11235</name></author><category term="study" /><category term="ML-DL" /><category term="study" /><category term="ML-DL" /><category term="AI" /><category term="LIME" /><category term="SHAP" /><summary type="html"><![CDATA[AI의 모델 Rule-based system: 사람이 일일이 프로그램하여 컴퓨터는 주어진 규칙대로 계산만 수행. Classic ML-DL: 사람이 feature를 디자인하고, 컴퓨터는 feature를 매핑한다. Deep Learning: 더욱 복잡한 feature를 모델이 찾는다.]]></summary></entry><entry><title type="html">t-SNE 공부하기</title><link href="http://localhost:4000/study/ml-dl/SNE/" rel="alternate" type="text/html" title="t-SNE 공부하기" /><published>2023-04-22T00:00:00+09:00</published><updated>2023-04-22T00:00:00+09:00</updated><id>http://localhost:4000/study/ml-dl/SNE</id><content type="html" xml:base="http://localhost:4000/study/ml-dl/SNE/"><![CDATA[<h1 id="sne">SNE</h1>
+<p>Stochastic Neighbor Embedding의 약자. 여기서 임베딩의 의미는 고차원에서 저차원으로 매핑한다는 말이다.</p>
+
+<p>고차원 공간에 있는 데이터 포인트들 사이의 거리, 혹은 이웃인 정도를 확률로서 표현하고, 그 확률을 유지하도록 저차원 공간으로 매핑하는 것. 데이터 자체는 왜곡이 될 수 있지만, 데이터 사이의 가까운 정도는 최대한 유지하고 싶다. 여기서 학습이라는 것은 고차원 공간에서 저차원 공간으로 매핑하는 방법을 학습하는 것.</p>
+
+<p>고차원에서 이웃의 정도를 결정하는 방법? -&gt; Squared Exponential 함수를 통해 거리를 측정하고 확률로 표현하기 위해서 normalize를 진행한다. n개의 데이터 포인트에 대해서 각각 n개의 데이터에 대한 이웃인 정도를 나타내기에 n by n 형태의 Neighbar Probability Matrix가 생성된다. 각 데이터 포인트 사이의 절대적 거리는 대칭적이지만, 기준이 되는 포인트에서 normalization constant는 다르기 때문에, probability matrix는 비대칭으로 표현될 수 있다.</p>
+
+<h2 id="perplexity">Perplexity</h2>
+<p>2 ** H(P_i)로 정의된다. 데이터끼리 뭉치고 흩어지는 정도를 정하는 파라미터. 대략 한 점에서 이웃이라고 생각하는 점의 개수라고 생각하면 될 듯.</p>
+
+<h2 id="cost-function">Cost Function</h2>
+<p>고차원과 저차원에서의 확률 행렬을 각각 P_ij, Q_ij라고 하면, 그 둘 사이의 차이값, 거리값, 괴리감은 확률 분포의 괴리를 표현하는 KL divergence로 표현한다.</p>
+
+\[J = KL(P||Q)\]
+
+<p>KL Divergence를 사용하면, gradient descent 방식에서 식이 쉽게 나온다.</p>
+
+\[dJ/dy = sth\]
+
+<p>gradient의 의미는? 이웃인 확률이 고차원 &gt; 저차원 이라면 저차원 공간에서 서로 가까이 당겨야하고, 반대로 고차원 &lt; 저차원 이라면 저차원 공간에서 서로 밀어야 한다. 또한 gradient의 크기가 저차원에서의 거리에 비례하기 때문에, 학습 과정에서 저차원 공간으로 매핑된 데이터들이 서로 뭉치게 된다.</p>
+
+<p>실제 데이터들을 SNE를 통해 저차원으로 매핑하면, 데이터들끼리 좀 뭉치는 경향이 있다. 이를 보완하고자 t-SNE를 고안.</p>
+
+<h1 id="t-sne">t-SNE</h1>
+<p>t-SNE에서 t는 Student-t를 의미한다. 
+기존 SNE보다 가까운 것은 더 가깝게, 먼 것은 더 멀게 표현하여 실제 데이터에 왜곡이 생길지라도 시각적으로 더 예쁘게 그리려고 함. SNE에서 이웃인 정도를 표현하기 위해 고차원과 저차원 공간에서 Gaussian 분포를 이용했다. 하지만 만약 저차원 공간에서 heavy-tailed distribution을 사용한다면? 고차원에서 가까운 점은 저차원에서 더 가까워지고, 고차원에서 먼 점은 저차원에서 더 멀어진다.</p>
+
+<p>t-SNE에서 cost function에 대한 gradient는 기존 SNE에서의 값에 (1+d)^-1 값이 붙는다. 이는 저차원 공간에서 두 점의 거리가 멀어지면 gradient 값이 작아지고, SNE와는 다르게 거리가 어느 이상 멀어지면 서로 밀고 당기는 힘의 크기가 작아진다. 그로 인해 가까운 데이터들은 서로 당기게 되고, 어느 거리가 넘어가면 더 이상 당기는 힘이 증가하지 않고 locally attract하게 된다.</p>]]></content><author><name>bear11235</name></author><category term="study" /><category term="ML-DL" /><category term="study" /><category term="ML-DL" /><summary type="html"><![CDATA[SNE Stochastic Neighbor Embedding의 약자. 여기서 임베딩의 의미는 고차원에서 저차원으로 매핑한다는 말이다.]]></summary></entry><entry><title type="html">여러 Boosting 알고리즘 공부하기</title><link href="http://localhost:4000/study/ml-dl/boosting-algorthms/" rel="alternate" type="text/html" title="여러 Boosting 알고리즘 공부하기" /><published>2023-04-22T00:00:00+09:00</published><updated>2023-04-22T00:00:00+09:00</updated><id>http://localhost:4000/study/ml-dl/boosting-algorthms</id><content type="html" xml:base="http://localhost:4000/study/ml-dl/boosting-algorthms/"><![CDATA[<h1 id="adaboost">AdaBoost</h1>
 <p>Adaptive Boost의 약자로, 이름에서 알 수 있다시피 적응형이다. 
 AdaBoost도 Boosting이므로 classifier를 순차적으로 학습한다. 첫번째 데이터셋에 대해 학습을 진행하고, 그 결과에 따라 다음 데이터셋에 적절한 가중치를 부여하고 다음 모델을 학습한다. 이때 데이터셋에 가중치는 어떻게 부여하는가? 또한 n개의 모델을 학습한 후에 각 모델들에 가중치를 두어 최종 모델을 구해야하는데, 이때도 각 모델에 대한 가중치를 어떻게 정할 것인가? 이 2개의 질문에 대한 답을 하는 것이 목적이다.</p>
 
@@ -22,9 +148,13 @@ AdaBoost도 Boosting이므로 classifier를 순차적으로 학습한다. 첫번
   <li>데이터가 부족하면 큰 효과가 없다.</li>
 </ul>
 
+<h1 id="gradient-boost">Gradient Boost</h1>
+
+<p>Squared Loss에서 Gradient는 Residual(잔차)를 의미한다.</p>
+
 <h1 id="xgboost">XGBoost</h1>
 
-<p>Extreme Gradient Boost의 약자.</p>]]></content><author><name>bear11235</name></author><category term="study" /><category term="machine learning" /><category term="study" /><category term="machine learning" /><category term="boosting" /><category term="ensemble" /><summary type="html"><![CDATA[AdaBoost Adaptive Boost의 약자로, 이름에서 알 수 있다시피 적응형이다. AdaBoost도 Boosting이므로 classifier를 순차적으로 학습한다. 첫번째 데이터셋에 대해 학습을 진행하고, 그 결과에 따라 다음 데이터셋에 적절한 가중치를 부여하고 다음 모델을 학습한다. 이때 데이터셋에 가중치는 어떻게 부여하는가? 또한 n개의 모델을 학습한 후에 각 모델들에 가중치를 두어 최종 모델을 구해야하는데, 이때도 각 모델에 대한 가중치를 어떻게 정할 것인가? 이 2개의 질문에 대한 답을 하는 것이 목적이다.]]></summary></entry><entry><title type="html">Ensemble Method 공부하기</title><link href="http://localhost:4000/study/machine%20learning/ensemble-method/" rel="alternate" type="text/html" title="Ensemble Method 공부하기" /><published>2023-04-22T00:00:00+09:00</published><updated>2023-04-22T00:00:00+09:00</updated><id>http://localhost:4000/study/machine%20learning/ensemble-method</id><content type="html" xml:base="http://localhost:4000/study/machine%20learning/ensemble-method/"><![CDATA[<h1 id="preliminary-knowledge">Preliminary Knowledge</h1>
+<p>Extreme Gradient Boost의 약자.</p>]]></content><author><name>bear11235</name></author><category term="study" /><category term="ML-DL" /><category term="study" /><category term="ML-DL" /><category term="boosting" /><category term="ensemble" /><summary type="html"><![CDATA[AdaBoost Adaptive Boost의 약자로, 이름에서 알 수 있다시피 적응형이다. AdaBoost도 Boosting이므로 classifier를 순차적으로 학습한다. 첫번째 데이터셋에 대해 학습을 진행하고, 그 결과에 따라 다음 데이터셋에 적절한 가중치를 부여하고 다음 모델을 학습한다. 이때 데이터셋에 가중치는 어떻게 부여하는가? 또한 n개의 모델을 학습한 후에 각 모델들에 가중치를 두어 최종 모델을 구해야하는데, 이때도 각 모델에 대한 가중치를 어떻게 정할 것인가? 이 2개의 질문에 대한 답을 하는 것이 목적이다.]]></summary></entry><entry><title type="html">Ensemble Method 공부하기</title><link href="http://localhost:4000/study/ml-dl/ensemble-method/" rel="alternate" type="text/html" title="Ensemble Method 공부하기" /><published>2023-04-22T00:00:00+09:00</published><updated>2023-04-22T00:00:00+09:00</updated><id>http://localhost:4000/study/ml-dl/ensemble-method</id><content type="html" xml:base="http://localhost:4000/study/ml-dl/ensemble-method/"><![CDATA[<h1 id="preliminary-knowledge">Preliminary Knowledge</h1>
 <h2 id="bootstrap-요약">Bootstrap 요약</h2>
 <p>Bootstrap (부트스트랩)은 데이터 내에서 반복적으로 샘플을 사용하는 resampling 방법 중 하나.</p>
 
@@ -60,7 +190,7 @@ AdaBoost도 Boosting이므로 classifier를 순차적으로 학습한다. 첫번
 <ul>
   <li>Bias를 줄인다. 쉬운 모델들을 중첩하여 하나의 모델을 만들기 때문에 dicision boundary가 부드럽게 형성된다. 그렇게 모델의 복잡도를 늘리기 때문에 모델의 bias가 작아진다.</li>
   <li></li>
-</ul>]]></content><author><name>bear11235</name></author><category term="study" /><category term="machine learning" /><category term="study" /><category term="machine learning" /><category term="boost" /><category term="learning" /><summary type="html"><![CDATA[Preliminary Knowledge Bootstrap 요약 Bootstrap (부트스트랩)은 데이터 내에서 반복적으로 샘플을 사용하는 resampling 방법 중 하나.]]></summary></entry><entry><title type="html">Kernel method 공부하기</title><link href="http://localhost:4000/study/machine%20learning/kernel-method/" rel="alternate" type="text/html" title="Kernel method 공부하기" /><published>2023-04-20T00:00:00+09:00</published><updated>2023-04-20T00:00:00+09:00</updated><id>http://localhost:4000/study/machine%20learning/kernel-method</id><content type="html" xml:base="http://localhost:4000/study/machine%20learning/kernel-method/"><![CDATA[<h1 id="linear-regression-with-non-linear-features">Linear Regression with Non-linear Features</h1>
+</ul>]]></content><author><name>bear11235</name></author><category term="study" /><category term="ML-DL" /><category term="study" /><category term="ML-DL" /><category term="boost" /><category term="learning" /><summary type="html"><![CDATA[Preliminary Knowledge Bootstrap 요약 Bootstrap (부트스트랩)은 데이터 내에서 반복적으로 샘플을 사용하는 resampling 방법 중 하나.]]></summary></entry><entry><title type="html">Kernel method 공부하기</title><link href="http://localhost:4000/study/ml-dl/kernel-method/" rel="alternate" type="text/html" title="Kernel method 공부하기" /><published>2023-04-20T00:00:00+09:00</published><updated>2023-04-20T00:00:00+09:00</updated><id>http://localhost:4000/study/ml-dl/kernel-method</id><content type="html" xml:base="http://localhost:4000/study/ml-dl/kernel-method/"><![CDATA[<h1 id="linear-regression-with-non-linear-features">Linear Regression with Non-linear Features</h1>
 
 <p>어떤 데이터 x를 다루고 싶을 때, 그 x를 그대로 모델의 입력값으로 사용할 수도 있지만, 어떤 \(y=f(x)\)라는 매핑을 통해 일차적으로 변환을 하고, 그 이후에 모델에 집어넣을 수 있다. 예를 들어 x를 n차 다항식 형태로 매핑을 한다고 생각해보자.</p>
 
@@ -140,7 +270,7 @@ AdaBoost도 Boosting이므로 classifier를 순차적으로 학습한다. 첫번
 
 <p>*유사도라는 개념. w를 x의 선형 결합으로 표현한다는 것은 데이터 사이의 유사도 개념과 밀접하다. perceptron 예시 참고.</p>
 
-<h2 id="kernel-pca">Kernel PCA</h2>]]></content><author><name>bear11235</name></author><category term="study" /><category term="machine learning" /><category term="study" /><category term="machine learning" /><category term="kernel" /><summary type="html"><![CDATA[Linear Regression with Non-linear Features]]></summary></entry><entry><title type="html">EM 알고리즘 공부하기</title><link href="http://localhost:4000/study/machine%20learning/expectation-maximization/" rel="alternate" type="text/html" title="EM 알고리즘 공부하기" /><published>2023-04-18T00:00:00+09:00</published><updated>2023-04-18T00:00:00+09:00</updated><id>http://localhost:4000/study/machine%20learning/expectation-maximization</id><content type="html" xml:base="http://localhost:4000/study/machine%20learning/expectation-maximization/"><![CDATA[]]></content><author><name>bear11235</name></author><category term="study" /><category term="machine learning" /><category term="study" /><category term="machine learning" /><category term="EM" /><category term="GMM" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Undirected model 공부하기</title><link href="http://localhost:4000/study/machine%20learning/undirected-graphical-model/" rel="alternate" type="text/html" title="Undirected model 공부하기" /><published>2023-04-18T00:00:00+09:00</published><updated>2023-04-18T00:00:00+09:00</updated><id>http://localhost:4000/study/machine%20learning/undirected-graphical-model</id><content type="html" xml:base="http://localhost:4000/study/machine%20learning/undirected-graphical-model/"><![CDATA[<h1 id="directed-vs-undirected">Directed vs Undirected</h1>
+<h2 id="kernel-pca">Kernel PCA</h2>]]></content><author><name>bear11235</name></author><category term="study" /><category term="ML-DL" /><category term="study" /><category term="ML-DL" /><category term="kernel" /><summary type="html"><![CDATA[Linear Regression with Non-linear Features]]></summary></entry><entry><title type="html">EM 알고리즘 공부하기</title><link href="http://localhost:4000/study/ml-dl/expectation-maximization/" rel="alternate" type="text/html" title="EM 알고리즘 공부하기" /><published>2023-04-18T00:00:00+09:00</published><updated>2023-04-18T00:00:00+09:00</updated><id>http://localhost:4000/study/ml-dl/expectation-maximization</id><content type="html" xml:base="http://localhost:4000/study/ml-dl/expectation-maximization/"><![CDATA[]]></content><author><name>bear11235</name></author><category term="study" /><category term="ML-DL" /><category term="study" /><category term="ML-DL" /><category term="EM" /><category term="GMM" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Undirected model 공부하기</title><link href="http://localhost:4000/study/ml-dl/undirected-graphical-model/" rel="alternate" type="text/html" title="Undirected model 공부하기" /><published>2023-04-18T00:00:00+09:00</published><updated>2023-04-18T00:00:00+09:00</updated><id>http://localhost:4000/study/ml-dl/undirected-graphical-model</id><content type="html" xml:base="http://localhost:4000/study/ml-dl/undirected-graphical-model/"><![CDATA[<h1 id="directed-vs-undirected">Directed vs Undirected</h1>
 <ul>
   <li>적용하고자 하는 application에서 변수 간 order가 있을 수도 있고 없을 수도 있음.</li>
   <li>오늘의 날씨와 내일의 날씨는 order가 있음.</li>
@@ -235,7 +365,7 @@ AdaBoost도 Boosting이므로 classifier를 순차적으로 학습한다. 첫번
 \frac{1}{Z} \prod_{c\in C} \psi_c(x_c) = 
 \frac{1}{Z} \exp\left( -\sum_{c\in C} \phi_c(x_c) \right)\]
 
-<h1 id="왜-clique를-이용하여-확률-분포를-생각하는가">왜 clique를 이용하여 확률 분포를 생각하는가?</h1>]]></content><author><name>bear11235</name></author><category term="study" /><category term="machine learning" /><category term="study" /><category term="machine learning" /><category term="graph model" /><category term="bayesian network" /><category term="UG" /><category term="DAG" /><summary type="html"><![CDATA[Directed vs Undirected 적용하고자 하는 application에서 변수 간 order가 있을 수도 있고 없을 수도 있음. 오늘의 날씨와 내일의 날씨는 order가 있음. 이미지의 픽셀 정보는 order가 없음. 순서가 있는 경우에는 DAG 모델을 주로 사용하고, 순서가 없는 경우에는 Undirected Graphical Model(UG, UGM) 혹은 Markov Random Fields(MRF)를 사용한다. BN에서는 Conditional Probability Table(CPT)를 사용하여 변수 간 관계를 정했다면, UG에서는 각 변수 노드간 연결이 “얼마나 잘 어울리는가”, “그럴듯한 조합이다”의 정도를 판단한다. (?)]]></summary></entry><entry><title type="html">Query an Ansys license status</title><link href="http://localhost:4000/linux/ansys/query-ansys-license/" rel="alternate" type="text/html" title="Query an Ansys license status" /><published>2023-04-16T00:00:00+09:00</published><updated>2023-04-16T00:00:00+09:00</updated><id>http://localhost:4000/linux/ansys/query-ansys-license</id><content type="html" xml:base="http://localhost:4000/linux/ansys/query-ansys-license/"><![CDATA[<h1 id="problem">problem</h1>
+<h1 id="왜-clique를-이용하여-확률-분포를-생각하는가">왜 clique를 이용하여 확률 분포를 생각하는가?</h1>]]></content><author><name>bear11235</name></author><category term="study" /><category term="ML-DL" /><category term="study" /><category term="ML-DL" /><category term="graph model" /><category term="bayesian network" /><category term="UG" /><category term="DAG" /><summary type="html"><![CDATA[Directed vs Undirected 적용하고자 하는 application에서 변수 간 order가 있을 수도 있고 없을 수도 있음. 오늘의 날씨와 내일의 날씨는 order가 있음. 이미지의 픽셀 정보는 order가 없음. 순서가 있는 경우에는 DAG 모델을 주로 사용하고, 순서가 없는 경우에는 Undirected Graphical Model(UG, UGM) 혹은 Markov Random Fields(MRF)를 사용한다. BN에서는 Conditional Probability Table(CPT)를 사용하여 변수 간 관계를 정했다면, UG에서는 각 변수 노드간 연결이 “얼마나 잘 어울리는가”, “그럴듯한 조합이다”의 정도를 판단한다. (?)]]></summary></entry><entry><title type="html">cluster test</title><link href="http://localhost:4000/linux/cluster/cluster-test/" rel="alternate" type="text/html" title="cluster test" /><published>2023-04-16T00:00:00+09:00</published><updated>2023-04-16T00:00:00+09:00</updated><id>http://localhost:4000/linux/cluster/cluster-test</id><content type="html" xml:base="http://localhost:4000/linux/cluster/cluster-test/"><![CDATA[<h1 id="problem">problem</h1>
 <ul>
   <li>ANSYS client host에서 server host로 license status 요청하기</li>
 </ul>
@@ -411,217 +541,180 @@ license <span class="k">in </span>used: cfd_solve_level2 <span class="o">(</span
   <li>
     <p><code class="language-plaintext highlighter-rouge">For</code></p>
   </li>
-</ol>]]></content><author><name>bear11235</name></author><category term="linux" /><category term="ansys" /><category term="linux" /><category term="ansys" /><category term="license" /><summary type="html"><![CDATA[problem ANSYS client host에서 server host로 license status 요청하기]]></summary></entry><entry><title type="html">Query a TecPlot license status</title><link href="http://localhost:4000/linux/tecplot/query-tecplot-license/" rel="alternate" type="text/html" title="Query a TecPlot license status" /><published>2023-04-16T00:00:00+09:00</published><updated>2023-04-16T00:00:00+09:00</updated><id>http://localhost:4000/linux/tecplot/query-tecplot-license</id><content type="html" xml:base="http://localhost:4000/linux/tecplot/query-tecplot-license/"><![CDATA[<h1 id="problem">problem</h1>
+</ol>]]></content><author><name>bear11235</name></author><category term="linux" /><category term="cluster" /><summary type="html"><![CDATA[problem ANSYS client host에서 server host로 license status 요청하기]]></summary></entry><entry><title type="html">Query an Ansys license status</title><link href="http://localhost:4000/linux/cluster/query-ansys-license/" rel="alternate" type="text/html" title="Query an Ansys license status" /><published>2023-04-16T00:00:00+09:00</published><updated>2023-04-16T00:00:00+09:00</updated><id>http://localhost:4000/linux/cluster/query-ansys-license</id><content type="html" xml:base="http://localhost:4000/linux/cluster/query-ansys-license/"><![CDATA[<h1 id="problem">problem</h1>
 <ul>
-  <li>TecPlot client host에서 server host로 license status 요청하기</li>
+  <li>ANSYS client host에서 server host로 license status 요청하기</li>
 </ul>
 
 <h1 id="solution">Solution</h1>
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">rlmutil rlmstat -c PORT@SERVER</code>
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@master bin]# /opt/tecplot/360ex_2022r2/bin/rlmutil rlmstat <span class="nt">-a</span> <span class="nt">-c</span> 27100@license.tml
-Setting license file path to 27100@license.tml
-rlmutil v12.4
-Copyright <span class="o">(</span>C<span class="o">)</span> 2006-2018, Reprise Software, Inc. All rights reserved.
+  <li><code class="language-plaintext highlighter-rouge">lmutil lmstat -c PORT@SERVER -a</code></li>
+  <li>
+    <p>모든 프로그램에 대한 현재 라이센스 상태를 보여준다.</p>
 
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@master ~]<span class="nv">$ </span>/nopt/ansys_inc/v202/licensingclient/linx64/lmutil lmstat <span class="nt">-c</span> 1055@license.tml <span class="nt">-a</span>
 
-rlm status on license.tml <span class="o">(</span>port 27100<span class="o">)</span>, up 00:28:24
-rlm software version v12.4 <span class="o">(</span>build:2<span class="o">)</span>
-rlm <span class="nb">comm </span>version: v1.2
-Startup <span class="nb">time</span>: Sun Apr 16 13:06:01 2023
-Todays Statistics <span class="o">(</span>00:28:23<span class="o">)</span>, init <span class="nb">time</span>: Sun Apr 16 13:06:02 2023
-Recent Statistics <span class="o">(</span>00:28:23<span class="o">)</span>, init <span class="nb">time</span>: Sun Apr 16 13:06:02 2023
+lmutil - Copyright <span class="o">(</span>c<span class="o">)</span> 1989-2015 Flexera Software LLC. All Rights Reserved.
+Flexible License Manager status on Sun 4/16/2023 14:03
 
-             Recent Stats         Todays Stats         Total Stats
-              00:28:23             00:28:23             00:28:24
-Messages:    71 <span class="o">(</span>0/sec<span class="o">)</span>           71 <span class="o">(</span>0/sec<span class="o">)</span>          71 <span class="o">(</span>0/sec<span class="o">)</span>
-Connections: 52 <span class="o">(</span>0/sec<span class="o">)</span>           52 <span class="o">(</span>0/sec<span class="o">)</span>          52 <span class="o">(</span>0/sec<span class="o">)</span>
+License server status: 1055@license.tml
+    License file<span class="o">(</span>s<span class="o">)</span> on license.tml: /ansys_inc/shared_files/licensing/license_files/ansyslmd.lic:
 
-<span class="nt">---------</span> ISV servers <span class="nt">----------</span>
-   Name           Port Running Restarts
-teclmd           27101   Yes      2
+license.tml: license server UP <span class="o">(</span>MASTER<span class="o">)</span> v11.19.0
 
-<span class="nt">------------------------</span>
+Vendor daemon status <span class="o">(</span>on license.tml<span class="o">)</span>:
 
-teclmd ISV server status on license.tml <span class="o">(</span>port 27101<span class="o">)</span>, up 00:03:37
-teclmd software version v12.4 <span class="o">(</span>build: 2<span class="o">)</span>
-teclmd <span class="nb">comm </span>version: v1.2
-teclmd Debug log filename: +./teclmd.log
-teclmd Report log filename: ./report.log
-Startup <span class="nb">time</span>: Sun Apr 16 13:30:48 2023
-Todays Statistics <span class="o">(</span>00:03:37<span class="o">)</span>, init <span class="nb">time</span>: Sun Apr 16 13:30:48 2023
-Recent Statistics <span class="o">(</span>00:03:37<span class="o">)</span>, init <span class="nb">time</span>: Sun Apr 16 13:30:48 2023
+ansyslmd: UP v11.19.0
+Feature usage info:
 
-             Recent Stats         Todays Stats         Total Stats
-              00:03:37             00:03:37             00:03:37
-Messages:    37 <span class="o">(</span>0/sec<span class="o">)</span>           37 <span class="o">(</span>0/sec<span class="o">)</span>          37 <span class="o">(</span>0/sec<span class="o">)</span>
-Connections: 17 <span class="o">(</span>0/sec<span class="o">)</span>           17 <span class="o">(</span>0/sec<span class="o">)</span>          17 <span class="o">(</span>0/sec<span class="o">)</span>
-Checkouts:   1 <span class="o">(</span>0/sec<span class="o">)</span>           1 <span class="o">(</span>0/sec<span class="o">)</span>          1 <span class="o">(</span>0/sec<span class="o">)</span>
-Denials:     1 <span class="o">(</span>0/sec<span class="o">)</span>           1 <span class="o">(</span>0/sec<span class="o">)</span>          1 <span class="o">(</span>0/sec<span class="o">)</span>
-Removals:    0 <span class="o">(</span>0/sec<span class="o">)</span>           0 <span class="o">(</span>0/sec<span class="o">)</span>          0 <span class="o">(</span>0/sec<span class="o">)</span>
+Users of anshpc:  <span class="o">(</span>Total of 1080 licenses issued<span class="p">;</span>  Total of 124 licenses <span class="k">in </span>use<span class="o">)</span>
 
+<span class="s2">"anshpc"</span> v2020.0514, vendor: ansyslmd, expiry: 1-jan-0
+floating license
 
-<span class="nt">------------------------</span>
+    shlee t009 t009.tml 60048 <span class="o">(</span>v2020.0507<span class="o">)</span> <span class="o">(</span>license.tml/1055 1404<span class="o">)</span>, start Sun 4/16 14:02, 124 licenses
 
-teclmd license pool status on license.tml <span class="o">(</span>port 27101<span class="o">)</span>
+Users of 1spacdes:  <span class="o">(</span>Total of 26 licenses issued<span class="p">;</span>  Total of 0 licenses <span class="k">in </span>use<span class="o">)</span>
 
-360ex v2024.04
-    count: 1, <span class="c"># reservations: 0, inuse: 0, exp: 30-apr-2024</span>
-    obsolete: 0, min_remove: 120, total checkouts: 1
-rs v2024.04
-    count: 1, <span class="c"># reservations: 0, inuse: 0, exp: 30-apr-2024</span>
-    obsolete: 0, min_remove: 120, total checkouts: 0
-chorus v2024.04
-    count: 1, <span class="c"># reservations: 0, inuse: 0, exp: 30-apr-2024</span>
-    obsolete: 0, min_remove: 120, total checkouts: 0
-batch v2024.04
-    count: 1, <span class="c"># reservations: 0, inuse: 0, exp: 30-apr-2024</span>
-    obsolete: 0, min_remove: 120, total checkouts: 0
-fv v2024.04
-    count: 1, <span class="c"># reservations: 0, inuse: 0, exp: 30-apr-2024</span>
-    obsolete: 0, min_remove: 120, total checkouts: 0
-360 v2013.1
-    Token-based license
+Users of cfd_base:  <span class="o">(</span>Total of 25 licenses issued<span class="p">;</span>  Total of 1 license <span class="k">in </span>use<span class="o">)</span>
+
+<span class="s2">"cfd_base"</span> v2020.0514, vendor: ansyslmd, expiry: 1-jan-0
+floating license
+
+    shlee t009 t009.tml 60048 <span class="o">(</span>v2020.0507<span class="o">)</span> <span class="o">(</span>license.tml/1055 1304<span class="o">)</span>, start Sun 4/16 14:02
+
+...
+</code></pre></div>    </div>
+  </li>
+  <li>현재 사용중인 license만 출력하기 위해 별도의 shell script 작성</li>
+  <li>사용중인 라이센스에 대해 USER, HOST, Start Time, (USED, AVAILABLE, TOTAL) 출력</li>
+  <li>HPC의 경우, 해당 작업이 사용중인 license 개수도 출력
+    <ol>
+      <li><code class="language-plaintext highlighter-rouge">lmutil lmstat -c PORT@SERVER -a</code>: 전체 license status를 출력한다.</li>
+      <li><code class="language-plaintext highlighter-rouge">sed '/Total of 0 licenses in use/d'</code>: 사용중인 license 개수가 0인 프로그램 문장은 지운다.</li>
+      <li><code class="language-plaintext highlighter-rouge">sed '/^[[:space:]]*$/d'</code>: 빈 문장 지운다.</li>
+      <li><code class="language-plaintext highlighter-rouge">awk '!/floating/' | awk '!/expiry/' </code>: license 사용중인 프로그램의 경우 ‘floating’과 ‘expiry’란 단어가 들어간 문장이 등장하는데 필요 없으므로 지운다.</li>
+      <li><code class="language-plaintext highlighter-rouge">sed -e '1,8d'</code>: 앞에 필요없는 문장 지운다.</li>
+      <li><code class="language-plaintext highlighter-rouge">$INDEX, $PROGRAMS</code>: For loop을 돌릴 때 필요한 변수. For loop을 돌면서 사용중인 프로그램에 대해서 각각 USER, Host 등 필요한 정보를 양식에 맞춰 기록한다.</li>
+      <li><code class="language-plaintext highlighter-rouge">USER</code>, <code class="language-plaintext highlighter-rouge">HOST</code>, <code class="language-plaintext highlighter-rouge">DATE</code> 등 필요한 정보를 <code class="language-plaintext highlighter-rouge">awk</code>, <code class="language-plaintext highlighter-rouge">sed</code>, <code class="language-plaintext highlighter-rouge">printf</code> 등의 command를 통해 양식에 맞도록 출력한다.</li>
+      <li>임시 파일을 지우면서 마무리한다.</li>
+    </ol>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@master bin]# <span class="nb">cat </span>query_license_ansys.sh 
+<span class="c">#!/bin/bash</span>
+<span class="nb">echo</span> <span class="s2">""</span>
+<span class="nb">echo</span> <span class="s2">"Only licenses being used now are shown."</span>
+<span class="nb">echo</span> <span class="s2">""</span>
+
+<span class="nv">FILE</span><span class="o">=</span><span class="nv">$HOME</span>/.license_status_ansys.tmp
+
+/nopt/ansys_inc/v202/licensingclient/linx64/lmutil lmstat <span class="nt">-c</span> 1055@license.tml <span class="nt">-a</span> |<span class="se">\</span>
+<span class="nb">sed</span> <span class="s1">'/Total of 0 licenses in use/d'</span> |<span class="se">\</span>
+<span class="nb">sed</span> <span class="s1">'/^[[:space:]]*$/d'</span> |<span class="se">\</span>
+<span class="nb">awk</span> <span class="s1">'!/floating/'</span> | <span class="nb">awk</span> <span class="s1">'!/expiry/'</span> |<span class="se">\</span>
+<span class="nb">sed</span> <span class="nt">-e</span> <span class="s1">'1,8d'</span> <span class="o">&gt;</span> <span class="nv">$FILE</span>
+
+<span class="nv">INDEX</span><span class="o">=(</span><span class="si">$(</span><span class="nb">cat</span> <span class="nv">$FILE</span> | <span class="nb">nl</span> | <span class="nb">grep</span> <span class="s2">"Users of"</span> | <span class="nb">awk</span> <span class="s1">'{print $1}'</span><span class="si">)</span> <span class="k">$((</span> <span class="sb">`</span><span class="o">(</span><span class="nb">cat</span> <span class="nv">$FILE</span> | <span class="nb">nl</span> | <span class="nb">tail</span> <span class="nt">-1</span> | <span class="nb">awk</span> <span class="s1">'{print $1}'</span><span class="o">)</span><span class="sb">`</span> <span class="o">+</span> <span class="m">1</span> <span class="k">))</span> <span class="o">)</span>
+<span class="nv">PROGRAMS</span><span class="o">=(</span><span class="si">$(</span><span class="nb">cat</span> <span class="nv">$FILE</span> | <span class="nb">grep</span> <span class="s2">"Users of"</span> | <span class="nb">awk</span> <span class="s1">'{print $3}'</span> | <span class="nb">sed</span> <span class="s1">'s/://g'</span><span class="si">)</span><span class="o">)</span>
+
+<span class="k">for </span>idx <span class="k">in</span> <span class="sb">`</span><span class="nb">seq </span>0 <span class="k">$((</span> <span class="k">${#</span><span class="nv">PROGRAMS</span><span class="p">[@]</span><span class="k">}</span> <span class="o">-</span><span class="m">1</span> <span class="k">))</span><span class="sb">`</span>
+<span class="k">do
+    </span><span class="nv">i</span><span class="o">=</span><span class="k">${</span><span class="nv">INDEX</span><span class="p">[</span><span class="nv">$idx</span><span class="p">]</span><span class="k">}</span>
+    <span class="nv">j</span><span class="o">=</span><span class="k">${</span><span class="nv">INDEX</span><span class="p">[</span><span class="k">$((</span> <span class="nv">$idx</span> <span class="o">+</span> <span class="m">1</span> <span class="k">))</span><span class="p">]</span><span class="k">}</span>
+    <span class="nv">PROGRAM</span><span class="o">=</span><span class="k">${</span><span class="nv">PROGRAMS</span><span class="p">[</span><span class="nv">$idx</span><span class="p">]</span><span class="k">}</span>
+    <span class="nv">TOT</span><span class="o">=</span><span class="si">$(</span><span class="nb">head</span> -<span class="nv">$i</span> <span class="nv">$FILE</span> | <span class="nb">tail</span> <span class="nt">-n</span> +<span class="nv">$i</span> | <span class="nb">awk</span> <span class="s1">'{print $6}'</span><span class="si">)</span>
+    <span class="nv">USE</span><span class="o">=</span><span class="si">$(</span><span class="nb">head</span> -<span class="nv">$i</span> <span class="nv">$FILE</span> | <span class="nb">tail</span> <span class="nt">-n</span> +<span class="nv">$i</span> | <span class="nb">awk</span> <span class="s1">'{print $11}'</span><span class="si">)</span>
+    <span class="nv">AVA</span><span class="o">=</span><span class="k">$((</span> <span class="nv">$TOT</span> <span class="o">-</span> <span class="nv">$USE</span> <span class="k">))</span>
+    <span class="nb">echo</span> <span class="nt">-e</span> <span class="s2">"license in used: </span><span class="k">${</span><span class="nv">PROGRAM</span><span class="k">}</span><span class="s2"> (used, available, total) = (</span><span class="k">${</span><span class="nv">USE</span><span class="k">}</span><span class="s2">, </span><span class="k">${</span><span class="nv">AVA</span><span class="k">}</span><span class="s2">, </span><span class="k">${</span><span class="nv">TOT</span><span class="k">}</span><span class="s2">)"</span>
+
+    <span class="k">if</span> <span class="o">[[</span> <span class="nv">$PROGRAM</span> <span class="o">==</span> <span class="s2">"anshpc"</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then
+        </span><span class="nb">echo</span> <span class="nt">-e</span> <span class="s2">" --------------------------------------------- "</span>
+        <span class="nb">echo</span> <span class="nt">-e</span> <span class="s2">"|    User    |    Host    |  Start Time | Use |"</span>	
+        <span class="nb">echo</span> <span class="nt">-e</span> <span class="s2">"|---------------------------------------------|"</span>
+    <span class="k">else
+        </span><span class="nb">echo</span> <span class="nt">-e</span> <span class="s2">" --------------------------------------- "</span>
+        <span class="nb">echo</span> <span class="nt">-e</span> <span class="s2">"|    User    |    Host    |  Start Time |"</span>	
+        <span class="nb">echo</span> <span class="nt">-e</span> <span class="s2">"|---------------------------------------|"</span>
+    <span class="k">fi
+
+    for </span>k <span class="k">in</span> <span class="sb">`</span><span class="nb">seq</span> <span class="k">$((</span> <span class="nv">$i</span> <span class="o">+</span> <span class="m">1</span> <span class="k">))</span> <span class="k">$((</span> <span class="nv">$j</span> <span class="o">-</span> <span class="m">1</span> <span class="k">))</span><span class="sb">`</span>
+    <span class="k">do
+        </span><span class="nv">LINE</span><span class="o">=</span><span class="si">$(</span><span class="nb">head</span> -<span class="nv">$k</span> <span class="nv">$FILE</span> | <span class="nb">tail</span> <span class="nt">-n</span> +<span class="nv">$k</span><span class="si">)</span>
+			
+        <span class="nv">USER</span><span class="o">=</span><span class="si">$(</span><span class="nb">echo</span> <span class="nv">$LINE</span> | <span class="nb">awk</span> <span class="s1">'{print $1}'</span> | <span class="nb">sed</span> <span class="s1">'s/$/         /'</span> | <span class="nb">cut</span> <span class="nt">-c</span> <span class="nt">-10</span><span class="si">)</span>
+        <span class="nv">COMP</span><span class="o">=</span><span class="si">$(</span><span class="nb">echo</span> <span class="nv">$LINE</span> | <span class="nb">awk</span> <span class="s1">'{print $2}'</span> | <span class="nb">sed</span> <span class="s1">'s/$/         /'</span> | <span class="nb">cut</span> <span class="nt">-c</span> <span class="nt">-10</span><span class="si">)</span>
+        <span class="nv">DATE</span><span class="o">=</span><span class="si">$(</span><span class="nb">printf</span> <span class="s2">"%02d/%02d"</span> <span class="si">$(</span><span class="nb">echo</span> <span class="nv">$LINE</span> | <span class="nb">awk</span> <span class="s1">'{print $10}'</span> | <span class="nb">sed</span> <span class="s1">'s/\// /'</span><span class="si">))</span>
+        <span class="nv">TIME</span><span class="o">=</span><span class="si">$(</span><span class="nb">printf</span> <span class="s2">"%02d:%s"</span>  <span class="si">$(</span><span class="nb">echo</span> <span class="nv">$LINE</span> | <span class="nb">awk</span> <span class="s1">'{print $11}'</span> | <span class="nb">sed</span> <span class="s1">'s/:/ /'</span> | <span class="nb">sed</span> <span class="s1">'s/,//'</span> <span class="si">))</span>
+			
+        <span class="k">if</span> <span class="o">[[</span> <span class="nv">$PROGRAM</span> <span class="o">==</span> <span class="s2">"anshpc"</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then
+            </span><span class="nv">USEHPC</span><span class="o">=</span><span class="si">$(</span><span class="nb">printf</span> <span class="s2">"%3d"</span> <span class="si">$(</span><span class="nb">echo</span> <span class="nv">$LINE</span> | <span class="nb">awk</span> <span class="s1">'{print $12}'</span> <span class="si">))</span>
+            <span class="nb">echo</span> <span class="nt">-e</span> <span class="s2">"| </span><span class="k">${</span><span class="nv">USER</span><span class="k">}</span><span class="s2"> | </span><span class="k">${</span><span class="nv">COMP</span><span class="k">}</span><span class="s2"> | </span><span class="k">${</span><span class="nv">DATE</span><span class="k">}</span><span class="s2">-</span><span class="k">${</span><span class="nv">TIME</span><span class="k">}</span><span class="s2"> | </span><span class="k">${</span><span class="nv">USEHPC</span><span class="k">}</span><span class="s2"> |"</span>
+        <span class="k">else
+            </span><span class="nb">echo</span> <span class="nt">-e</span> <span class="s2">"| </span><span class="k">${</span><span class="nv">USER</span><span class="k">}</span><span class="s2"> | </span><span class="k">${</span><span class="nv">COMP</span><span class="k">}</span><span class="s2"> | </span><span class="k">${</span><span class="nv">DATE</span><span class="k">}</span><span class="s2">-</span><span class="k">${</span><span class="nv">TIME</span><span class="k">}</span><span class="s2"> |"</span>
+        <span class="k">fi
+    done
+
+		
+    if</span> <span class="o">[[</span> <span class="nv">$PROGRAM</span> <span class="o">==</span> <span class="s2">"anshpc"</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then
+        </span><span class="nb">echo</span> <span class="nt">-e</span> <span class="s2">" --------------------------------------------- "</span>
+    <span class="k">else
+        </span><span class="nb">echo</span> <span class="nt">-e</span> <span class="s2">" --------------------------------------- "</span>
+    <span class="k">fi
+    </span><span class="nb">echo</span> <span class="s2">""</span>
+<span class="k">done
+
+</span><span class="nb">rm</span> <span class="nv">$FILE</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>위 script를 사용한 출력 결과는 아래와 같다.</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@master ~]<span class="nv">$ </span>query_license_ansys 
+
+Only licenses being used now are shown.
+
+license <span class="k">in </span>used: anshpc <span class="o">(</span>used, available, total<span class="o">)</span> <span class="o">=</span> <span class="o">(</span>124, 956, 1080<span class="o">)</span>
+<span class="nt">---------------------------------------------</span> 
+|    User    |    Host    |  Start Time | Use |
+|---------------------------------------------|
+| shlee      | t009       | 04/16-14:03 | 124 |
+<span class="nt">---------------------------------------------</span> 
+
+license <span class="k">in </span>used: cfd_base <span class="o">(</span>used, available, total<span class="o">)</span> <span class="o">=</span> <span class="o">(</span>1, 24, 25<span class="o">)</span>
+<span class="nt">---------------------------------------</span> 
+|    User    |    Host    |  Start Time |
+|---------------------------------------|
+| shlee      | t009       | 04/16-14:03 |
+<span class="nt">---------------------------------------</span> 
+
+license <span class="k">in </span>used: cfd_solve_level1 <span class="o">(</span>used, available, total<span class="o">)</span> <span class="o">=</span> <span class="o">(</span>1, 24, 25<span class="o">)</span>
+<span class="nt">---------------------------------------</span> 
+|    User    |    Host    |  Start Time |
+|---------------------------------------|
+| shlee      | t009       | 04/16-14:03 |
+<span class="nt">---------------------------------------</span> 
+
+license <span class="k">in </span>used: cfd_solve_level2 <span class="o">(</span>used, available, total<span class="o">)</span> <span class="o">=</span> <span class="o">(</span>1, 24, 25<span class="o">)</span>
+<span class="nt">---------------------------------------</span> 
+|    User    |    Host    |  Start Time |
+|---------------------------------------|
+| shlee      | t009       | 04/16-14:03 |
+<span class="nt">---------------------------------------</span> 
+
 </code></pre></div>    </div>
   </li>
 </ul>
 
-<h1 id="issues">Issues</h1>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">rlmutil</code> 도움말을 보면 아래와 같이 나오는데, 문제는 일반 사용자도 rlmdown, rlmreread 같은 명령어를 사용하여 lisence server에 명령을 내릴 수 있다는 것.
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@master bin]# /opt/tecplot/360ex_2022r2/bin/rlmutil <span class="nt">-h</span>
-Usage: rlmutil program &lt;args&gt;, <span class="nt">-OR-</span>
-          program &lt;args&gt;
- where program is one of:
- 	rlmdebug   rlmdown    rlmhostid
- 	rlmnewlog  rlmremove  rlmreread
- 	rlmstat    rlmswitch  rlmswitchr
- args are:
- <span class="nt">-c</span> license_file | port@host - to specify license
- <span class="nt">-dat</span> - use <span class="k">*</span>.dat instead of <span class="k">*</span>.lic <span class="k">for </span>license file
- <span class="nt">-h</span> - print usage information and <span class="nb">exit</span>
- <span class="nt">-q</span> - don<span class="s1">'t prompt on rlmdown/rlmremove/rlmswitch(r)
-  and don'</span>t check license checksums
- <span class="nt">-v</span> - print version and <span class="nb">exit</span>
- <span class="nt">-z</span> password - specify license password
-  rlmdebug <span class="o">[</span>product]
-  rlmdown <span class="o">[</span>isv] <span class="o">[</span>RLM]
-  rlmhostid <span class="nt">-q</span> <span class="o">[[</span>-]32|disksn|ether|gc|ip|internet|host|user|rlmid1]
-  rlmnewlog isv log-file-name
-  rlmremove server_host port isv handle
-  rlmreread <span class="o">[</span>isv]
-  rlmstat <span class="o">[</span><span class="nt">-a</span><span class="o">]</span> <span class="o">[</span><span class="nt">-i</span> <span class="o">[</span>isv]] <span class="nt">-I</span> <span class="o">[</span><span class="nt">-l</span> <span class="o">[</span>isv]] <span class="o">[</span><span class="nt">-n</span> <span class="o">[</span>node]] <span class="o">[</span><span class="nt">-p</span> <span class="o">[</span>product]] <span class="o">[</span><span class="nt">-u</span> <span class="o">[</span>user]] 
-  rlmstat <span class="nt">-avail</span> <span class="o">[</span><span class="nt">-b</span><span class="o">]</span> <span class="o">[</span><span class="nt">-i</span> isv] <span class="o">[</span><span class="nt">-p</span> product]
-  rlmswitch isv new-file
-  rlmswitchr isv new-file
-</code></pre></div>    </div>
+<h1 id="command">Command</h1>
+
+<ol>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">awk</code></p>
   </li>
-</ul>]]></content><author><name>bear11235</name></author><category term="linux" /><category term="tecplot" /><category term="linux" /><category term="tecplot" /><category term="license" /><summary type="html"><![CDATA[problem TecPlot client host에서 server host로 license status 요청하기]]></summary></entry><entry><title type="html">Bayesian Network 공부하기</title><link href="http://localhost:4000/study/machine%20learning/bayesian-network/" rel="alternate" type="text/html" title="Bayesian Network 공부하기" /><published>2023-04-16T00:00:00+09:00</published><updated>2023-04-16T00:00:00+09:00</updated><id>http://localhost:4000/study/machine%20learning/bayesian-network</id><content type="html" xml:base="http://localhost:4000/study/machine%20learning/bayesian-network/"><![CDATA[<h1 id="bayesian-networkbn-란">Bayesian Network(BN) 란?</h1>
-<ul>
-  <li><strong>Bayesian Network</strong> = <strong>Graph</strong> + <strong>Conditional Probability Table</strong></li>
-  <li>확률 변수 사이의 상관관계를 그래프로 표현하고, 변수 사이의 조건부 확률 분포를 학습</li>
-  <li>그래프는 node와 edge로 표현된다. BN은 확률 변수를 node로, 확률 변수 사이 직접적인 의존성(direct dependency)을 edge로 표현한다.</li>
-  <li>BN에서 사용하는 그래프 모델은 Directed Acyclic Graph (DAG), 즉 비순환-방향성 그래프로 표현된다.
-    <ul>
-      <li>Directed: 노드 간 연결은 단순 선분이 아니라 방향성이 있는 화살표로 표현된다.</li>
-      <li>Acyclic: a-&gt;b-&gt;c-&gt;a 와 같이 순환적인 구조가 없다.</li>
-    </ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">sed</code></p>
   </li>
-</ul>
-
-<p><img src="/assets/images/posts/MLDL/bayesian-network-01.png" alt="" /></p>]]></content><author><name>bear11235</name></author><category term="study" /><category term="machine learning" /><category term="study" /><category term="machine learning" /><category term="bayesian network" /><summary type="html"><![CDATA[Bayesian Network(BN) 란? Bayesian Network = Graph + Conditional Probability Table 확률 변수 사이의 상관관계를 그래프로 표현하고, 변수 사이의 조건부 확률 분포를 학습 그래프는 node와 edge로 표현된다. BN은 확률 변수를 node로, 확률 변수 사이 직접적인 의존성(direct dependency)을 edge로 표현한다. BN에서 사용하는 그래프 모델은 Directed Acyclic Graph (DAG), 즉 비순환-방향성 그래프로 표현된다. Directed: 노드 간 연결은 단순 선분이 아니라 방향성이 있는 화살표로 표현된다. Acyclic: a-&gt;b-&gt;c-&gt;a 와 같이 순환적인 구조가 없다.]]></summary></entry><entry><title type="html">Hidden Markov Model 공부하기</title><link href="http://localhost:4000/study/machine%20learning/hidden-markov-model/" rel="alternate" type="text/html" title="Hidden Markov Model 공부하기" /><published>2023-04-16T00:00:00+09:00</published><updated>2023-04-16T00:00:00+09:00</updated><id>http://localhost:4000/study/machine%20learning/hidden-markov-model</id><content type="html" xml:base="http://localhost:4000/study/machine%20learning/hidden-markov-model/"><![CDATA[<h1 id="markov-chain">Markov Chain</h1>
-
-<h2 id="markov-property">Markov Property</h2>
-<ul>
-  <li>Markov 성질은 현재 시점의 상태는 바로 직전 시점의 상태에만 의존한다는 것이다.</li>
-  <li>즉 $ P(X_{n} \vert X_{n-1}, X_{n-2}, \cdots, X_{1}) = P(X_{n} \vert X_{n-1}) $</li>
-  <li>이것은 다가오는 미래는 과거에 영향 받지 않고 온전히 현재 상태에만 의존함을 의미한다.</li>
-</ul>
-
-<h2 id="definition">Definition</h2>
-<ul>
-  <li>A Markov process is a stochastic process that satisfies the Markov property (sometimes characterized as “memorylessness”). In simpler terms, it is a process for which predictions can be made regarding future outcomes based solely on its present state and—most importantly—such predictions are just as good as the ones that could be made knowing the process’s full history. In other words, conditional on the present state of the system, its future and past states are independent.</li>
-  <li>Markov chain은 Markov 성질을 만족하는 확률 과정이다. 쉽게 말해,, 한 상태에서 다른 상태로 상태가 전이될 때의 확률이 Markov property를 만족하는 chain을 의미한다. 다른 상태로 전이할 때 이전 상태의 history는 전혀 중요하지 않고 현재 상태만 고려하면 된다.</li>
-  <li>예를 들어, 날씨의 변화를 Markov chain을 통해 표현한다는 것은 오늘의 날씨는 바로 전날의 날씨에만 영향을 받으며, 또한 내일의 날씨는 오늘의 날씨에만 영향을 받는다는 것을 의미한다. 굉장히 강력한 가정이라 볼 수 있다.</li>
-</ul>
-
-<h2 id="transition-matrix">Transition Matrix</h2>
-<ul>
-  <li>n개의 상태 $(X_{1}, \cdot, X_{n})$ 로 구성된 Markov chain을 생각해보자.</li>
-  <li>$i$번째 상태 $X_{i}$에서 $j$번째 상태 $X_{j}$로 전이될 확률을 $P_{ij}$로 생각할 수 있다.</li>
-  <li>Transition Matrix $P$는 $P_{ij}$를 성분으로 갖는 $n \times n$ 크기의 행렬이다.</li>
-</ul>
-
-<h1 id="hidden-markov-model-hmm">Hidden Markov Model (HMM)</h1>
-
-<h2 id="definition-1">Definition</h2>
-<ul>
-  <li>A hidden Markov model (HMM) is a statistical Markov model in which the system being modeled is assumed to be a Markov process with unobservable (“hidden”) states.</li>
-  <li>관측가능한 변수 $(X)$와 관측이 불가능한 은닉 상태 $(Z)$로 이루어진 Markov 시스템을 의미한다.</li>
-  <li>우리가 관측하는 변수들끼리는 markov 성질을 만족하지 않지만, 그것들을 야기하는 은닉 상태는 markov chain을 이룬다.</li>
-  <li>HMM의 Joint Probability Distribution $P(X_1, \cdots, X_n, Z_1, \cdots, Z_n)$를 그래프로 표현하면 아래와 같이 표현할 수 있다. <br />
-<img src="/assets/images/posts/MLDL/hidden-markov-model/01.png" style="width:50%" /></li>
-</ul>
-
-<h2 id="example">Example</h2>
-<p><strong>Part-Of-Speech(POS) Tag</strong> <br />
-  <img src="/assets/images/posts/MLDL/hidden-markov-model/02.png" style="width:45%" />
-  <img src="/assets/images/posts/MLDL/hidden-markov-model/03.png" style="width:45%" /></p>
-<ul>
-  <li>“Janet will back the bill”이란 문장이 있다고 생각해보자.</li>
-  <li>여기서 우리가 관측한 변수는 Janet, will 등과 같은 단어 자체다.</li>
-  <li>이때 HMM은 상태의 전이 확률(A단어 다음 B단어가 등장할 확률)을 단어와 단어 사이의 직접적인 관계가 아닌 은닉 상태 Z를 통해 표현된다고 본다.</li>
-  <li>본 예시에서 은닉 상태 Z는 단어의 품사다. Janet이란 단어$(X_1)$ 뒤에 will이란 단어$(X_2)$가 등장할 확률은 각각의 품사와 함께 표현된다.</li>
-  <li>$P(X_2, X_1) = P(X_1, X_2, Z_1, Z_2) = P(Z_1)P(X_1 \vert Z_1)P(Z_2 \vert Z_1)P(X_2 \vert Z_2)$
-    <ul>
-      <li>$P(Z_1)$: $Z_1$(명사)의 품사가 등장할 확률</li>
-      <li>$P(X_1 \vert Z_1)$: 품사가 $Z_1$(명사)일 때, 단어가 $X_1$(Janet)일 확률</li>
-      <li>$P(Z_2 \vert Z_1)$: 이전 품사가 $Z_1$(명사)일 때, 다음 품사가 $Z_2$(조동사)일 확률</li>
-      <li>$P(X_2 \vert Z_2)$: 품사가 $Z_2$(조동사)일 때, 단어가 $X_2$(will)일 확률</li>
-    </ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">For</code></p>
   </li>
-</ul>
-
-<h2 id="hmm">HMM</h2>
-<p><img src="/assets/images/posts/MLDL/hidden-markov-model/01.png" style="width:70%" /> <br />
-위 그림과 같은 Hidden Markov Model를 생각해보자. 이때 편의를 위해 HMM이 다음의 조건을 만족한다 가정하자.</p>
-<ul>
-  <li>각각의 은닉 상태는 \(\{ 1, \cdots, m \}\) 중 하나를 갖는다: \(Z_i \in \{1, \cdots, m\}\)</li>
-  <li>초기 분포를 $\pi$라고 하자: $\pi_i = P(Z_1=i)$</li>
-  <li>Time-homogeneity를 만족한다. 전이확률 $T_{ij}=P(Z_{t+1}=j \vert Z_t=i)$이 time-index인 t에 대해 변하지 않는다. 즉 전이 확률은 시간에 대해 independent하다.</li>
-  <li>마찬가지로 emission distribution $\epsilon_{i}(x_t)=P(x_{t} \vert Z_{t}=i)$ 또한 time-independent하다.</li>
-</ul>
-
-<h2 id="tasks-in-hmm">Tasks in HMM</h2>
-<p><strong>1. Decoding</strong></p>
-<ul>
-  <li>Find $argmax_z P(z \vert x)$.</li>
-  <li>Given an HMM, what is the most likely sequence of states z to generate output x?</li>
-  <li>어떤 HMM에 대해 주어진 output $\mathbf{X}$를 생성해냈을 가장 그럴듯한 sequence of hidden state $\mathbf{Z}$ 가 무엇이냐?</li>
-</ul>
-
-<p><strong>2. Likelihood</strong></p>
-<ul>
-  <li>Compute $P(X)$</li>
-  <li>Given an HMM parametrized with \(\Theta = (\pi, T, \epsilon)\), compute the likelihood of the output sequence.</li>
-  <li>\(\Theta = (\pi, T, \epsilon)\)으로 parametrization 된 HMM이 주어졌을 때, output $\mathbf{X}$이 생성될 확률은?</li>
-</ul>
-
-<p><strong>3. Estimation</strong></p>
-<ul>
-  <li>Find $argmax_{\Theta} P(X;\Theta)$</li>
-  <li>Learning</li>
-  <li>Maximum Likelihood Estimation</li>
-</ul>]]></content><author><name>bear11235</name></author><category term="study" /><category term="machine learning" /><category term="study" /><category term="machine learning" /><category term="markov" /><category term="bayesian network" /><summary type="html"><![CDATA[Markov Chain]]></summary></entry><entry><title type="html">Research Note</title><link href="http://localhost:4000/research/research-note/" rel="alternate" type="text/html" title="Research Note" /><published>2023-04-01T00:00:00+09:00</published><updated>2023-04-01T00:00:00+09:00</updated><id>http://localhost:4000/research/research-note</id><content type="html" xml:base="http://localhost:4000/research/research-note/"><![CDATA[<h2 id="2023-04-11-화">2023-04-11 (화)</h2>
-<ul>
-  <li>두 개의 난류 유동이 있을 때, 그 둘의 유사성을 어떻게 판단할 것인가?</li>
-</ul>
-
-<h2 id="2023-04-13-목">2023-04-13 (목)</h2>
-<ul>
-  <li>난류 유동의 순간적인(?) time scale은 어떻게 구할 것인가?
-    <ul>
-      <li></li>
-    </ul>
-  </li>
-</ul>]]></content><author><name>bear11235</name></author><category term="research" /><summary type="html"><![CDATA[2023-04-11 (화) 두 개의 난류 유동이 있을 때, 그 둘의 유사성을 어떻게 판단할 것인가?]]></summary></entry></feed>
+</ol>]]></content><author><name>bear11235</name></author><category term="linux" /><category term="cluster" /><category term="linux" /><category term="cluster" /><category term="license" /><summary type="html"><![CDATA[problem ANSYS client host에서 server host로 license status 요청하기]]></summary></entry></feed>

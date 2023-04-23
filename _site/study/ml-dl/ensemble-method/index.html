@@ -1,0 +1,852 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Ensemble Method 공부하기 - bear11235’s blog</title>
+<meta name="description" content="Preliminary Knowledge Bootstrap 요약 Bootstrap (부트스트랩)은 데이터 내에서 반복적으로 샘플을 사용하는 resampling 방법 중 하나.">
+
+
+  <meta name="author" content="bear11235">
+  
+  <meta property="article:author" content="bear11235">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="bear11235's blog">
+<meta property="og:title" content="Ensemble Method 공부하기">
+<meta property="og:url" content="http://localhost:4000/study/ml-dl/ensemble-method/">
+
+
+  <meta property="og:description" content="Preliminary Knowledge Bootstrap 요약 Bootstrap (부트스트랩)은 데이터 내에서 반복적으로 샘플을 사용하는 resampling 방법 중 하나.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-04-22T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/study/ml-dl/ensemble-method/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "bear11235",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="bear11235's blog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+
+<!-- Mathjax Support -->
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/icons/favicon-16x16.png">
+<link rel="manifest" href="/assets/images/icons/site.webmanifest">
+<link rel="mask-icon" href="/assets/images/icons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/icons/bear_logo_wobg.png" alt="bear11235's blog"></a>
+        
+        <a class="site-title" href="/">
+          bear11235's blog
+          <span class="site-subtitle">Version 1.0</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/photo_sq.jpg" alt="bear11235" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">bear11235</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Have a Gooood Day!</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">SNU, Seoul, South Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:bear11235@gmail.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">bear11235@gmail.com</span></a></li>
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/bear11235/" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+          
+            <li><a href="/assets/files/shlee_CV.pdf" rel="nofollow noopener noreferrer me"><i class="far fa-fw fa-file-pdf" aria-hidden="true"></i><span class="label">My C.V.</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <li> 전체 글 수 (18)개 </li>
+  <ul class="nav__items">
+    
+      
+      <li>
+        
+          <span class="nav__sub-title">Study</span>
+        
+
+        
+        <ul>
+          
+          
+          
+          
+          
+
+            <li><a href="/study/ML-DL">ML / DL(9)</a></li>
+          
+          
+          
+          
+          
+
+            <li><a href="/study/fluid-mechanics">Fluid Mechanics(1)</a></li>
+          
+          
+          
+          
+          
+
+            <li><a href="/study/turbo-machines">Turbomachines(1)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      
+      <li>
+        
+          <span class="nav__sub-title">Research</span>
+        
+
+        
+        <ul>
+          
+          
+          
+          
+          
+
+            <li><a href="/research/research-1">research 1(1)</a></li>
+          
+          
+          
+          
+          
+
+            <li><a href="/research/research-2">research 2(1)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      
+      <li>
+        
+          <span class="nav__sub-title">Linux</span>
+        
+
+        
+        <ul>
+          
+          
+          
+          
+          
+
+            <li><a href="/linux/command">Command(1)</a></li>
+          
+          
+          
+          
+          
+
+            <li><a href="/linux/cluster">Cluster(4)</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Ensemble Method 공부하기">
+    <meta itemprop="description" content="Preliminary KnowledgeBootstrap 요약Bootstrap (부트스트랩)은 데이터 내에서 반복적으로 샘플을 사용하는 resampling 방법 중 하나.">
+    <meta itemprop="datePublished" content="2023-04-22T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/study/ml-dl/ensemble-method/" class="u-url" itemprop="url">Ensemble Method 공부하기
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-04-22T00:00:00+09:00">April 22, 2023</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
+              <ul class="toc__menu"><li><a href="#preliminary-knowledge">Preliminary Knowledge</a><ul><li><a href="#bootstrap-요약">Bootstrap 요약</a></li></ul></li><li><a href="#ensemble-model">Ensemble Model</a><ul><li><a href="#bagging">Bagging</a></li><li><a href="#voting">Voting</a></li><li><a href="#boosting">Boosting</a></li></ul></li><li><a href="#characteristics-of-ensemble-model">Characteristics of Ensemble Model</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h1 id="preliminary-knowledge">Preliminary Knowledge</h1>
+<h2 id="bootstrap-요약">Bootstrap 요약</h2>
+<p>Bootstrap (부트스트랩)은 데이터 내에서 반복적으로 샘플을 사용하는 resampling 방법 중 하나.</p>
+
+<p>Bootstrap sampling을 하면 애초에 한 개 밖에 없었던 우리들의 sample data set을 n개의 sample data set을 가지고 있는 것과 같은 효과를 누릴 수 있게 한다. 이를 통해 우리는 data의 variance를 상당히 잘 근사 할 수 있는 결과를 볼 수 있다.</p>
+
+<p>전체 크기가 n개인 원래의 데이터셋 S가 있다고 하자. S를 통해 크기가 N개인, 기존보다 더 큰 데이터셋 S’을 얻고 싶을 때, 부트스트랩 샘플링을 할 수 있다. 원래 데이터셋 S에서 복원 추출을 통해 m개를 뽑는다. 그렇게 뽑은 하나의 데이터셋을 \(s_i\)라고 하자. 이러한 복원추출을 N번 반복한다. 그러면 \(S'=\{s_1, \cdots, s_N \}\)의 새로운 데이터 셋을 구할 수 있다.</p>
+
+<p>부트스트랩을 통해 얻어진 새로운 데이터 셋은 기존의 데이터 셋과 비슷한 분포를 가진다.</p>
+
+<h1 id="ensemble-model">Ensemble Model</h1>
+
+<p>강력한 하나의 모델 대신, 여러 개의 간단한 모델을 만들고 그들을 조합하여 예측하는 것.
+예를 들어 Classifier를 만든다고 생각할 때, 엄청 복잡한 하나의 모델을 만들기보다는 간단한 classifer들을 만들고, 결과를 내야할 때 각 classifer에게 물어보고, 그것들의 대답 비율을 따져 최종 결정을 내리는 것.</p>
+
+<p>대표적인 앙상블 유형에는 다음이 있다: Voting, Bagging, Boosting.</p>
+
+<h2 id="bagging">Bagging</h2>
+
+<p>Bootstrap Aggregation의 약자로, 샘플을 여러 번 뽑아(Bootstrap) 각 모델을 학습시켜 결과물을 집계(Aggregration)하는 방법이다. 원래 데이터 셋에서 작은 여러 개의 데이터 셋을 샘플링한다(bootstrap). 각 데이터 셋으로 모델을 학습시킨다. 그리고 학습된 모델의 결과를 집계하여 최종 결과 값을 구한다(Aggregation).</p>
+
+<p>Categorical data는 각 모델들이 말한 catogory의 빈도수를 확인하고, 가장 많이 나온 결과를 채택하면 된다. Regression과 같이 continuous data를 다루는 경우, 각 모델들의 결과를 평균낼 수 있다.</p>
+
+<h2 id="voting">Voting</h2>
+
+<p>Voting은 Bagging과 비슷하게, 부트스트랩을 통해 구해진 여러 데이터 셋을 이용한다. 하지만 Bagging은 각 데이터 셋에 같은 알고리즘의 모델을 사용한다면, Voting은 각 데이터 셋에 대해 다른 알고리즘의 모델들을 사용하고, 각 모델이 자신만의 알고리즘으로 답한 결과를 이용하여 최종 결과를 도출한다. 예를 들어 분류 문제에서 Voting은 각 데이터 셋에 대해 KNN, SVM, Linear Regression 등의 알고리즘을 사용할 수 있다.</p>
+
+<h2 id="boosting">Boosting</h2>
+
+<p>Bagging에서는 부트스트랩을 통해 얻어진 데이터 셋에 대해 각각의 모델들이 “독립적으로” 학습하게 된다. 하지만 Boosting에서는 이전 모델의 학습이 다음 모델의 학습에 영향을 미친다. 이전 모델의 학습 결과에 대해 오답 데이터에는 더 큰 가중치를 두어, 새로운 모델은 이전에 모델이 틀린 부분에 대해 조금 더 집중해서 학습하게 된다. Bagging은 병렬적인 과정이라면, Boosting은 순차적인 과정이다.</p>
+
+<h1 id="characteristics-of-ensemble-model">Characteristics of Ensemble Model</h1>
+
+<ul>
+  <li>Bias를 줄인다. 쉬운 모델들을 중첩하여 하나의 모델을 만들기 때문에 dicision boundary가 부드럽게 형성된다. 그렇게 모델의 복잡도를 늘리기 때문에 모델의 bias가 작아진다.</li>
+  <li></li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/boost" class="page__taxonomy-item p-category" rel="tag">boost</a><span class="sep">, </span>
+    
+      <a href="/tags/learning" class="page__taxonomy-item p-category" rel="tag">learning</a><span class="sep">, </span>
+    
+      <a href="/tags/ml-dl" class="page__taxonomy-item p-category" rel="tag">ML-DL</a><span class="sep">, </span>
+    
+      <a href="/tags/study" class="page__taxonomy-item p-category" rel="tag">study</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/ml-dl" class="page__taxonomy-item p-category" rel="tag">ML-DL</a><span class="sep">, </span>
+    
+      <a href="/categories/study" class="page__taxonomy-item p-category" rel="tag">study</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-04-22T00:00:00+09:00">April 22, 2023</time></p>
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/study/ml-dl/boosting-algorthms/" class="pagination--pager" title="여러 Boosting 알고리즘 공부하기
+">이전</a>
+    
+    
+      <a href="/linux/cluster/remote-access-via-ssh-tunneling/" class="pagination--pager" title="Remote access with SSH tunneling
+">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/ml-dl/explainable-AI/" rel="permalink">Explainable AI (LIME, SHAP) 공부하기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-04-23T00:00:00+09:00">April 23, 2023</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">AI의 모델
+
+  Rule-based system: 사람이 일일이 프로그램하여 컴퓨터는 주어진 규칙대로 계산만 수행.
+  Classic ML-DL: 사람이 feature를 디자인하고, 컴퓨터는 feature를 매핑한다.
+  Deep Learning: 더욱 복잡한 feature를 모...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/linux/cluster/remote-access-via-ssh-tunneling/" rel="permalink">Remote access with SSH tunneling
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-04-23T00:00:00+09:00">April 23, 2023</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/ml-dl/boosting-algorthms/" rel="permalink">여러 Boosting 알고리즘 공부하기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-04-22T00:00:00+09:00">April 22, 2023</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">AdaBoost
+Adaptive Boost의 약자로, 이름에서 알 수 있다시피 적응형이다. 
+AdaBoost도 Boosting이므로 classifier를 순차적으로 학습한다. 첫번째 데이터셋에 대해 학습을 진행하고, 그 결과에 따라 다음 데이터셋에 적절한 가중치를 부여하고 다음 모...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/ml-dl/SNE/" rel="permalink">t-SNE 공부하기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-04-22T00:00:00+09:00">April 22, 2023</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">SNE
+Stochastic Neighbor Embedding의 약자. 여기서 임베딩의 의미는 고차원에서 저차원으로 매핑한다는 말이다.
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/bear11235/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 bear11235. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+<script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+    processEscapes: true
+    },
+    "HTML-CSS": { availableFonts: ["TeX"] }
+});
+</script>
+
+  </body>
+</html>

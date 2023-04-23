@@ -2,10 +2,10 @@
 title: "Bayesian Network 공부하기"
 categories:
   - study
-  - machine learning
+  - ML-DL
 tags:
   - study
-  - machine learning
+  - ML-DL
   - bayesian network
 ---
 
@@ -16,5 +16,10 @@ tags:
 - BN에서 사용하는 그래프 모델은 Directed Acyclic Graph (DAG), 즉 비순환-방향성 그래프로 표현된다. 
   - Directed: 노드 간 연결은 단순 선분이 아니라 방향성이 있는 화살표로 표현된다.
   - Acyclic: a->b->c->a 와 같이 순환적인 구조가 없다.
+
+<figure>
+  <img src="/assets/images/posts/MLDL/bayesian-network/01.png" style="width:90%">
+  <figcaption>Bayesian Network 예시</figcaption>
+</figure>
 
 <img src="/assets/images/posts/MLDL/bayesian-network-01.png" alt="">

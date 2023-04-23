@@ -2,10 +2,10 @@
 title: "Hidden Markov Model 공부하기"
 categories:
   - study
-  - machine learning
+  - ML-DL
 tags:
   - study
-  - machine learning
+  - ML-DL
   - markov
   - bayesian network
 

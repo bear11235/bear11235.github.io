@@ -12,38 +12,43 @@
 #   #   url: /sitemap/
 
 main:
-  - title: "Posts"
-    url: /year-archive/
+  - title: "About"
+    url: /about/
   - title: "Categories"
     url: /categories/
-  - title: "Tags"
-    url: /tags/
-  - title: "Pages"
-    url: /page-archive/
-  - title: "Collections"
-    url: /collection-archive/
 
-docs:
-  - title: Getting Started
-    children:
-      - title: "Quick-Start Guide"
-        url: /docs/quick-start-guide/
-      - title: "Structure"
-        url: /docs/structure/
-      - title: "Installation"
-        url: /docs/installation/
-      - title: "Upgrading"
-        url: /docs/upgrading/
 
-  - title: Customization
+sidebar-category:
+  - title: "Study"
     children:
-      - title: "Configuration"
-        url: /docs/configuration/
-      - title: "Navigation"
-        url: /docs/navigation/
-      - title: "UI Text"
-        url: /docs/ui-text/
-      - title: "Authors"
-        url: /docs/authors/
-      - title: "Layouts"
-        url: /docs/layouts/
+      - title: "ML / DL"
+        category: "ML-DL"
+        url: "/study/ML-DL"
+
+      - title: "Fluid Mechanics"
+        category: "fluid-mechanics"
+        url:  "/study/fluid-mechanics"
+      
+      - title: "Turbomachines"
+        category: "turbo-machines"
+        url:  "/study/turbo-machines"
+
+  - title: "Research"
+    children:
+      - title: "research 1"
+        url: "/research/research-1"
+        category: "research-1"
+      - title: "research 2"
+        url: "/research/research-2"
+        category: "research-2"
+
+  - title: "Linux"
+    children:
+      - title: "Command"
+        category: "command"
+        url: "/linux/command"
+      
+      - title: "Cluster"
+        category: "cluster"
+        url: "/linux/cluster"
+

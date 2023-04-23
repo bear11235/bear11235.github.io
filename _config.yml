@@ -18,7 +18,7 @@ minimal_mistakes_skin    : "air" # "air", "aqua", "contrast", "dark", "dirt", "n
 locale                   : "ko-KR"
 title                    : "bear11235's blog"
 title_separator          : "-"
-subtitle                 : "Version 0.0" # site tagline that appears below site title in masthead
+subtitle                 : "Version 1.0" # site tagline that appears below site title in masthead
 name                     : "bear11235"
 description              : "bear11235's study blog. "
 url                      : "https://bear11235.github.io" # the base hostname & protocol for your site.
@@ -106,24 +106,13 @@ analytics:
 author:
   name             : "bear11235"
   avatar           : "/assets/images/photo_sq.jpg"
-  bio              : "
-  Ph.D Student in SNU. <br>
-  Topics of interest: <br>
-  &nbsp; - fluid mechanics <br>
-  &nbsp; - machine learning <br>
-  &nbsp; - deep learning <br>
-  
-  
-      "
+  bio              : "Have a Gooood Day!"
   location         : "SNU, Seoul, South Korea"
   email            : #"bear11235@gmail.com"
   links:
-    - label: "Email"
+    - label: "bear11235@gmail.com"
       icon: "fas fa-fw fa-envelope-square"
       url: "mailto:bear11235@gmail.com"
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      url: # "https://your-website.com"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       # url: "https://twitter.com/"
@@ -136,6 +125,9 @@ author:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
+    - label: "My C.V."
+      icon: "far fa-fw fa-file-pdf"
+      url: "/assets/files/shlee_CV.pdf"
 
 # Site Footer
 footer:
@@ -301,10 +293,11 @@ compress_html:
 
 # Defaults
 defaults:
+
   # _posts
   - scope:
       path: ""
-      type: posts
+      type: posts 
     values:
       layout: single
       author_profile: true
@@ -314,7 +307,11 @@ defaults:
       related: true
       show_date: true
       date_format: "%Y-%m-%d"
-      use_math: true
+      use_math: true            # 추가한 부분
+      sidebar:                  # 추가한 부분
+        nav: "sidebar-category" # 추가한 부분
+      toc: true                 # 추가한 부분
+      toc_sticky: true          # 추가한 부분
 
   # _pages
   - scope:
@@ -323,6 +320,8 @@ defaults:
     values:
       layout: single
       author_profile: true
+      sidebar:                  # 추가한 부분
+        nav: "sidebar-category" # 추가한 부분
 
 
 # Minimal-Mistakes에서 수식 쓰기
