@@ -111,7 +111,7 @@ var store = [{
     "excerpt":"Sorry, but the page you were trying to view does not exist.  ","url": "http://localhost:4000/404.html"
   },{
     "title": "About",
-    "excerpt":"Self introduction  ","url": "http://localhost:4000/about/"
+    "excerpt":"현재 서울대학교 기계공학부 대학원에서 박사과정 중인 학생입니다. 대학원 내에서는 유체역학에 기계학습을 접목시키는 것을 공부하고 있습니다. 해당 블로그는 공부한 것과 읽은 논문들, 연구 과정 중 생각들을 적는 용도로 사용할 예정입니다. 블로그에 내용을 꾸준히 더해가기 위해 지속적으로 공부하고 연구하는 것을 목표로 동기부여 차원에서 블로그를 운영합니다. 가능하다면 남들에게 내용을 공유할 수 있을 정도로...","url": "http://localhost:4000/about/"
   },{
     "title": "Archive Layout with Content",
     "excerpt":"A variety of common markup showing how the theme styles them. Header one Header two Header three Header four Header five Header six Blockquotes Single line blockquote: Stay hungry. Stay foolish. Multi line blockquote with a cite reference: People think focus means saying yes to the thing you’ve got to...","url": "http://localhost:4000/archive-layout-with-content/"
