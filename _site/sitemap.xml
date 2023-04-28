@@ -73,6 +73,10 @@
 <lastmod>2023-04-23T00:00:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/study/ml-dl/gaussian-process/</loc>
+<lastmod>2023-04-28T00:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/about/</loc>
 </url>
 <url>
@@ -237,6 +241,12 @@
 </url>
 <url>
 <loc>http://localhost:4000/tags/shap/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/tags/gaussian-process/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/tags/gp/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/categories/research/</loc>

@@ -107,6 +107,12 @@ var store = [{
         "url": "/study/ml-dl/explainable-AI/",
         "teaser": null
       },{
+        "title": "[ML/DL] Gaussian Process 공부하기",
+        "excerpt":"Learning Log-Likelihood of MVN GP를 실제 데이터에 적용하면 우리가 얻게되는 데이터의 형태는 Multi-Variate Normal(MVN) 분포를 따르게 된다. n차원의 MVN 분포를 생각해보자. 평균은 n차원의 벡터로, 공분산은 \\(n \\times n\\)의 행렬로 표현된다. \\[\\mathbf{X}\\sim \\mathcal{N_n}(\\mathbf{\\mu}, \\mathbf{\\Sigma}) \\quad \\text{where} \\quad \\mathbf{\\mu} \\in \\mathcal{R}^n, \\mathbf{\\Sigma} \\in \\mathcal{R}^{n \\times n}\\] 그리고 위 분포의 pdf는 아래와 같이...","categories": ["study","ML-DL"],
+        "tags": ["study","ML-DL","Gaussian Process","GP"],
+        "url": "/study/ml-dl/gaussian-process/",
+        "teaser": null
+      },{
     "title": "Page Not Found",
     "excerpt":"Sorry, but the page you were trying to view does not exist.  ","url": "http://localhost:4000/404.html"
   },{
@@ -138,19 +144,19 @@ var store = [{
     "excerpt":"                              test                                                                     April 16, 2023                                                                           최대 1 분 소요                                        ","url": "http://localhost:4000/study/fluid-mechanics"
   },{
     "title": "Machine Learning / Deep Learning",
-    "excerpt":"Explainable AI (LIME, SHAP) 공부하기 April 23, 2023 2 분 소요 AI의 모델 Rule-based system: 사람이 일일이 프로그램하여 컴퓨터는 주어진 규칙대로 계산만 수행. Classic ML-DL: 사람이 feature를 디자인하고, 컴퓨터는 feature를 매핑한다. Deep Learning: 더욱 복잡한 feature를 모... Ensemble Method 공부하기 April 22, 2023 1 분 소요 Preliminary Knowledge Bootstrap 요약...","url": "http://localhost:4000/study/ML-DL"
+    "excerpt":"[ML/DL] Gaussian Process 공부하기 April 28, 2023 1 분 소요 Learning Explainable AI (LIME, SHAP) 공부하기 April 23, 2023 2 분 소요 AI의 모델 Rule-based system: 사람이 일일이 프로그램하여 컴퓨터는 주어진 규칙대로 계산만 수행. Classic ML-DL: 사람이 feature를 디자인하고, 컴퓨터는 feature를 매핑한다. Deep Learning: 더욱 복잡한 feature를 모... Ensemble Method...","url": "http://localhost:4000/study/ML-DL"
   },{
     "title": "Turbomachines",
     "excerpt":"                              test                                                                     April 16, 2023                                                                           최대 1 분 소요                                        ","url": "http://localhost:4000/study/turbo-machines"
   },{
     "title": "study",
-    "excerpt":"Explainable AI (LIME, SHAP) 공부하기 April 23, 2023 2 분 소요 AI의 모델 Rule-based system: 사람이 일일이 프로그램하여 컴퓨터는 주어진 규칙대로 계산만 수행. Classic ML-DL: 사람이 feature를 디자인하고, 컴퓨터는 feature를 매핑한다. Deep Learning: 더욱 복잡한 feature를 모... Ensemble Method 공부하기 April 22, 2023 1 분 소요 Preliminary Knowledge Bootstrap 요약...","url": "http://localhost:4000/study"
+    "excerpt":"[ML/DL] Gaussian Process 공부하기 April 28, 2023 1 분 소요 Learning Explainable AI (LIME, SHAP) 공부하기 April 23, 2023 2 분 소요 AI의 모델 Rule-based system: 사람이 일일이 프로그램하여 컴퓨터는 주어진 규칙대로 계산만 수행. Classic ML-DL: 사람이 feature를 디자인하고, 컴퓨터는 feature를 매핑한다. Deep Learning: 더욱 복잡한 feature를 모... Ensemble Method...","url": "http://localhost:4000/study"
   },{
     "title": "Posts by Category",
     "excerpt":" ","url": "http://localhost:4000/categories/"
   },{
     "title": "Posts by Collection",
-    "excerpt":"                                                                                                                                                         ","url": "http://localhost:4000/collection-archive/"
+    "excerpt":"                                                                                                                                                                 ","url": "http://localhost:4000/collection-archive/"
   },{
     "title": "Edge Case",
     "excerpt":"Sample post listing for the category Edge Case.  ","url": "http://localhost:4000/categories/edge-case/"
@@ -283,6 +289,12 @@ var store = [{
   },{
     "title": "SHAP",
     "excerpt":"","url": "http://localhost:4000/tags/shap/"
+  },{
+    "title": "Gaussian Process",
+    "excerpt":"","url": "http://localhost:4000/tags/gaussian-process/"
+  },{
+    "title": "GP",
+    "excerpt":"","url": "http://localhost:4000/tags/gp/"
   },{
     "title": "research",
     "excerpt":"","url": "http://localhost:4000/categories/research/"

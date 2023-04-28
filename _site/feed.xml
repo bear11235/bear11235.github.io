@@ -1,4 +1,45 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-04-24T17:39:50+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">bear11235’s blog</title><subtitle>bear11235&apos;s study blog. </subtitle><author><name>bear11235</name></author><entry><title type="html">Remote access with SSH tunneling</title><link href="http://localhost:4000/linux/cluster/remote-access-via-ssh-tunneling/" rel="alternate" type="text/html" title="Remote access with SSH tunneling" /><published>2023-04-23T00:00:00+09:00</published><updated>2023-04-23T00:00:00+09:00</updated><id>http://localhost:4000/linux/cluster/remote-access-via-ssh-tunneling</id><content type="html" xml:base="http://localhost:4000/linux/cluster/remote-access-via-ssh-tunneling/"><![CDATA[]]></content><author><name>bear11235</name></author><category term="linux" /><category term="cluster" /><category term="linux" /><category term="cluster" /><category term="firewall" /><category term="ssh" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Explainable AI (LIME, SHAP) 공부하기</title><link href="http://localhost:4000/study/ml-dl/explainable-AI/" rel="alternate" type="text/html" title="Explainable AI (LIME, SHAP) 공부하기" /><published>2023-04-23T00:00:00+09:00</published><updated>2023-04-23T00:00:00+09:00</updated><id>http://localhost:4000/study/ml-dl/explainable-AI</id><content type="html" xml:base="http://localhost:4000/study/ml-dl/explainable-AI/"><![CDATA[<p>AI의 모델</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-04-28T17:07:51+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">bear11235’s blog</title><subtitle>bear11235&apos;s study blog. </subtitle><author><name>bear11235</name></author><entry><title type="html">[ML/DL] Gaussian Process 공부하기</title><link href="http://localhost:4000/study/ml-dl/gaussian-process/" rel="alternate" type="text/html" title="[ML/DL] Gaussian Process 공부하기" /><published>2023-04-28T00:00:00+09:00</published><updated>2023-04-28T00:00:00+09:00</updated><id>http://localhost:4000/study/ml-dl/gaussian-process</id><content type="html" xml:base="http://localhost:4000/study/ml-dl/gaussian-process/"><![CDATA[<h1 id="learning">Learning</h1>
+
+<h2 id="log-likelihood-of-mvn">Log-Likelihood of MVN</h2>
+<p>GP를 실제 데이터에 적용하면 우리가 얻게되는 데이터의 형태는 Multi-Variate Normal(MVN) 분포를 따르게 된다. n차원의 MVN 분포를 생각해보자. 평균은 n차원의 벡터로, 공분산은 \(n \times n\)의 행렬로 표현된다.</p>
+
+\[\mathbf{X}\sim \mathcal{N_n}(\mathbf{\mu}, \mathbf{\Sigma}) \quad \text{where} \quad \mathbf{\mu} \in \mathcal{R}^n, \mathbf{\Sigma} \in \mathcal{R}^{n \times n}\]
+
+<p>그리고 위 분포의 pdf는 아래와 같이 정의된다.</p>
+
+\[p(\mathbf{x; \mu, \Sigma}) = (2 \pi)^{-n/2} \det{(\mathbf{\Sigma})}^{-1/2} \exp{\left(-\frac{1}{2} \mathbf{(x-\mu)^T \Sigma^{-1} (x-\mu)}\right)}\]
+
+<p>평균과 공분산을 파라미터 \(\mathbf{\Theta}\)로 생각하면 log-likelihood 함수를 아래와 같이 계산할 수 있다.</p>
+
+\[\mathcal{L}(\mathbf{\Theta}) = \log p(\mathbf{x}; \mathbf{\Theta}) = 
+-\frac{n}{2}\log(2\pi) -\frac{1}{2}\det{\mathbf{\Sigma}} -\frac{1}{2} \mathbf{(x-\mu)^T \Sigma^{-1} (x-\mu)}\]
+
+<p>만약 prior mean을 0으로 생각한다면 조금 단순해진다.</p>
+
+\[\mathcal{L}(\mathbf{\Theta}) = -\frac{n}{2}\log(2\pi) -\frac{1}{2}\det{\mathbf{\Sigma}} -\frac{1}{2} \mathbf{x^T \Sigma^{-1} x}\]
+
+<h2 id="marginal-log-likelihood-in-gp">Marginal Log-Likelihood in GP</h2>
+<p>Gaussian Process는 프로세스 안에서 어떠한 subset을 골라도 gaussian distribution을 따르기 때문에, 우리가 관심있는 index에 대해서 marginalize하기 쉽다. 이를 Marginal Log-Likelihood(MLL)이라 하자. GP를 통해 찾고자하는 latent function variable(?) 혹은 참이라고 추정하는 함수값을 \(\mathbf{f}\)라고 하자. 실제 그 함수가 우리에게 발현되어 관측되는 값은 노이즈가 섞인 값이다. 관측되는 값을 \(\mathbf{y}\)라고 하자. 우리가 학습하는 과정에서 활용하는 데이터는 실제 측정된 데이터이므로 \(\mathbf{f}\)보단 \(\mathbf{y}\)라고 생각해야 한다. 따라서 우리가 구하고자 하는 likelihood 값은 아래와 같다. GP를 학습하기 위해서 위 MLL 값을 최대화, 혹은 negative MLL을 최소화한다.</p>
+
+\[\begin{align}
+\mathcal{L}(\mathbf{\Theta}) &amp;= p(\mathbf{y}\vert\mathbf{x}; \mathbf{\Theta}) \\
+&amp;= \int{p(\mathbf{y \vert f}) p(\mathbf{f \vert x}) d\mathbf{f}} \\
+&amp;= -\frac{n}{2}\log(2\pi) -\frac{1}{2}\log(\det{(\mathbf{\Sigma} + \sigma_n^2\mathbf{I})}) -\frac{1}{2} \mathbf{x^T (\mathbf{\Sigma} + \sigma_n^2\mathbf{I})^{-1} x} \\
+&amp;= -\frac{n}{2}\log(2\pi) -\frac{1}{2}\log(\det{\mathbf{\Sigma'}}) -\frac{1}{2} \mathbf{x^T (\Sigma')^{-1} x}
+\end{align}\]
+
+<p>MLL을 계산할 때, Covariance Matrix가 가진 성질을 바탕으로 Cholesky decomposition을 활용해 직접 역행렬과 행렬식을 구하는 것보다 빠르게 구할 수 있다. Symmetric Semi-Positive Definite Matrix \(K\)에 대해서 아래와 같은 cholesky decomposition이 가능하다.</p>
+
+\[K = LL^T = L^TL  \quad \text{where} \quad L \text{ is triangular matrix}\]
+
+<p>우리가 다루는 Covariance Matrix는 위 조건을 만족하므로 cholesky decomposition이 가능하고, 위에서 정리한 MLL은 아래와 같이 전개된다.</p>
+
+\[\begin{align}
+\mathcal{L} &amp;\propto -\frac{1}{2}\log(\det{\mathbf{\Sigma'}}) -\frac{1}{2} \mathbf{y^T (\Sigma')^{-1} y} \\
+&amp;= -\frac{1}{2}\log(\det{(\mathbf{L L}^T)}) -\frac{1}{2} \mathbf{y^T L^{-T} L^{-1} y} \\
+&amp;= -\log(\det{\mathbf{L}}) -\frac{1}{2} \mathbf{y^T L^{-T} L^{-1} y} \\
+&amp;= -\sum_{i=1}^{n} \log L_{ii} -\frac{1}{2} \mathbf{\alpha}^T \mathbf{\alpha}, \qquad \text{where } \alpha =\mathbf{L}\backslash\mathbf{y}\\
+\end{align}\]]]></content><author><name>bear11235</name></author><category term="study" /><category term="ML-DL" /><category term="study" /><category term="ML-DL" /><category term="Gaussian Process" /><category term="GP" /><summary type="html"><![CDATA[Learning]]></summary></entry><entry><title type="html">Remote access with SSH tunneling</title><link href="http://localhost:4000/linux/cluster/remote-access-via-ssh-tunneling/" rel="alternate" type="text/html" title="Remote access with SSH tunneling" /><published>2023-04-23T00:00:00+09:00</published><updated>2023-04-23T00:00:00+09:00</updated><id>http://localhost:4000/linux/cluster/remote-access-via-ssh-tunneling</id><content type="html" xml:base="http://localhost:4000/linux/cluster/remote-access-via-ssh-tunneling/"><![CDATA[]]></content><author><name>bear11235</name></author><category term="linux" /><category term="cluster" /><category term="linux" /><category term="cluster" /><category term="firewall" /><category term="ssh" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Explainable AI (LIME, SHAP) 공부하기</title><link href="http://localhost:4000/study/ml-dl/explainable-AI/" rel="alternate" type="text/html" title="Explainable AI (LIME, SHAP) 공부하기" /><published>2023-04-23T00:00:00+09:00</published><updated>2023-04-23T00:00:00+09:00</updated><id>http://localhost:4000/study/ml-dl/explainable-AI</id><content type="html" xml:base="http://localhost:4000/study/ml-dl/explainable-AI/"><![CDATA[<p>AI의 모델</p>
 <ul>
   <li>Rule-based system: 사람이 일일이 프로그램하여 컴퓨터는 주어진 규칙대로 계산만 수행.</li>
   <li>Classic ML-DL: 사람이 feature를 디자인하고, 컴퓨터는 feature를 매핑한다.</li>
@@ -541,180 +582,4 @@ license <span class="k">in </span>used: cfd_solve_level2 <span class="o">(</span
   <li>
     <p><code class="language-plaintext highlighter-rouge">For</code></p>
   </li>
-</ol>]]></content><author><name>bear11235</name></author><category term="linux" /><category term="cluster" /><summary type="html"><![CDATA[problem ANSYS client host에서 server host로 license status 요청하기]]></summary></entry><entry><title type="html">Query an Ansys license status</title><link href="http://localhost:4000/linux/cluster/query-ansys-license/" rel="alternate" type="text/html" title="Query an Ansys license status" /><published>2023-04-16T00:00:00+09:00</published><updated>2023-04-16T00:00:00+09:00</updated><id>http://localhost:4000/linux/cluster/query-ansys-license</id><content type="html" xml:base="http://localhost:4000/linux/cluster/query-ansys-license/"><![CDATA[<h1 id="problem">problem</h1>
-<ul>
-  <li>ANSYS client host에서 server host로 license status 요청하기</li>
-</ul>
-
-<h1 id="solution">Solution</h1>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">lmutil lmstat -c PORT@SERVER -a</code></li>
-  <li>
-    <p>모든 프로그램에 대한 현재 라이센스 상태를 보여준다.</p>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@master ~]<span class="nv">$ </span>/nopt/ansys_inc/v202/licensingclient/linx64/lmutil lmstat <span class="nt">-c</span> 1055@license.tml <span class="nt">-a</span>
-
-lmutil - Copyright <span class="o">(</span>c<span class="o">)</span> 1989-2015 Flexera Software LLC. All Rights Reserved.
-Flexible License Manager status on Sun 4/16/2023 14:03
-
-License server status: 1055@license.tml
-    License file<span class="o">(</span>s<span class="o">)</span> on license.tml: /ansys_inc/shared_files/licensing/license_files/ansyslmd.lic:
-
-license.tml: license server UP <span class="o">(</span>MASTER<span class="o">)</span> v11.19.0
-
-Vendor daemon status <span class="o">(</span>on license.tml<span class="o">)</span>:
-
-ansyslmd: UP v11.19.0
-Feature usage info:
-
-Users of anshpc:  <span class="o">(</span>Total of 1080 licenses issued<span class="p">;</span>  Total of 124 licenses <span class="k">in </span>use<span class="o">)</span>
-
-<span class="s2">"anshpc"</span> v2020.0514, vendor: ansyslmd, expiry: 1-jan-0
-floating license
-
-    shlee t009 t009.tml 60048 <span class="o">(</span>v2020.0507<span class="o">)</span> <span class="o">(</span>license.tml/1055 1404<span class="o">)</span>, start Sun 4/16 14:02, 124 licenses
-
-Users of 1spacdes:  <span class="o">(</span>Total of 26 licenses issued<span class="p">;</span>  Total of 0 licenses <span class="k">in </span>use<span class="o">)</span>
-
-Users of cfd_base:  <span class="o">(</span>Total of 25 licenses issued<span class="p">;</span>  Total of 1 license <span class="k">in </span>use<span class="o">)</span>
-
-<span class="s2">"cfd_base"</span> v2020.0514, vendor: ansyslmd, expiry: 1-jan-0
-floating license
-
-    shlee t009 t009.tml 60048 <span class="o">(</span>v2020.0507<span class="o">)</span> <span class="o">(</span>license.tml/1055 1304<span class="o">)</span>, start Sun 4/16 14:02
-
-...
-</code></pre></div>    </div>
-  </li>
-  <li>현재 사용중인 license만 출력하기 위해 별도의 shell script 작성</li>
-  <li>사용중인 라이센스에 대해 USER, HOST, Start Time, (USED, AVAILABLE, TOTAL) 출력</li>
-  <li>HPC의 경우, 해당 작업이 사용중인 license 개수도 출력
-    <ol>
-      <li><code class="language-plaintext highlighter-rouge">lmutil lmstat -c PORT@SERVER -a</code>: 전체 license status를 출력한다.</li>
-      <li><code class="language-plaintext highlighter-rouge">sed '/Total of 0 licenses in use/d'</code>: 사용중인 license 개수가 0인 프로그램 문장은 지운다.</li>
-      <li><code class="language-plaintext highlighter-rouge">sed '/^[[:space:]]*$/d'</code>: 빈 문장 지운다.</li>
-      <li><code class="language-plaintext highlighter-rouge">awk '!/floating/' | awk '!/expiry/' </code>: license 사용중인 프로그램의 경우 ‘floating’과 ‘expiry’란 단어가 들어간 문장이 등장하는데 필요 없으므로 지운다.</li>
-      <li><code class="language-plaintext highlighter-rouge">sed -e '1,8d'</code>: 앞에 필요없는 문장 지운다.</li>
-      <li><code class="language-plaintext highlighter-rouge">$INDEX, $PROGRAMS</code>: For loop을 돌릴 때 필요한 변수. For loop을 돌면서 사용중인 프로그램에 대해서 각각 USER, Host 등 필요한 정보를 양식에 맞춰 기록한다.</li>
-      <li><code class="language-plaintext highlighter-rouge">USER</code>, <code class="language-plaintext highlighter-rouge">HOST</code>, <code class="language-plaintext highlighter-rouge">DATE</code> 등 필요한 정보를 <code class="language-plaintext highlighter-rouge">awk</code>, <code class="language-plaintext highlighter-rouge">sed</code>, <code class="language-plaintext highlighter-rouge">printf</code> 등의 command를 통해 양식에 맞도록 출력한다.</li>
-      <li>임시 파일을 지우면서 마무리한다.</li>
-    </ol>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@master bin]# <span class="nb">cat </span>query_license_ansys.sh 
-<span class="c">#!/bin/bash</span>
-<span class="nb">echo</span> <span class="s2">""</span>
-<span class="nb">echo</span> <span class="s2">"Only licenses being used now are shown."</span>
-<span class="nb">echo</span> <span class="s2">""</span>
-
-<span class="nv">FILE</span><span class="o">=</span><span class="nv">$HOME</span>/.license_status_ansys.tmp
-
-/nopt/ansys_inc/v202/licensingclient/linx64/lmutil lmstat <span class="nt">-c</span> 1055@license.tml <span class="nt">-a</span> |<span class="se">\</span>
-<span class="nb">sed</span> <span class="s1">'/Total of 0 licenses in use/d'</span> |<span class="se">\</span>
-<span class="nb">sed</span> <span class="s1">'/^[[:space:]]*$/d'</span> |<span class="se">\</span>
-<span class="nb">awk</span> <span class="s1">'!/floating/'</span> | <span class="nb">awk</span> <span class="s1">'!/expiry/'</span> |<span class="se">\</span>
-<span class="nb">sed</span> <span class="nt">-e</span> <span class="s1">'1,8d'</span> <span class="o">&gt;</span> <span class="nv">$FILE</span>
-
-<span class="nv">INDEX</span><span class="o">=(</span><span class="si">$(</span><span class="nb">cat</span> <span class="nv">$FILE</span> | <span class="nb">nl</span> | <span class="nb">grep</span> <span class="s2">"Users of"</span> | <span class="nb">awk</span> <span class="s1">'{print $1}'</span><span class="si">)</span> <span class="k">$((</span> <span class="sb">`</span><span class="o">(</span><span class="nb">cat</span> <span class="nv">$FILE</span> | <span class="nb">nl</span> | <span class="nb">tail</span> <span class="nt">-1</span> | <span class="nb">awk</span> <span class="s1">'{print $1}'</span><span class="o">)</span><span class="sb">`</span> <span class="o">+</span> <span class="m">1</span> <span class="k">))</span> <span class="o">)</span>
-<span class="nv">PROGRAMS</span><span class="o">=(</span><span class="si">$(</span><span class="nb">cat</span> <span class="nv">$FILE</span> | <span class="nb">grep</span> <span class="s2">"Users of"</span> | <span class="nb">awk</span> <span class="s1">'{print $3}'</span> | <span class="nb">sed</span> <span class="s1">'s/://g'</span><span class="si">)</span><span class="o">)</span>
-
-<span class="k">for </span>idx <span class="k">in</span> <span class="sb">`</span><span class="nb">seq </span>0 <span class="k">$((</span> <span class="k">${#</span><span class="nv">PROGRAMS</span><span class="p">[@]</span><span class="k">}</span> <span class="o">-</span><span class="m">1</span> <span class="k">))</span><span class="sb">`</span>
-<span class="k">do
-    </span><span class="nv">i</span><span class="o">=</span><span class="k">${</span><span class="nv">INDEX</span><span class="p">[</span><span class="nv">$idx</span><span class="p">]</span><span class="k">}</span>
-    <span class="nv">j</span><span class="o">=</span><span class="k">${</span><span class="nv">INDEX</span><span class="p">[</span><span class="k">$((</span> <span class="nv">$idx</span> <span class="o">+</span> <span class="m">1</span> <span class="k">))</span><span class="p">]</span><span class="k">}</span>
-    <span class="nv">PROGRAM</span><span class="o">=</span><span class="k">${</span><span class="nv">PROGRAMS</span><span class="p">[</span><span class="nv">$idx</span><span class="p">]</span><span class="k">}</span>
-    <span class="nv">TOT</span><span class="o">=</span><span class="si">$(</span><span class="nb">head</span> -<span class="nv">$i</span> <span class="nv">$FILE</span> | <span class="nb">tail</span> <span class="nt">-n</span> +<span class="nv">$i</span> | <span class="nb">awk</span> <span class="s1">'{print $6}'</span><span class="si">)</span>
-    <span class="nv">USE</span><span class="o">=</span><span class="si">$(</span><span class="nb">head</span> -<span class="nv">$i</span> <span class="nv">$FILE</span> | <span class="nb">tail</span> <span class="nt">-n</span> +<span class="nv">$i</span> | <span class="nb">awk</span> <span class="s1">'{print $11}'</span><span class="si">)</span>
-    <span class="nv">AVA</span><span class="o">=</span><span class="k">$((</span> <span class="nv">$TOT</span> <span class="o">-</span> <span class="nv">$USE</span> <span class="k">))</span>
-    <span class="nb">echo</span> <span class="nt">-e</span> <span class="s2">"license in used: </span><span class="k">${</span><span class="nv">PROGRAM</span><span class="k">}</span><span class="s2"> (used, available, total) = (</span><span class="k">${</span><span class="nv">USE</span><span class="k">}</span><span class="s2">, </span><span class="k">${</span><span class="nv">AVA</span><span class="k">}</span><span class="s2">, </span><span class="k">${</span><span class="nv">TOT</span><span class="k">}</span><span class="s2">)"</span>
-
-    <span class="k">if</span> <span class="o">[[</span> <span class="nv">$PROGRAM</span> <span class="o">==</span> <span class="s2">"anshpc"</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then
-        </span><span class="nb">echo</span> <span class="nt">-e</span> <span class="s2">" --------------------------------------------- "</span>
-        <span class="nb">echo</span> <span class="nt">-e</span> <span class="s2">"|    User    |    Host    |  Start Time | Use |"</span>	
-        <span class="nb">echo</span> <span class="nt">-e</span> <span class="s2">"|---------------------------------------------|"</span>
-    <span class="k">else
-        </span><span class="nb">echo</span> <span class="nt">-e</span> <span class="s2">" --------------------------------------- "</span>
-        <span class="nb">echo</span> <span class="nt">-e</span> <span class="s2">"|    User    |    Host    |  Start Time |"</span>	
-        <span class="nb">echo</span> <span class="nt">-e</span> <span class="s2">"|---------------------------------------|"</span>
-    <span class="k">fi
-
-    for </span>k <span class="k">in</span> <span class="sb">`</span><span class="nb">seq</span> <span class="k">$((</span> <span class="nv">$i</span> <span class="o">+</span> <span class="m">1</span> <span class="k">))</span> <span class="k">$((</span> <span class="nv">$j</span> <span class="o">-</span> <span class="m">1</span> <span class="k">))</span><span class="sb">`</span>
-    <span class="k">do
-        </span><span class="nv">LINE</span><span class="o">=</span><span class="si">$(</span><span class="nb">head</span> -<span class="nv">$k</span> <span class="nv">$FILE</span> | <span class="nb">tail</span> <span class="nt">-n</span> +<span class="nv">$k</span><span class="si">)</span>
-			
-        <span class="nv">USER</span><span class="o">=</span><span class="si">$(</span><span class="nb">echo</span> <span class="nv">$LINE</span> | <span class="nb">awk</span> <span class="s1">'{print $1}'</span> | <span class="nb">sed</span> <span class="s1">'s/$/         /'</span> | <span class="nb">cut</span> <span class="nt">-c</span> <span class="nt">-10</span><span class="si">)</span>
-        <span class="nv">COMP</span><span class="o">=</span><span class="si">$(</span><span class="nb">echo</span> <span class="nv">$LINE</span> | <span class="nb">awk</span> <span class="s1">'{print $2}'</span> | <span class="nb">sed</span> <span class="s1">'s/$/         /'</span> | <span class="nb">cut</span> <span class="nt">-c</span> <span class="nt">-10</span><span class="si">)</span>
-        <span class="nv">DATE</span><span class="o">=</span><span class="si">$(</span><span class="nb">printf</span> <span class="s2">"%02d/%02d"</span> <span class="si">$(</span><span class="nb">echo</span> <span class="nv">$LINE</span> | <span class="nb">awk</span> <span class="s1">'{print $10}'</span> | <span class="nb">sed</span> <span class="s1">'s/\// /'</span><span class="si">))</span>
-        <span class="nv">TIME</span><span class="o">=</span><span class="si">$(</span><span class="nb">printf</span> <span class="s2">"%02d:%s"</span>  <span class="si">$(</span><span class="nb">echo</span> <span class="nv">$LINE</span> | <span class="nb">awk</span> <span class="s1">'{print $11}'</span> | <span class="nb">sed</span> <span class="s1">'s/:/ /'</span> | <span class="nb">sed</span> <span class="s1">'s/,//'</span> <span class="si">))</span>
-			
-        <span class="k">if</span> <span class="o">[[</span> <span class="nv">$PROGRAM</span> <span class="o">==</span> <span class="s2">"anshpc"</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then
-            </span><span class="nv">USEHPC</span><span class="o">=</span><span class="si">$(</span><span class="nb">printf</span> <span class="s2">"%3d"</span> <span class="si">$(</span><span class="nb">echo</span> <span class="nv">$LINE</span> | <span class="nb">awk</span> <span class="s1">'{print $12}'</span> <span class="si">))</span>
-            <span class="nb">echo</span> <span class="nt">-e</span> <span class="s2">"| </span><span class="k">${</span><span class="nv">USER</span><span class="k">}</span><span class="s2"> | </span><span class="k">${</span><span class="nv">COMP</span><span class="k">}</span><span class="s2"> | </span><span class="k">${</span><span class="nv">DATE</span><span class="k">}</span><span class="s2">-</span><span class="k">${</span><span class="nv">TIME</span><span class="k">}</span><span class="s2"> | </span><span class="k">${</span><span class="nv">USEHPC</span><span class="k">}</span><span class="s2"> |"</span>
-        <span class="k">else
-            </span><span class="nb">echo</span> <span class="nt">-e</span> <span class="s2">"| </span><span class="k">${</span><span class="nv">USER</span><span class="k">}</span><span class="s2"> | </span><span class="k">${</span><span class="nv">COMP</span><span class="k">}</span><span class="s2"> | </span><span class="k">${</span><span class="nv">DATE</span><span class="k">}</span><span class="s2">-</span><span class="k">${</span><span class="nv">TIME</span><span class="k">}</span><span class="s2"> |"</span>
-        <span class="k">fi
-    done
-
-		
-    if</span> <span class="o">[[</span> <span class="nv">$PROGRAM</span> <span class="o">==</span> <span class="s2">"anshpc"</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then
-        </span><span class="nb">echo</span> <span class="nt">-e</span> <span class="s2">" --------------------------------------------- "</span>
-    <span class="k">else
-        </span><span class="nb">echo</span> <span class="nt">-e</span> <span class="s2">" --------------------------------------- "</span>
-    <span class="k">fi
-    </span><span class="nb">echo</span> <span class="s2">""</span>
-<span class="k">done
-
-</span><span class="nb">rm</span> <span class="nv">$FILE</span>
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>위 script를 사용한 출력 결과는 아래와 같다.</p>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@master ~]<span class="nv">$ </span>query_license_ansys 
-
-Only licenses being used now are shown.
-
-license <span class="k">in </span>used: anshpc <span class="o">(</span>used, available, total<span class="o">)</span> <span class="o">=</span> <span class="o">(</span>124, 956, 1080<span class="o">)</span>
-<span class="nt">---------------------------------------------</span> 
-|    User    |    Host    |  Start Time | Use |
-|---------------------------------------------|
-| shlee      | t009       | 04/16-14:03 | 124 |
-<span class="nt">---------------------------------------------</span> 
-
-license <span class="k">in </span>used: cfd_base <span class="o">(</span>used, available, total<span class="o">)</span> <span class="o">=</span> <span class="o">(</span>1, 24, 25<span class="o">)</span>
-<span class="nt">---------------------------------------</span> 
-|    User    |    Host    |  Start Time |
-|---------------------------------------|
-| shlee      | t009       | 04/16-14:03 |
-<span class="nt">---------------------------------------</span> 
-
-license <span class="k">in </span>used: cfd_solve_level1 <span class="o">(</span>used, available, total<span class="o">)</span> <span class="o">=</span> <span class="o">(</span>1, 24, 25<span class="o">)</span>
-<span class="nt">---------------------------------------</span> 
-|    User    |    Host    |  Start Time |
-|---------------------------------------|
-| shlee      | t009       | 04/16-14:03 |
-<span class="nt">---------------------------------------</span> 
-
-license <span class="k">in </span>used: cfd_solve_level2 <span class="o">(</span>used, available, total<span class="o">)</span> <span class="o">=</span> <span class="o">(</span>1, 24, 25<span class="o">)</span>
-<span class="nt">---------------------------------------</span> 
-|    User    |    Host    |  Start Time |
-|---------------------------------------|
-| shlee      | t009       | 04/16-14:03 |
-<span class="nt">---------------------------------------</span> 
-
-</code></pre></div>    </div>
-  </li>
-</ul>
-
-<h1 id="command">Command</h1>
-
-<ol>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">awk</code></p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">sed</code></p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">For</code></p>
-  </li>
-</ol>]]></content><author><name>bear11235</name></author><category term="linux" /><category term="cluster" /><category term="linux" /><category term="cluster" /><category term="license" /><summary type="html"><![CDATA[problem ANSYS client host에서 server host로 license status 요청하기]]></summary></entry></feed>
+</ol>]]></content><author><name>bear11235</name></author><category term="linux" /><category term="cluster" /><summary type="html"><![CDATA[problem ANSYS client host에서 server host로 license status 요청하기]]></summary></entry></feed>
