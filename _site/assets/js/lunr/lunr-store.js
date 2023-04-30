@@ -96,7 +96,7 @@ var store = [{
         "teaser": null
       },{
         "title": "Remote access with SSH tunneling",
-        "excerpt":" ","categories": ["linux","cluster"],
+        "excerpt":"개요 이 포스트는 보안 상의 이유로 인바운드 포트가 막혀있을 때, 이를 ssh tunneling을 통해 우회하여 통신하는 방식에 대해 소개한다. Cluster Configuration 현재 우리 연구실의 컴퓨터 클러스터 시스템은 아래 사진과 같이 구성되어 있다. 모든 CPU 및 GPU 컴퓨터, NAS, Switch 등은 코로케이션이라는 곳에 위치하고 있다. 기본적으로 서울대학교는 일부 포트(80, 443, 22...","categories": ["linux","cluster"],
         "tags": ["linux","cluster","firewall","ssh"],
         "url": "/linux/cluster/remote-access-via-ssh-tunneling/",
         "teaser": null
@@ -123,13 +123,13 @@ var store = [{
     "excerpt":"A variety of common markup showing how the theme styles them. Header one Header two Header three Header four Header five Header six Blockquotes Single line blockquote: Stay hungry. Stay foolish. Multi line blockquote with a cite reference: People think focus means saying yes to the thing you’ve got to...","url": "http://localhost:4000/archive-layout-with-content/"
   },{
     "title": "Linux - Cluster",
-    "excerpt":"Remote access with SSH tunneling April 23, 2023 최대 1 분 소요 Query a TecPlot license status April 16, 2023 2 분 소요 problem TecPlot client host에서 server host로 license status 요청하기 Query an Ansys license status April 16, 2023 3 분 소요 problem ANSYS client host에서 server host로 license...","url": "http://localhost:4000/linux/cluster"
+    "excerpt":"Remote access with SSH tunneling April 23, 2023 4 분 소요 개요 이 포스트는 보안 상의 이유로 인바운드 포트가 막혀있을 때, 이를 ssh tunneling을 통해 우회하여 통신하는 방식에 대해 소개한다. Query a TecPlot license status April 16, 2023 2 분 소요 problem TecPlot client host에서 server host로 license status 요청하기...","url": "http://localhost:4000/linux/cluster"
   },{
     "title": "Linux - Command",
     "excerpt":"                              commands test                                                                     April 16, 2023                                                                           3 분 소요                                problem    ANSYS client host에서 server host로 license status 요청하기         ","url": "http://localhost:4000/linux/command"
   },{
     "title": "Linux",
-    "excerpt":"Remote access with SSH tunneling April 23, 2023 최대 1 분 소요 commands test April 16, 2023 3 분 소요 problem ANSYS client host에서 server host로 license status 요청하기 Query a TecPlot license status April 16, 2023 2 분 소요 problem TecPlot client host에서 server host로 license status 요청하기 Query...","url": "http://localhost:4000/linux"
+    "excerpt":"Remote access with SSH tunneling April 23, 2023 4 분 소요 개요 이 포스트는 보안 상의 이유로 인바운드 포트가 막혀있을 때, 이를 ssh tunneling을 통해 우회하여 통신하는 방식에 대해 소개한다. commands test April 16, 2023 3 분 소요 problem ANSYS client host에서 server host로 license status 요청하기 Query a TecPlot...","url": "http://localhost:4000/linux"
   },{
     "title": "Research - Research 1",
     "excerpt":"                              Research Note                                                                     April 1, 2023                                                                           최대 1 분 소요                                2023-04-11 (화)    두 개의 난류 유동이 있을 때, 그 둘의 유사성을 어떻게 판단할 것인가?         ","url": "http://localhost:4000/research/research-1"
