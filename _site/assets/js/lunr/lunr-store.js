@@ -114,7 +114,7 @@ var store = [{
         "teaser": null
       },{
         "title": "Segmenting Continuous Motions with Hidden Semi-markov Models and Gaussian Processes",
-        "excerpt":"Introduction   Related Work   #  ","categories": ["paper","paper-ML-DL"],
+        "excerpt":"Introduction   Related Work   #asdasf -asdf00  ","categories": ["paper","paper-ML-DL"],
         "tags": ["paper review","ML-DL","gaussian process"],
         "url": "/paper/paper-ml-dl/bayesian-network/",
         "teaser": null
