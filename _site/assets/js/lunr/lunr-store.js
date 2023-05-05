@@ -113,6 +113,12 @@ var store = [{
         "url": "/study/ml-dl/gaussian-process/",
         "teaser": null
       },{
+        "title": "Segmenting Continuous Motions with Hidden Semi-markov Models and Gaussian Processes",
+        "excerpt":"Introduction   Related Work   #  ","categories": ["paper","paper-ML-DL"],
+        "tags": ["paper review","ML-DL","gaussian process"],
+        "url": "/paper/paper-ml-dl/bayesian-network/",
+        "teaser": null
+      },{
     "title": "Page Not Found",
     "excerpt":"Sorry, but the page you were trying to view does not exist.  ","url": "http://localhost:4000/404.html"
   },{
@@ -130,6 +136,15 @@ var store = [{
   },{
     "title": "Linux",
     "excerpt":"Remote access with SSH tunneling April 23, 2023 최대 1 분 소요 commands test April 16, 2023 3 분 소요 problem ANSYS client host에서 server host로 license status 요청하기 Query a TecPlot license status April 16, 2023 2 분 소요 problem TecPlot client host에서 server host로 license status 요청하기 Query...","url": "http://localhost:4000/linux"
+  },{
+    "title": "Paper Review - Fluid Mechanics",
+    "excerpt":" ","url": "http://localhost:4000/paper-review/fluid-mechanics"
+  },{
+    "title": "Paper Review - Machine Learning / Deep Learning",
+    "excerpt":"                              Segmenting Continuous Motions with Hidden Semi-markov Models and Gaussian Processes                                                                     May 5, 2023                                                                           최대 1 분 소요                                Introduction        ","url": "http://localhost:4000/paper-review/ML-DL"
+  },{
+    "title": "Paper Review",
+    "excerpt":"                              Segmenting Continuous Motions with Hidden Semi-markov Models and Gaussian Processes                                                                     May 5, 2023                                                                           최대 1 분 소요                                Introduction        ","url": "http://localhost:4000/paper-review"
   },{
     "title": "Research - Research 1",
     "excerpt":"                              Research Note                                                                     April 1, 2023                                                                           최대 1 분 소요                                2023-04-11 (화)    두 개의 난류 유동이 있을 때, 그 둘의 유사성을 어떻게 판단할 것인가?         ","url": "http://localhost:4000/research/research-1"
@@ -156,7 +171,7 @@ var store = [{
     "excerpt":" ","url": "http://localhost:4000/categories/"
   },{
     "title": "Posts by Collection",
-    "excerpt":"                                                                                                                                                                 ","url": "http://localhost:4000/collection-archive/"
+    "excerpt":"                                                                                                                                                                         ","url": "http://localhost:4000/collection-archive/"
   },{
     "title": "Edge Case",
     "excerpt":"Sample post listing for the category Edge Case.  ","url": "http://localhost:4000/categories/edge-case/"
@@ -296,6 +311,12 @@ var store = [{
     "title": "GP",
     "excerpt":"","url": "http://localhost:4000/tags/gp/"
   },{
+    "title": "paper review",
+    "excerpt":"","url": "http://localhost:4000/tags/paper-review/"
+  },{
+    "title": "gaussian process",
+    "excerpt":"","url": "http://localhost:4000/tags/gaussian-process/"
+  },{
     "title": "research",
     "excerpt":"","url": "http://localhost:4000/categories/research/"
   },{
@@ -325,6 +346,12 @@ var store = [{
   },{
     "title": "turbo-machines",
     "excerpt":"","url": "http://localhost:4000/categories/turbo-machines/"
+  },{
+    "title": "paper",
+    "excerpt":"","url": "http://localhost:4000/categories/paper/"
+  },{
+    "title": "paper-ML-DL",
+    "excerpt":"","url": "http://localhost:4000/categories/paper-ml-dl/"
   },{
     "title": null,
     "excerpt":"","url": "http://localhost:4000/page2/"
