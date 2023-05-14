@@ -77,6 +77,14 @@
 <lastmod>2023-04-28T00:00:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/study/turbulence/coherent-structures/</loc>
+<lastmod>2023-05-12T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/study/turbulence/turbulence/</loc>
+<lastmod>2023-05-12T00:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/about/</loc>
 </url>
 <url>
@@ -108,6 +116,9 @@
 </url>
 <url>
 <loc>http://localhost:4000/study/turbo-machines</loc>
+</url>
+<url>
+<loc>http://localhost:4000/study/turbulence</loc>
 </url>
 <url>
 <loc>http://localhost:4000/study</loc>
@@ -279,6 +290,9 @@
 <loc>http://localhost:4000/categories/turbo-machines/</loc>
 </url>
 <url>
+<loc>http://localhost:4000/categories/turbulence/</loc>
+</url>
+<url>
 <loc>http://localhost:4000/page2/</loc>
 </url>
 <url>
@@ -286,6 +300,9 @@
 </url>
 <url>
 <loc>http://localhost:4000/page4/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/page5/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/assets/files/shlee_CV.pdf</loc>

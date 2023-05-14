@@ -1,4 +1,85 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-04-30T12:07:30+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">bear11235’s blog</title><subtitle>bear11235&apos;s study blog. </subtitle><author><name>bear11235</name></author><entry><title type="html">[ML/DL] Gaussian Process 공부하기</title><link href="http://localhost:4000/study/ml-dl/gaussian-process/" rel="alternate" type="text/html" title="[ML/DL] Gaussian Process 공부하기" /><published>2023-04-28T00:00:00+09:00</published><updated>2023-04-28T00:00:00+09:00</updated><id>http://localhost:4000/study/ml-dl/gaussian-process</id><content type="html" xml:base="http://localhost:4000/study/ml-dl/gaussian-process/"><![CDATA[<h1 id="learning">Learning</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-05-13T12:34:30+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">bear11235’s blog</title><subtitle>bear11235&apos;s study blog. </subtitle><author><name>bear11235</name></author><entry><title type="html">Coherent Structures in Turbulence</title><link href="http://localhost:4000/study/turbulence/coherent-structures/" rel="alternate" type="text/html" title="Coherent Structures in Turbulence" /><published>2023-05-12T00:00:00+09:00</published><updated>2023-05-12T00:00:00+09:00</updated><id>http://localhost:4000/study/turbulence/coherent-structures</id><content type="html" xml:base="http://localhost:4000/study/turbulence/coherent-structures/"><![CDATA[<h1 id="coherent-structures-and-turbulence-1968">Coherent structures and turbulence (1968)</h1>
+<ul>
+  <li>Journal of Fluid Mechanics (1986)</li>
+  <li>Author: FAZLE HUSSAIN</li>
+</ul>
+
+<h2 id="introduction">Introduction</h2>
+<p>Coherent structure(난류 구조)는 무질서하게 보이는 난류에서 질서를 찾고자 하는 우리의 노력이 투영된 결과로 볼 수 있다.</p>
+
+<h2 id="the-nature-of-coherent-structures">The nature of coherent structures</h2>
+<h3 id="earlier-approaches---flow-visualization">Earlier approaches - flow visualization</h3>
+<p>거의 대부분의 난류 구조 연구는 유동 가시화에 기반하여 진행되었다. 이런 방법을 사용할 때, 하류에서 the marker outline has little to do with the boundary of the turbulent domain. 우선 마커가 빠르게 번져서 국소적 유동을 선명히 볼 수 없다. 마커는 입자가 지나온 전 과정의 history를 모두 반영한다. 또 난류에 의해 마커의 선명함뿐 아니라 농도도 퍼진다. 심지어 층류 유동에서도 vortex boundary와 많은 차이를 보일 수 있다. 유동 가시화는 보충의 역할로서 수행되어야 한다.</p>
+
+<h3 id="dejinition-and-characteristics-of-coherent-structures">Dejinition and characteristics of coherent structures</h3>
+<p><strong>There is as yet no consensus in what is meant by coherent structures</strong>. Most researchers
+have seen pictures of structures in a mixing layer. 원칙적으로 난류 구조와 같은 개념은 암묵적으로 두는 것이 최선이다. 하지만 난류 구조를 측정하고 그들의 역학을 평가하기 위해서는 난류 구조에 대한 정의를 세워야 한다.</p>
+
+<p><strong>A coherent structure is a connected turbulent fluid mass with instantaneously phase-correlated vorticity over its spatial extent</strong>. That is, underlying the random, three-dimensional vorticity that characterizes turbulence, there is a component of large-scale vorticity which is instantaneously coherent over the spatial extent of a coherent structure Coherent vorticity is the primary identifier of coherent structures, which have distinct boundaries and independent territories.</p>
+
+<p>이러한 정의에 의해, 난류 유동은 coherent / in-coherent structure로 분해될 수 있다. 앙상블 평균을 내면 in-coherent 구조는 날아가고 coherent 구조를 특징지을 수 있다. The ensemble average of appropriately phase-aligned realizations containing similar organized events is a coherent structure; whatever is not included in the ensemble average is incoherent turbulence.</p>]]></content><author><name>bear11235</name></author><category term="study" /><category term="turbulence" /><summary type="html"><![CDATA[Coherent structures and turbulence (1968) Journal of Fluid Mechanics (1986) Author: FAZLE HUSSAIN]]></summary></entry><entry><title type="html">Turbulence Equations</title><link href="http://localhost:4000/study/turbulence/turbulence/" rel="alternate" type="text/html" title="Turbulence Equations" /><published>2023-05-12T00:00:00+09:00</published><updated>2023-05-12T00:00:00+09:00</updated><id>http://localhost:4000/study/turbulence/turbulence</id><content type="html" xml:base="http://localhost:4000/study/turbulence/turbulence/"><![CDATA[<h1 id="types-of-turbulence">Types of Turbulence</h1>
+<h2 id="statistically-homogeneous-turbulence">Statistically Homogeneous Turbulence</h2>
+<ul>
+  <li>All statistics of fluctuating quantities are invariant under translation of the coordinate system</li>
+  <li>어디에서 난류 유동의 통계량을 측정해도 같은 값을 가짐</li>
+  <li>모든 곳에서 평균 속도에 대한 gradient는 0이어야 하고, 따라서 모든 곳에서 평균 속도는 모두 0을 가짐</li>
+  <li>Kolmogorov hypotheses: Turbulent motions on small scales are typically assumed to be isotropic</li>
+</ul>
+
+<figure class="third center">
+  <img src="/assets/images/posts/linux/Turbulence/introduction/01.png" />
+  <figcaption>DNS of statistically homogeneous and isotropic turbulence: x1-component of the velocity
+</figcaption>
+</figure>
+
+<h2 id="turbulent-shear-flow">Turbulent Shear Flow</h2>
+<ul>
+  <li>Relevant flow cases in technical systems
+    <ul>
+      <li>Round jet</li>
+      <li>Flow around airfoil</li>
+      <li>Flows in combustion chamber</li>
+    </ul>
+  </li>
+  <li>Due to the complexity of these turbulent flows they cannot be described theoretically</li>
+</ul>
+
+<figure class="third center">
+  <img src="/assets/images/posts/linux/Turbulence/introduction/02.png" />
+  <img src="/assets/images/posts/linux/Turbulence/introduction/03.png" />
+  <figcaption>
+  Temporally evolving shear layer“: Scalar dissipation rate χ (left), mixture fraction Z (rechts)
+</figcaption>
+</figure>
+
+<h1 id="equations">Equations</h1>
+<h2 id="mean-flow-equations">Mean-flow Equations</h2>
+<ul>
+  <li>Averaged Momentum Equation</li>
+</ul>
+<figure class="two-third center" style="margin: 0 0">
+  <img src="/assets/images/posts/linux/Turbulence/introduction/04.png" />
+</figure>
+
+<p>The last term is defined as Reynolds stress tensor:</p>
+
+\[\tau_{ij,turb}=-\rho \overline{u'_i u'_j}\]
+
+<h2 id="reynolds-stress-equations">Reynolds Stress Equations</h2>
+<figure class="two-third center" style="margin: 0 0">
+  <img src="/assets/images/posts/linux/Turbulence/introduction/05-1.png" />
+  <img src="/assets/images/posts/linux/Turbulence/introduction/05-2.png" />
+</figure>
+
+<p><strong>Physical meaning of each term</strong></p>
+<ul>
+  <li>\(L\): Local change</li>
+  <li>\(C\): Convective transport</li>
+  <li>\(P\): Production of Reynolds stresses (negative product of Reynolds-stress tensor and the gradient of time-averaged velocity)</li>
+  <li>\(DS\): (Pseudo-)dissipation of Reynolds stresses</li>
+  <li>\(PSC\): pressure-rate-of-strain correlation. It contributes to the redistribution of Reynolds stresses in a similar way the diffusion term does</li>
+  <li>\(DF\): diffusion of the Reynolds stresses. It includes all terms under the divergence operator</li>
+</ul>]]></content><author><name>bear11235</name></author><category term="study" /><category term="turbulence" /><summary type="html"><![CDATA[Types of Turbulence Statistically Homogeneous Turbulence All statistics of fluctuating quantities are invariant under translation of the coordinate system 어디에서 난류 유동의 통계량을 측정해도 같은 값을 가짐 모든 곳에서 평균 속도에 대한 gradient는 0이어야 하고, 따라서 모든 곳에서 평균 속도는 모두 0을 가짐 Kolmogorov hypotheses: Turbulent motions on small scales are typically assumed to be isotropic]]></summary></entry><entry><title type="html">[ML/DL] Gaussian Process 공부하기</title><link href="http://localhost:4000/study/ml-dl/gaussian-process/" rel="alternate" type="text/html" title="[ML/DL] Gaussian Process 공부하기" /><published>2023-04-28T00:00:00+09:00</published><updated>2023-04-28T00:00:00+09:00</updated><id>http://localhost:4000/study/ml-dl/gaussian-process</id><content type="html" xml:base="http://localhost:4000/study/ml-dl/gaussian-process/"><![CDATA[<h1 id="learning">Learning</h1>
 
 <h2 id="log-likelihood-of-mvn">Log-Likelihood of MVN</h2>
 <p>GP를 실제 데이터에 적용하면 우리가 얻게되는 데이터의 형태는 Multi-Variate Normal(MVN) 분포를 따르게 된다. n차원의 MVN 분포를 생각해보자. 평균은 n차원의 벡터로, 공분산은 \(n \times n\)의 행렬로 표현된다.</p>
@@ -361,275 +442,4 @@ AdaBoost도 Boosting이므로 classifier를 순차적으로 학습한다. 첫번
 
 <p>*유사도라는 개념. w를 x의 선형 결합으로 표현한다는 것은 데이터 사이의 유사도 개념과 밀접하다. perceptron 예시 참고.</p>
 
-<h2 id="kernel-pca">Kernel PCA</h2>]]></content><author><name>bear11235</name></author><category term="study" /><category term="ML-DL" /><category term="study" /><category term="ML-DL" /><category term="kernel" /><summary type="html"><![CDATA[Linear Regression with Non-linear Features]]></summary></entry><entry><title type="html">EM 알고리즘 공부하기</title><link href="http://localhost:4000/study/ml-dl/expectation-maximization/" rel="alternate" type="text/html" title="EM 알고리즘 공부하기" /><published>2023-04-18T00:00:00+09:00</published><updated>2023-04-18T00:00:00+09:00</updated><id>http://localhost:4000/study/ml-dl/expectation-maximization</id><content type="html" xml:base="http://localhost:4000/study/ml-dl/expectation-maximization/"><![CDATA[]]></content><author><name>bear11235</name></author><category term="study" /><category term="ML-DL" /><category term="study" /><category term="ML-DL" /><category term="EM" /><category term="GMM" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Undirected model 공부하기</title><link href="http://localhost:4000/study/ml-dl/undirected-graphical-model/" rel="alternate" type="text/html" title="Undirected model 공부하기" /><published>2023-04-18T00:00:00+09:00</published><updated>2023-04-18T00:00:00+09:00</updated><id>http://localhost:4000/study/ml-dl/undirected-graphical-model</id><content type="html" xml:base="http://localhost:4000/study/ml-dl/undirected-graphical-model/"><![CDATA[<h1 id="directed-vs-undirected">Directed vs Undirected</h1>
-<ul>
-  <li>적용하고자 하는 application에서 변수 간 order가 있을 수도 있고 없을 수도 있음.</li>
-  <li>오늘의 날씨와 내일의 날씨는 order가 있음.</li>
-  <li>이미지의 픽셀 정보는 order가 없음.</li>
-  <li>순서가 있는 경우에는 DAG 모델을 주로 사용하고, 순서가 없는 경우에는 Undirected Graphical Model(UG, UGM) 혹은 Markov Random Fields(MRF)를 사용한다.</li>
-  <li>BN에서는 Conditional Probability Table(CPT)를 사용하여 변수 간 관계를 정했다면, UG에서는 각 변수 노드간 연결이 “얼마나 잘 어울리는가”, “그럴듯한 조합이다”의 정도를 판단한다. (?)</li>
-</ul>
-
-<h2 id="ug의-예시">UG의 예시</h2>
-<ol>
-  <li>Ising Model
-    <ul>
-      <li>격자 구조를 갖는 분자 구조에서 각 분자의 극성(+/-)은 해당 분자의 주변 분자에서 영향을 갖는다.</li>
-      <li>확률이 높은 상태라는 것은 에너지가 낮은 상태라는 것.</li>
-    </ul>
-  </li>
-  <li>이미지 처리
-    <ul>
-      <li>이미지에서 denoising. noised pixel value는 실제 관측된 값, true pixel value는 관측되지 않은 값이라 생각할 수 있다. noised value를 가지고 denoised value를 확률적으로 추정할 수 있을까?</li>
-    </ul>
-  </li>
-</ol>
-
-<h1 id="ug의-수학적-표현">UG의 수학적 표현</h1>
-
-<h2 id="정의">정의</h2>
-<ul>
-  <li><strong>Clique</strong>
-    <ul>
-      <li>어떤 그래프 \(G\)가 주어져 있을 때, 그것의 subgraph 중 complete graph를 의미한다.</li>
-      <li>즉 부분 그래프 중 완전그래프를 clique라고 정의.</li>
-      <li>노드의 개수가 0개인 경우 또한 clique</li>
-      <li>노드의 개수가 1개인 경우 또한 clique</li>
-      <li>Maximal Clique: 모든 clique 중에 가장 큰 clique. 가장 크다는 것은 어떤 노드를 추가하더라도 clique이 되지 못하는 경우를 의미.</li>
-    </ul>
-  </li>
-  <li><strong>Potential Function</strong>, \(\psi_c(\mathbf{x}_c)\)
-    <ul>
-      <li>\(c\)라는 clique 안의 x에 대해 \(\mathbf{x}_c\)가 얼마나 그럴듯한지 (확률이 높은지) 의미하는 함수.</li>
-    </ul>
-  </li>
-  <li><strong>Partition Function</strong>, Z
-    <ul>
-      <li>Normalize를 위한 상수.</li>
-      <li>\(Z = \sum_{x_1, \cdots, x_n} \prod_{c\in C} \psi_c(x_c)\): 모든 clique에 대한 potential function 값을 모두 곱한 뒤, 가능한 모든 x의 경우에 대해 더한다.</li>
-    </ul>
-  </li>
-</ul>
-
-<h2 id="표현">표현</h2>
-<ul>
-  <li>n개의 노드를 가진 undirected graph, \(H\)를 생각하자. n개 변수들의 확률 분포는 \(P(X_1, \cdots, X_n)\)으로 표현할 수 있다.</li>
-  <li>확률 분포는 아래와 같이 potential functions의 곱으로 표현됨. (이처럼 될 수 있다는 정리는 뒷부분에)</li>
-  <li>
-\[P(x_1, \cdots, x_n) = \frac{1}{Z} \prod_{c\in C}\psi_c(x_c)\]
-  </li>
-  <li>clique을 이용하여 UG의 확률분포를 표현할 수 있는데, maximal clique만 사용할 수도 있고, 모든 clique을 다 사용할 수도 있다.
-    <ul>
-      <li>
-\[P(x_1, x_2, x_3, x_4) = 
-\frac{1}{Z} \psi_{124}(\mathbf{x}_{124}) \psi_{234}(\mathbf{x}_{234})\]
-      </li>
-      <li>만약 3개 clique만을 사용한다면 변수 2개 사이 관계는 못 보지 않을까?</li>
-      <li>즉 확률 분포를 어떤 clique들의 조합으로 보는지 또한 모델링 과정 중 하나일 듯.</li>
-    </ul>
-  </li>
-</ul>
-
-<h2 id="interpretation-of-clique-potentials">Interpretation of clique potentials</h2>
-<p>X-Y-Z 라는 모델은 X와 Z의 Y에 대한 조건부 확률을 의미한다: \(X \mathrel{\unicode{x2AEB}} Z \vert Y\) (일단 지금 단계에서는 받아들이자.) 확률 분포는 아래와 같이 주어져야 한다.</p>
-
-\[p(x,y,z) = p(y) p(x \vert y) p(z \vert y)\]
-
-<p>또한 위에서 살펴본 것처럼, 확률 분포는 potential functions의 곱으로 표현된다.</p>
-
-\[p(x,y,z) = \psi_{xy} \psi_{yz}\]
-
-<p>그렇다면 여기서 potential function의 의미는?</p>
-<ul>
-  <li>\(p(x,y,z) = p(x,y) p(z \vert y)\) 혹은 \(p(x,y,z) = p(z,y) p(x \vert y)\)로도 표현할 수 있지만, 그렇게 되면 각각의 potential은 marginalize 혹은 conditionalize 될 수 없다. (?)</li>
-  <li>따라서 potential function을 확률로서 생각하지 말고, 그 값이 높으면 확률이 높으므로 서로 연결된 값이 얼마나 그럴듯한 값들을 가지고 있는지 정도로 생각하자.</li>
-</ul>
-
-<h2 id="clique-potentials-in-exponential-form">Clique Potentials in Exponential Form</h2>
-<p>clique potential이 항상 양수가 되게끔 하는 것이 불편한 경우가 있다. 예를 들어 분자의 극성을 표현할 때는 +/-로 표현하는 것이 편하겠지. 그렇기 때문에 실수 범위에서 정의되는 함수를 하나 생각하고 그 함수에 expotential 함수를 취해 양수 범위로 mapping하자.</p>
-
-\[\psi_c(x_c) = \exp\{ -\phi_c(x_c) \}\]
-
-<p>그렇게 되면 확률 분포는 Gibbs distribution을 따르게 된다.</p>
-
-\[p(x) = 
-\frac{1}{Z} \prod_{c\in C} \psi_c(x_c) = 
-\frac{1}{Z} \exp\left( -\sum_{c\in C} \phi_c(x_c) \right)\]
-
-<h1 id="왜-clique를-이용하여-확률-분포를-생각하는가">왜 clique를 이용하여 확률 분포를 생각하는가?</h1>]]></content><author><name>bear11235</name></author><category term="study" /><category term="ML-DL" /><category term="study" /><category term="ML-DL" /><category term="graph model" /><category term="bayesian network" /><category term="UG" /><category term="DAG" /><summary type="html"><![CDATA[Directed vs Undirected 적용하고자 하는 application에서 변수 간 order가 있을 수도 있고 없을 수도 있음. 오늘의 날씨와 내일의 날씨는 order가 있음. 이미지의 픽셀 정보는 order가 없음. 순서가 있는 경우에는 DAG 모델을 주로 사용하고, 순서가 없는 경우에는 Undirected Graphical Model(UG, UGM) 혹은 Markov Random Fields(MRF)를 사용한다. BN에서는 Conditional Probability Table(CPT)를 사용하여 변수 간 관계를 정했다면, UG에서는 각 변수 노드간 연결이 “얼마나 잘 어울리는가”, “그럴듯한 조합이다”의 정도를 판단한다. (?)]]></summary></entry><entry><title type="html">cluster test</title><link href="http://localhost:4000/linux/cluster/cluster-test/" rel="alternate" type="text/html" title="cluster test" /><published>2023-04-16T00:00:00+09:00</published><updated>2023-04-16T00:00:00+09:00</updated><id>http://localhost:4000/linux/cluster/cluster-test</id><content type="html" xml:base="http://localhost:4000/linux/cluster/cluster-test/"><![CDATA[<h1 id="problem">problem</h1>
-<ul>
-  <li>ANSYS client host에서 server host로 license status 요청하기</li>
-</ul>
-
-<h1 id="solution">Solution</h1>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">lmutil lmstat -c PORT@SERVER -a</code></li>
-  <li>
-    <p>모든 프로그램에 대한 현재 라이센스 상태를 보여준다.</p>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@master ~]<span class="nv">$ </span>/nopt/ansys_inc/v202/licensingclient/linx64/lmutil lmstat <span class="nt">-c</span> 1055@license.tml <span class="nt">-a</span>
-
-lmutil - Copyright <span class="o">(</span>c<span class="o">)</span> 1989-2015 Flexera Software LLC. All Rights Reserved.
-Flexible License Manager status on Sun 4/16/2023 14:03
-
-License server status: 1055@license.tml
-    License file<span class="o">(</span>s<span class="o">)</span> on license.tml: /ansys_inc/shared_files/licensing/license_files/ansyslmd.lic:
-
-license.tml: license server UP <span class="o">(</span>MASTER<span class="o">)</span> v11.19.0
-
-Vendor daemon status <span class="o">(</span>on license.tml<span class="o">)</span>:
-
-ansyslmd: UP v11.19.0
-Feature usage info:
-
-Users of anshpc:  <span class="o">(</span>Total of 1080 licenses issued<span class="p">;</span>  Total of 124 licenses <span class="k">in </span>use<span class="o">)</span>
-
-<span class="s2">"anshpc"</span> v2020.0514, vendor: ansyslmd, expiry: 1-jan-0
-floating license
-
-    shlee t009 t009.tml 60048 <span class="o">(</span>v2020.0507<span class="o">)</span> <span class="o">(</span>license.tml/1055 1404<span class="o">)</span>, start Sun 4/16 14:02, 124 licenses
-
-Users of 1spacdes:  <span class="o">(</span>Total of 26 licenses issued<span class="p">;</span>  Total of 0 licenses <span class="k">in </span>use<span class="o">)</span>
-
-Users of cfd_base:  <span class="o">(</span>Total of 25 licenses issued<span class="p">;</span>  Total of 1 license <span class="k">in </span>use<span class="o">)</span>
-
-<span class="s2">"cfd_base"</span> v2020.0514, vendor: ansyslmd, expiry: 1-jan-0
-floating license
-
-    shlee t009 t009.tml 60048 <span class="o">(</span>v2020.0507<span class="o">)</span> <span class="o">(</span>license.tml/1055 1304<span class="o">)</span>, start Sun 4/16 14:02
-
-...
-</code></pre></div>    </div>
-  </li>
-  <li>현재 사용중인 license만 출력하기 위해 별도의 shell script 작성</li>
-  <li>사용중인 라이센스에 대해 USER, HOST, Start Time, (USED, AVAILABLE, TOTAL) 출력</li>
-  <li>HPC의 경우, 해당 작업이 사용중인 license 개수도 출력
-    <ol>
-      <li><code class="language-plaintext highlighter-rouge">lmutil lmstat -c PORT@SERVER -a</code>: 전체 license status를 출력한다.</li>
-      <li><code class="language-plaintext highlighter-rouge">sed '/Total of 0 licenses in use/d'</code>: 사용중인 license 개수가 0인 프로그램 문장은 지운다.</li>
-      <li><code class="language-plaintext highlighter-rouge">sed '/^[[:space:]]*$/d'</code>: 빈 문장 지운다.</li>
-      <li><code class="language-plaintext highlighter-rouge">awk '!/floating/' | awk '!/expiry/' </code>: license 사용중인 프로그램의 경우 ‘floating’과 ‘expiry’란 단어가 들어간 문장이 등장하는데 필요 없으므로 지운다.</li>
-      <li><code class="language-plaintext highlighter-rouge">sed -e '1,8d'</code>: 앞에 필요없는 문장 지운다.</li>
-      <li><code class="language-plaintext highlighter-rouge">$INDEX, $PROGRAMS</code>: For loop을 돌릴 때 필요한 변수. For loop을 돌면서 사용중인 프로그램에 대해서 각각 USER, Host 등 필요한 정보를 양식에 맞춰 기록한다.</li>
-      <li><code class="language-plaintext highlighter-rouge">USER</code>, <code class="language-plaintext highlighter-rouge">HOST</code>, <code class="language-plaintext highlighter-rouge">DATE</code> 등 필요한 정보를 <code class="language-plaintext highlighter-rouge">awk</code>, <code class="language-plaintext highlighter-rouge">sed</code>, <code class="language-plaintext highlighter-rouge">printf</code> 등의 command를 통해 양식에 맞도록 출력한다.</li>
-      <li>임시 파일을 지우면서 마무리한다.</li>
-    </ol>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@master bin]# <span class="nb">cat </span>query_license_ansys.sh 
-<span class="c">#!/bin/bash</span>
-<span class="nb">echo</span> <span class="s2">""</span>
-<span class="nb">echo</span> <span class="s2">"Only licenses being used now are shown."</span>
-<span class="nb">echo</span> <span class="s2">""</span>
-
-<span class="nv">FILE</span><span class="o">=</span><span class="nv">$HOME</span>/.license_status_ansys.tmp
-
-/nopt/ansys_inc/v202/licensingclient/linx64/lmutil lmstat <span class="nt">-c</span> 1055@license.tml <span class="nt">-a</span> |<span class="se">\</span>
-<span class="nb">sed</span> <span class="s1">'/Total of 0 licenses in use/d'</span> |<span class="se">\</span>
-<span class="nb">sed</span> <span class="s1">'/^[[:space:]]*$/d'</span> |<span class="se">\</span>
-<span class="nb">awk</span> <span class="s1">'!/floating/'</span> | <span class="nb">awk</span> <span class="s1">'!/expiry/'</span> |<span class="se">\</span>
-<span class="nb">sed</span> <span class="nt">-e</span> <span class="s1">'1,8d'</span> <span class="o">&gt;</span> <span class="nv">$FILE</span>
-
-<span class="nv">INDEX</span><span class="o">=(</span><span class="si">$(</span><span class="nb">cat</span> <span class="nv">$FILE</span> | <span class="nb">nl</span> | <span class="nb">grep</span> <span class="s2">"Users of"</span> | <span class="nb">awk</span> <span class="s1">'{print $1}'</span><span class="si">)</span> <span class="k">$((</span> <span class="sb">`</span><span class="o">(</span><span class="nb">cat</span> <span class="nv">$FILE</span> | <span class="nb">nl</span> | <span class="nb">tail</span> <span class="nt">-1</span> | <span class="nb">awk</span> <span class="s1">'{print $1}'</span><span class="o">)</span><span class="sb">`</span> <span class="o">+</span> <span class="m">1</span> <span class="k">))</span> <span class="o">)</span>
-<span class="nv">PROGRAMS</span><span class="o">=(</span><span class="si">$(</span><span class="nb">cat</span> <span class="nv">$FILE</span> | <span class="nb">grep</span> <span class="s2">"Users of"</span> | <span class="nb">awk</span> <span class="s1">'{print $3}'</span> | <span class="nb">sed</span> <span class="s1">'s/://g'</span><span class="si">)</span><span class="o">)</span>
-
-<span class="k">for </span>idx <span class="k">in</span> <span class="sb">`</span><span class="nb">seq </span>0 <span class="k">$((</span> <span class="k">${#</span><span class="nv">PROGRAMS</span><span class="p">[@]</span><span class="k">}</span> <span class="o">-</span><span class="m">1</span> <span class="k">))</span><span class="sb">`</span>
-<span class="k">do
-    </span><span class="nv">i</span><span class="o">=</span><span class="k">${</span><span class="nv">INDEX</span><span class="p">[</span><span class="nv">$idx</span><span class="p">]</span><span class="k">}</span>
-    <span class="nv">j</span><span class="o">=</span><span class="k">${</span><span class="nv">INDEX</span><span class="p">[</span><span class="k">$((</span> <span class="nv">$idx</span> <span class="o">+</span> <span class="m">1</span> <span class="k">))</span><span class="p">]</span><span class="k">}</span>
-    <span class="nv">PROGRAM</span><span class="o">=</span><span class="k">${</span><span class="nv">PROGRAMS</span><span class="p">[</span><span class="nv">$idx</span><span class="p">]</span><span class="k">}</span>
-    <span class="nv">TOT</span><span class="o">=</span><span class="si">$(</span><span class="nb">head</span> -<span class="nv">$i</span> <span class="nv">$FILE</span> | <span class="nb">tail</span> <span class="nt">-n</span> +<span class="nv">$i</span> | <span class="nb">awk</span> <span class="s1">'{print $6}'</span><span class="si">)</span>
-    <span class="nv">USE</span><span class="o">=</span><span class="si">$(</span><span class="nb">head</span> -<span class="nv">$i</span> <span class="nv">$FILE</span> | <span class="nb">tail</span> <span class="nt">-n</span> +<span class="nv">$i</span> | <span class="nb">awk</span> <span class="s1">'{print $11}'</span><span class="si">)</span>
-    <span class="nv">AVA</span><span class="o">=</span><span class="k">$((</span> <span class="nv">$TOT</span> <span class="o">-</span> <span class="nv">$USE</span> <span class="k">))</span>
-    <span class="nb">echo</span> <span class="nt">-e</span> <span class="s2">"license in used: </span><span class="k">${</span><span class="nv">PROGRAM</span><span class="k">}</span><span class="s2"> (used, available, total) = (</span><span class="k">${</span><span class="nv">USE</span><span class="k">}</span><span class="s2">, </span><span class="k">${</span><span class="nv">AVA</span><span class="k">}</span><span class="s2">, </span><span class="k">${</span><span class="nv">TOT</span><span class="k">}</span><span class="s2">)"</span>
-
-    <span class="k">if</span> <span class="o">[[</span> <span class="nv">$PROGRAM</span> <span class="o">==</span> <span class="s2">"anshpc"</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then
-        </span><span class="nb">echo</span> <span class="nt">-e</span> <span class="s2">" --------------------------------------------- "</span>
-        <span class="nb">echo</span> <span class="nt">-e</span> <span class="s2">"|    User    |    Host    |  Start Time | Use |"</span>	
-        <span class="nb">echo</span> <span class="nt">-e</span> <span class="s2">"|---------------------------------------------|"</span>
-    <span class="k">else
-        </span><span class="nb">echo</span> <span class="nt">-e</span> <span class="s2">" --------------------------------------- "</span>
-        <span class="nb">echo</span> <span class="nt">-e</span> <span class="s2">"|    User    |    Host    |  Start Time |"</span>	
-        <span class="nb">echo</span> <span class="nt">-e</span> <span class="s2">"|---------------------------------------|"</span>
-    <span class="k">fi
-
-    for </span>k <span class="k">in</span> <span class="sb">`</span><span class="nb">seq</span> <span class="k">$((</span> <span class="nv">$i</span> <span class="o">+</span> <span class="m">1</span> <span class="k">))</span> <span class="k">$((</span> <span class="nv">$j</span> <span class="o">-</span> <span class="m">1</span> <span class="k">))</span><span class="sb">`</span>
-    <span class="k">do
-        </span><span class="nv">LINE</span><span class="o">=</span><span class="si">$(</span><span class="nb">head</span> -<span class="nv">$k</span> <span class="nv">$FILE</span> | <span class="nb">tail</span> <span class="nt">-n</span> +<span class="nv">$k</span><span class="si">)</span>
-			
-        <span class="nv">USER</span><span class="o">=</span><span class="si">$(</span><span class="nb">echo</span> <span class="nv">$LINE</span> | <span class="nb">awk</span> <span class="s1">'{print $1}'</span> | <span class="nb">sed</span> <span class="s1">'s/$/         /'</span> | <span class="nb">cut</span> <span class="nt">-c</span> <span class="nt">-10</span><span class="si">)</span>
-        <span class="nv">COMP</span><span class="o">=</span><span class="si">$(</span><span class="nb">echo</span> <span class="nv">$LINE</span> | <span class="nb">awk</span> <span class="s1">'{print $2}'</span> | <span class="nb">sed</span> <span class="s1">'s/$/         /'</span> | <span class="nb">cut</span> <span class="nt">-c</span> <span class="nt">-10</span><span class="si">)</span>
-        <span class="nv">DATE</span><span class="o">=</span><span class="si">$(</span><span class="nb">printf</span> <span class="s2">"%02d/%02d"</span> <span class="si">$(</span><span class="nb">echo</span> <span class="nv">$LINE</span> | <span class="nb">awk</span> <span class="s1">'{print $10}'</span> | <span class="nb">sed</span> <span class="s1">'s/\// /'</span><span class="si">))</span>
-        <span class="nv">TIME</span><span class="o">=</span><span class="si">$(</span><span class="nb">printf</span> <span class="s2">"%02d:%s"</span>  <span class="si">$(</span><span class="nb">echo</span> <span class="nv">$LINE</span> | <span class="nb">awk</span> <span class="s1">'{print $11}'</span> | <span class="nb">sed</span> <span class="s1">'s/:/ /'</span> | <span class="nb">sed</span> <span class="s1">'s/,//'</span> <span class="si">))</span>
-			
-        <span class="k">if</span> <span class="o">[[</span> <span class="nv">$PROGRAM</span> <span class="o">==</span> <span class="s2">"anshpc"</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then
-            </span><span class="nv">USEHPC</span><span class="o">=</span><span class="si">$(</span><span class="nb">printf</span> <span class="s2">"%3d"</span> <span class="si">$(</span><span class="nb">echo</span> <span class="nv">$LINE</span> | <span class="nb">awk</span> <span class="s1">'{print $12}'</span> <span class="si">))</span>
-            <span class="nb">echo</span> <span class="nt">-e</span> <span class="s2">"| </span><span class="k">${</span><span class="nv">USER</span><span class="k">}</span><span class="s2"> | </span><span class="k">${</span><span class="nv">COMP</span><span class="k">}</span><span class="s2"> | </span><span class="k">${</span><span class="nv">DATE</span><span class="k">}</span><span class="s2">-</span><span class="k">${</span><span class="nv">TIME</span><span class="k">}</span><span class="s2"> | </span><span class="k">${</span><span class="nv">USEHPC</span><span class="k">}</span><span class="s2"> |"</span>
-        <span class="k">else
-            </span><span class="nb">echo</span> <span class="nt">-e</span> <span class="s2">"| </span><span class="k">${</span><span class="nv">USER</span><span class="k">}</span><span class="s2"> | </span><span class="k">${</span><span class="nv">COMP</span><span class="k">}</span><span class="s2"> | </span><span class="k">${</span><span class="nv">DATE</span><span class="k">}</span><span class="s2">-</span><span class="k">${</span><span class="nv">TIME</span><span class="k">}</span><span class="s2"> |"</span>
-        <span class="k">fi
-    done
-
-		
-    if</span> <span class="o">[[</span> <span class="nv">$PROGRAM</span> <span class="o">==</span> <span class="s2">"anshpc"</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then
-        </span><span class="nb">echo</span> <span class="nt">-e</span> <span class="s2">" --------------------------------------------- "</span>
-    <span class="k">else
-        </span><span class="nb">echo</span> <span class="nt">-e</span> <span class="s2">" --------------------------------------- "</span>
-    <span class="k">fi
-    </span><span class="nb">echo</span> <span class="s2">""</span>
-<span class="k">done
-
-</span><span class="nb">rm</span> <span class="nv">$FILE</span>
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>위 script를 사용한 출력 결과는 아래와 같다.</p>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@master ~]<span class="nv">$ </span>query_license_ansys 
-
-Only licenses being used now are shown.
-
-license <span class="k">in </span>used: anshpc <span class="o">(</span>used, available, total<span class="o">)</span> <span class="o">=</span> <span class="o">(</span>124, 956, 1080<span class="o">)</span>
-<span class="nt">---------------------------------------------</span> 
-|    User    |    Host    |  Start Time | Use |
-|---------------------------------------------|
-| shlee      | t009       | 04/16-14:03 | 124 |
-<span class="nt">---------------------------------------------</span> 
-
-license <span class="k">in </span>used: cfd_base <span class="o">(</span>used, available, total<span class="o">)</span> <span class="o">=</span> <span class="o">(</span>1, 24, 25<span class="o">)</span>
-<span class="nt">---------------------------------------</span> 
-|    User    |    Host    |  Start Time |
-|---------------------------------------|
-| shlee      | t009       | 04/16-14:03 |
-<span class="nt">---------------------------------------</span> 
-
-license <span class="k">in </span>used: cfd_solve_level1 <span class="o">(</span>used, available, total<span class="o">)</span> <span class="o">=</span> <span class="o">(</span>1, 24, 25<span class="o">)</span>
-<span class="nt">---------------------------------------</span> 
-|    User    |    Host    |  Start Time |
-|---------------------------------------|
-| shlee      | t009       | 04/16-14:03 |
-<span class="nt">---------------------------------------</span> 
-
-license <span class="k">in </span>used: cfd_solve_level2 <span class="o">(</span>used, available, total<span class="o">)</span> <span class="o">=</span> <span class="o">(</span>1, 24, 25<span class="o">)</span>
-<span class="nt">---------------------------------------</span> 
-|    User    |    Host    |  Start Time |
-|---------------------------------------|
-| shlee      | t009       | 04/16-14:03 |
-<span class="nt">---------------------------------------</span> 
-
-</code></pre></div>    </div>
-  </li>
-</ul>
-
-<h1 id="command">Command</h1>
-
-<ol>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">awk</code></p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">sed</code></p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">For</code></p>
-  </li>
-</ol>]]></content><author><name>bear11235</name></author><category term="linux" /><category term="cluster" /><summary type="html"><![CDATA[problem ANSYS client host에서 server host로 license status 요청하기]]></summary></entry></feed>
+<h2 id="kernel-pca">Kernel PCA</h2>]]></content><author><name>bear11235</name></author><category term="study" /><category term="ML-DL" /><category term="study" /><category term="ML-DL" /><category term="kernel" /><summary type="html"><![CDATA[Linear Regression with Non-linear Features]]></summary></entry><entry><title type="html">EM 알고리즘 공부하기</title><link href="http://localhost:4000/study/ml-dl/expectation-maximization/" rel="alternate" type="text/html" title="EM 알고리즘 공부하기" /><published>2023-04-18T00:00:00+09:00</published><updated>2023-04-18T00:00:00+09:00</updated><id>http://localhost:4000/study/ml-dl/expectation-maximization</id><content type="html" xml:base="http://localhost:4000/study/ml-dl/expectation-maximization/"><![CDATA[]]></content><author><name>bear11235</name></author><category term="study" /><category term="ML-DL" /><category term="study" /><category term="ML-DL" /><category term="EM" /><category term="GMM" /><summary type="html"><![CDATA[]]></summary></entry></feed>

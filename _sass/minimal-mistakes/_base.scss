@@ -214,6 +214,19 @@ figure {
     display: block;
   }
 
+  &.two-third {
+    > a,
+    > img {
+      @include breakpoint($small) {
+        width: calc(66.6666% - 0.5em);
+      }
+    }
+
+    figcaption {
+      width: 100%;
+    }
+  }
+
   &.half {
     > a,
     > img {
@@ -239,6 +252,23 @@ figure {
       width: 100%;
     }
   }
+
+  &.center {
+    > img {
+      @include breakpoint($small) {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    figcaption {
+      width: 100%;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+  }
 }
 
 /* Figure captions */
@@ -247,7 +277,7 @@ figcaption {
   margin-bottom: 0.5em;
   color: $muted-text-color;
   font-family: $caption-font-family;
-  font-size: $type-size-6;
+  font-size: $type-size-5;
 
   a {
     -webkit-transition: $global-transition;

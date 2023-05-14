@@ -28,6 +28,10 @@ sidebar-category:
       - title: "Fluid Mechanics"
         category: "fluid-mechanics"
         url:  "/study/fluid-mechanics"
+
+      - title: "Turbulence"
+        category: "turbulence"
+        url:  "/study/turbulence"
       
       - title: "Turbomachines"
         category: "turbo-machines"
