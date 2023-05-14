@@ -77,12 +77,17 @@
 <lastmod>2023-04-28T00:00:00+09:00</lastmod>
 </url>
 <url>
+<<<<<<< HEAD
 <loc>http://localhost:4000/study/turbulence/coherent-structures/</loc>
 <lastmod>2023-05-12T00:00:00+09:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/study/turbulence/turbulence/</loc>
 <lastmod>2023-05-12T00:00:00+09:00</lastmod>
+=======
+<loc>http://localhost:4000/paper/paper-ml-dl/bayesian-network/</loc>
+<lastmod>2023-05-05T00:00:00+09:00</lastmod>
+>>>>>>> f1e6c0535481d9a7771e6b15b14f81117684e525
 </url>
 <url>
 <loc>http://localhost:4000/about/</loc>
@@ -98,6 +103,15 @@
 </url>
 <url>
 <loc>http://localhost:4000/linux</loc>
+</url>
+<url>
+<loc>http://localhost:4000/paper-review/fluid-mechanics</loc>
+</url>
+<url>
+<loc>http://localhost:4000/paper-review/ML-DL</loc>
+</url>
+<url>
+<loc>http://localhost:4000/paper-review</loc>
 </url>
 <url>
 <loc>http://localhost:4000/research/research-1</loc>
@@ -260,6 +274,12 @@
 <loc>http://localhost:4000/tags/gp/</loc>
 </url>
 <url>
+<loc>http://localhost:4000/tags/paper-review/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/tags/gaussian-process/</loc>
+</url>
+<url>
 <loc>http://localhost:4000/categories/research/</loc>
 </url>
 <url>
@@ -290,7 +310,14 @@
 <loc>http://localhost:4000/categories/turbo-machines/</loc>
 </url>
 <url>
+<<<<<<< HEAD
 <loc>http://localhost:4000/categories/turbulence/</loc>
+=======
+<loc>http://localhost:4000/categories/paper/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/categories/paper-ml-dl/</loc>
+>>>>>>> f1e6c0535481d9a7771e6b15b14f81117684e525
 </url>
 <url>
 <loc>http://localhost:4000/page2/</loc>
@@ -306,6 +333,6 @@
 </url>
 <url>
 <loc>http://localhost:4000/assets/files/shlee_CV.pdf</loc>
-<lastmod>2023-04-29T14:08:48+09:00</lastmod>
+<lastmod>2023-04-24T17:24:46+09:00</lastmod>
 </url>
 </urlset>

@@ -46,6 +46,15 @@ sidebar-category:
         url: "/research/research-2"
         category: "research-2"
 
+  - title: "Paper Review"
+    children:
+      - title: "ML / DL"
+        category: "paper-ML-DL"
+        url: "/paper-review/ML-DL"
+      - title: "Fluid Mechanics"
+        category: "paper-fluid-mechanics"
+        url: "/paper-review/fluid-mechanics"
+
   - title: "Linux"
     children:
       - title: "Command"

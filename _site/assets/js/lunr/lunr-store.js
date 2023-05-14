@@ -113,6 +113,7 @@ var store = [{
         "url": "/study/ml-dl/gaussian-process/",
         "teaser": null
       },{
+<<<<<<< HEAD
         "title": "Coherent Structures in Turbulence",
         "excerpt":"Coherent structures and turbulence (1968) Journal of Fluid Mechanics (1986) Author: FAZLE HUSSAIN Introduction Coherent structure(난류 구조)는 무질서하게 보이는 난류에서 질서를 찾고자 하는 우리의 노력이 투영된 결과로 볼 수 있다. The nature of coherent structures Earlier approaches - flow visualization 거의 대부분의 난류 구조 연구는 유동 가시화에 기반하여 진행되었다. 이런...","categories": ["study","turbulence"],
         "tags": [],
@@ -123,6 +124,12 @@ var store = [{
         "excerpt":"Types of Turbulence Statistically Homogeneous Turbulence All statistics of fluctuating quantities are invariant under translation of the coordinate system 어디에서 난류 유동의 통계량을 측정해도 같은 값을 가짐 모든 곳에서 평균 속도에 대한 gradient는 0이어야 하고, 따라서 모든 곳에서 평균 속도는 모두 0을 가짐 Kolmogorov hypotheses: Turbulent motions on small scales...","categories": ["study","turbulence"],
         "tags": [],
         "url": "/study/turbulence/turbulence/",
+=======
+        "title": "Segmenting Continuous Motions with Hidden Semi-markov Models and Gaussian Processes",
+        "excerpt":"Introduction   Related Work   #asdasf -asdf00  ","categories": ["paper","paper-ML-DL"],
+        "tags": ["paper review","ML-DL","gaussian process"],
+        "url": "/paper/paper-ml-dl/bayesian-network/",
+>>>>>>> f1e6c0535481d9a7771e6b15b14f81117684e525
         "teaser": null
       },{
     "title": "Page Not Found",
@@ -142,6 +149,15 @@ var store = [{
   },{
     "title": "Linux",
     "excerpt":"Remote access with SSH tunneling April 23, 2023 4 분 소요 개요 이 포스트는 보안 상의 이유로 인바운드 포트가 막혀있을 때, 이를 ssh tunneling을 통해 우회하여 통신하는 방식에 대해 소개한다. commands test April 16, 2023 3 분 소요 problem ANSYS client host에서 server host로 license status 요청하기 Query a TecPlot...","url": "http://localhost:4000/linux"
+  },{
+    "title": "Paper Review - Fluid Mechanics",
+    "excerpt":" ","url": "http://localhost:4000/paper-review/fluid-mechanics"
+  },{
+    "title": "Paper Review - Machine Learning / Deep Learning",
+    "excerpt":"                              Segmenting Continuous Motions with Hidden Semi-markov Models and Gaussian Processes                                                                     May 5, 2023                                                                           최대 1 분 소요                                Introduction        ","url": "http://localhost:4000/paper-review/ML-DL"
+  },{
+    "title": "Paper Review",
+    "excerpt":"                              Segmenting Continuous Motions with Hidden Semi-markov Models and Gaussian Processes                                                                     May 5, 2023                                                                           최대 1 분 소요                                Introduction        ","url": "http://localhost:4000/paper-review"
   },{
     "title": "Research - Research 1",
     "excerpt":"                              Research Note                                                                     April 1, 2023                                                                           최대 1 분 소요                                2023-04-11 (화)    두 개의 난류 유동이 있을 때, 그 둘의 유사성을 어떻게 판단할 것인가?         ","url": "http://localhost:4000/research/research-1"
@@ -171,7 +187,11 @@ var store = [{
     "excerpt":" ","url": "http://localhost:4000/categories/"
   },{
     "title": "Posts by Collection",
+<<<<<<< HEAD
     "excerpt":"                                                                                                                                                                                 ","url": "http://localhost:4000/collection-archive/"
+=======
+    "excerpt":"                                                                                                                                                                         ","url": "http://localhost:4000/collection-archive/"
+>>>>>>> f1e6c0535481d9a7771e6b15b14f81117684e525
   },{
     "title": "Edge Case",
     "excerpt":"Sample post listing for the category Edge Case.  ","url": "http://localhost:4000/categories/edge-case/"
@@ -311,6 +331,12 @@ var store = [{
     "title": "GP",
     "excerpt":"","url": "http://localhost:4000/tags/gp/"
   },{
+    "title": "paper review",
+    "excerpt":"","url": "http://localhost:4000/tags/paper-review/"
+  },{
+    "title": "gaussian process",
+    "excerpt":"","url": "http://localhost:4000/tags/gaussian-process/"
+  },{
     "title": "research",
     "excerpt":"","url": "http://localhost:4000/categories/research/"
   },{
@@ -341,8 +367,16 @@ var store = [{
     "title": "turbo-machines",
     "excerpt":"","url": "http://localhost:4000/categories/turbo-machines/"
   },{
+<<<<<<< HEAD
     "title": "turbulence",
     "excerpt":"","url": "http://localhost:4000/categories/turbulence/"
+=======
+    "title": "paper",
+    "excerpt":"","url": "http://localhost:4000/categories/paper/"
+  },{
+    "title": "paper-ML-DL",
+    "excerpt":"","url": "http://localhost:4000/categories/paper-ml-dl/"
+>>>>>>> f1e6c0535481d9a7771e6b15b14f81117684e525
   },{
     "title": null,
     "excerpt":"","url": "http://localhost:4000/page2/"

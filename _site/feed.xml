@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-05-13T12:34:30+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">bear11235’s blog</title><subtitle>bear11235&apos;s study blog. </subtitle><author><name>bear11235</name></author><entry><title type="html">Coherent Structures in Turbulence</title><link href="http://localhost:4000/study/turbulence/coherent-structures/" rel="alternate" type="text/html" title="Coherent Structures in Turbulence" /><published>2023-05-12T00:00:00+09:00</published><updated>2023-05-12T00:00:00+09:00</updated><id>http://localhost:4000/study/turbulence/coherent-structures</id><content type="html" xml:base="http://localhost:4000/study/turbulence/coherent-structures/"><![CDATA[<h1 id="coherent-structures-and-turbulence-1968">Coherent structures and turbulence (1968)</h1>
 <ul>
   <li>Journal of Fluid Mechanics (1986)</li>
@@ -80,6 +81,14 @@ have seen pictures of structures in a mixing layer. 원칙적으로 난류 구�
   <li>\(PSC\): pressure-rate-of-strain correlation. It contributes to the redistribution of Reynolds stresses in a similar way the diffusion term does</li>
   <li>\(DF\): diffusion of the Reynolds stresses. It includes all terms under the divergence operator</li>
 </ul>]]></content><author><name>bear11235</name></author><category term="study" /><category term="turbulence" /><summary type="html"><![CDATA[Types of Turbulence Statistically Homogeneous Turbulence All statistics of fluctuating quantities are invariant under translation of the coordinate system 어디에서 난류 유동의 통계량을 측정해도 같은 값을 가짐 모든 곳에서 평균 속도에 대한 gradient는 0이어야 하고, 따라서 모든 곳에서 평균 속도는 모두 0을 가짐 Kolmogorov hypotheses: Turbulent motions on small scales are typically assumed to be isotropic]]></summary></entry><entry><title type="html">[ML/DL] Gaussian Process 공부하기</title><link href="http://localhost:4000/study/ml-dl/gaussian-process/" rel="alternate" type="text/html" title="[ML/DL] Gaussian Process 공부하기" /><published>2023-04-28T00:00:00+09:00</published><updated>2023-04-28T00:00:00+09:00</updated><id>http://localhost:4000/study/ml-dl/gaussian-process</id><content type="html" xml:base="http://localhost:4000/study/ml-dl/gaussian-process/"><![CDATA[<h1 id="learning">Learning</h1>
+=======
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-05-05T13:09:13+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">bear11235’s blog</title><subtitle>bear11235&apos;s study blog. </subtitle><author><name>bear11235</name></author><entry><title type="html">Segmenting Continuous Motions with Hidden Semi-markov Models and Gaussian Processes</title><link href="http://localhost:4000/paper/paper-ml-dl/bayesian-network/" rel="alternate" type="text/html" title="Segmenting Continuous Motions with Hidden Semi-markov Models and Gaussian Processes" /><published>2023-05-05T00:00:00+09:00</published><updated>2023-05-05T00:00:00+09:00</updated><id>http://localhost:4000/paper/paper-ml-dl/bayesian-network</id><content type="html" xml:base="http://localhost:4000/paper/paper-ml-dl/bayesian-network/"><![CDATA[<h1 id="introduction">Introduction</h1>
+
+<h1 id="related-work">Related Work</h1>
+
+<p>#asdasf
+-asdf00</p>]]></content><author><name>bear11235</name></author><category term="paper" /><category term="paper-ML-DL" /><category term="paper review" /><category term="ML-DL" /><category term="gaussian process" /><summary type="html"><![CDATA[Introduction]]></summary></entry><entry><title type="html">[ML/DL] Gaussian Process 공부하기</title><link href="http://localhost:4000/study/ml-dl/gaussian-process/" rel="alternate" type="text/html" title="[ML/DL] Gaussian Process 공부하기" /><published>2023-04-28T00:00:00+09:00</published><updated>2023-04-28T00:00:00+09:00</updated><id>http://localhost:4000/study/ml-dl/gaussian-process</id><content type="html" xml:base="http://localhost:4000/study/ml-dl/gaussian-process/"><![CDATA[<h1 id="learning">Learning</h1>
+>>>>>>> f1e6c0535481d9a7771e6b15b14f81117684e525
 
 <h2 id="log-likelihood-of-mvn">Log-Likelihood of MVN</h2>
 <p>GP를 실제 데이터에 적용하면 우리가 얻게되는 데이터의 형태는 Multi-Variate Normal(MVN) 분포를 따르게 된다. n차원의 MVN 분포를 생각해보자. 평균은 n차원의 벡터로, 공분산은 \(n \times n\)의 행렬로 표현된다.</p>
@@ -442,4 +451,103 @@ AdaBoost도 Boosting이므로 classifier를 순차적으로 학습한다. 첫번
 
 <p>*유사도라는 개념. w를 x의 선형 결합으로 표현한다는 것은 데이터 사이의 유사도 개념과 밀접하다. perceptron 예시 참고.</p>
 
+<<<<<<< HEAD
 <h2 id="kernel-pca">Kernel PCA</h2>]]></content><author><name>bear11235</name></author><category term="study" /><category term="ML-DL" /><category term="study" /><category term="ML-DL" /><category term="kernel" /><summary type="html"><![CDATA[Linear Regression with Non-linear Features]]></summary></entry><entry><title type="html">EM 알고리즘 공부하기</title><link href="http://localhost:4000/study/ml-dl/expectation-maximization/" rel="alternate" type="text/html" title="EM 알고리즘 공부하기" /><published>2023-04-18T00:00:00+09:00</published><updated>2023-04-18T00:00:00+09:00</updated><id>http://localhost:4000/study/ml-dl/expectation-maximization</id><content type="html" xml:base="http://localhost:4000/study/ml-dl/expectation-maximization/"><![CDATA[]]></content><author><name>bear11235</name></author><category term="study" /><category term="ML-DL" /><category term="study" /><category term="ML-DL" /><category term="EM" /><category term="GMM" /><summary type="html"><![CDATA[]]></summary></entry></feed>
+=======
+<h2 id="kernel-pca">Kernel PCA</h2>]]></content><author><name>bear11235</name></author><category term="study" /><category term="ML-DL" /><category term="study" /><category term="ML-DL" /><category term="kernel" /><summary type="html"><![CDATA[Linear Regression with Non-linear Features]]></summary></entry><entry><title type="html">EM 알고리즘 공부하기</title><link href="http://localhost:4000/study/ml-dl/expectation-maximization/" rel="alternate" type="text/html" title="EM 알고리즘 공부하기" /><published>2023-04-18T00:00:00+09:00</published><updated>2023-04-18T00:00:00+09:00</updated><id>http://localhost:4000/study/ml-dl/expectation-maximization</id><content type="html" xml:base="http://localhost:4000/study/ml-dl/expectation-maximization/"><![CDATA[]]></content><author><name>bear11235</name></author><category term="study" /><category term="ML-DL" /><category term="study" /><category term="ML-DL" /><category term="EM" /><category term="GMM" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Undirected model 공부하기</title><link href="http://localhost:4000/study/ml-dl/undirected-graphical-model/" rel="alternate" type="text/html" title="Undirected model 공부하기" /><published>2023-04-18T00:00:00+09:00</published><updated>2023-04-18T00:00:00+09:00</updated><id>http://localhost:4000/study/ml-dl/undirected-graphical-model</id><content type="html" xml:base="http://localhost:4000/study/ml-dl/undirected-graphical-model/"><![CDATA[<h1 id="directed-vs-undirected">Directed vs Undirected</h1>
+<ul>
+  <li>적용하고자 하는 application에서 변수 간 order가 있을 수도 있고 없을 수도 있음.</li>
+  <li>오늘의 날씨와 내일의 날씨는 order가 있음.</li>
+  <li>이미지의 픽셀 정보는 order가 없음.</li>
+  <li>순서가 있는 경우에는 DAG 모델을 주로 사용하고, 순서가 없는 경우에는 Undirected Graphical Model(UG, UGM) 혹은 Markov Random Fields(MRF)를 사용한다.</li>
+  <li>BN에서는 Conditional Probability Table(CPT)를 사용하여 변수 간 관계를 정했다면, UG에서는 각 변수 노드간 연결이 “얼마나 잘 어울리는가”, “그럴듯한 조합이다”의 정도를 판단한다. (?)</li>
+</ul>
+
+<h2 id="ug의-예시">UG의 예시</h2>
+<ol>
+  <li>Ising Model
+    <ul>
+      <li>격자 구조를 갖는 분자 구조에서 각 분자의 극성(+/-)은 해당 분자의 주변 분자에서 영향을 갖는다.</li>
+      <li>확률이 높은 상태라는 것은 에너지가 낮은 상태라는 것.</li>
+    </ul>
+  </li>
+  <li>이미지 처리
+    <ul>
+      <li>이미지에서 denoising. noised pixel value는 실제 관측된 값, true pixel value는 관측되지 않은 값이라 생각할 수 있다. noised value를 가지고 denoised value를 확률적으로 추정할 수 있을까?</li>
+    </ul>
+  </li>
+</ol>
+
+<h1 id="ug의-수학적-표현">UG의 수학적 표현</h1>
+
+<h2 id="정의">정의</h2>
+<ul>
+  <li><strong>Clique</strong>
+    <ul>
+      <li>어떤 그래프 \(G\)가 주어져 있을 때, 그것의 subgraph 중 complete graph를 의미한다.</li>
+      <li>즉 부분 그래프 중 완전그래프를 clique라고 정의.</li>
+      <li>노드의 개수가 0개인 경우 또한 clique</li>
+      <li>노드의 개수가 1개인 경우 또한 clique</li>
+      <li>Maximal Clique: 모든 clique 중에 가장 큰 clique. 가장 크다는 것은 어떤 노드를 추가하더라도 clique이 되지 못하는 경우를 의미.</li>
+    </ul>
+  </li>
+  <li><strong>Potential Function</strong>, \(\psi_c(\mathbf{x}_c)\)
+    <ul>
+      <li>\(c\)라는 clique 안의 x에 대해 \(\mathbf{x}_c\)가 얼마나 그럴듯한지 (확률이 높은지) 의미하는 함수.</li>
+    </ul>
+  </li>
+  <li><strong>Partition Function</strong>, Z
+    <ul>
+      <li>Normalize를 위한 상수.</li>
+      <li>\(Z = \sum_{x_1, \cdots, x_n} \prod_{c\in C} \psi_c(x_c)\): 모든 clique에 대한 potential function 값을 모두 곱한 뒤, 가능한 모든 x의 경우에 대해 더한다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="표현">표현</h2>
+<ul>
+  <li>n개의 노드를 가진 undirected graph, \(H\)를 생각하자. n개 변수들의 확률 분포는 \(P(X_1, \cdots, X_n)\)으로 표현할 수 있다.</li>
+  <li>확률 분포는 아래와 같이 potential functions의 곱으로 표현됨. (이처럼 될 수 있다는 정리는 뒷부분에)</li>
+  <li>
+\[P(x_1, \cdots, x_n) = \frac{1}{Z} \prod_{c\in C}\psi_c(x_c)\]
+  </li>
+  <li>clique을 이용하여 UG의 확률분포를 표현할 수 있는데, maximal clique만 사용할 수도 있고, 모든 clique을 다 사용할 수도 있다.
+    <ul>
+      <li>
+\[P(x_1, x_2, x_3, x_4) = 
+\frac{1}{Z} \psi_{124}(\mathbf{x}_{124}) \psi_{234}(\mathbf{x}_{234})\]
+      </li>
+      <li>만약 3개 clique만을 사용한다면 변수 2개 사이 관계는 못 보지 않을까?</li>
+      <li>즉 확률 분포를 어떤 clique들의 조합으로 보는지 또한 모델링 과정 중 하나일 듯.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="interpretation-of-clique-potentials">Interpretation of clique potentials</h2>
+<p>X-Y-Z 라는 모델은 X와 Z의 Y에 대한 조건부 확률을 의미한다: \(X \mathrel{\unicode{x2AEB}} Z \vert Y\) (일단 지금 단계에서는 받아들이자.) 확률 분포는 아래와 같이 주어져야 한다.</p>
+
+\[p(x,y,z) = p(y) p(x \vert y) p(z \vert y)\]
+
+<p>또한 위에서 살펴본 것처럼, 확률 분포는 potential functions의 곱으로 표현된다.</p>
+
+\[p(x,y,z) = \psi_{xy} \psi_{yz}\]
+
+<p>그렇다면 여기서 potential function의 의미는?</p>
+<ul>
+  <li>\(p(x,y,z) = p(x,y) p(z \vert y)\) 혹은 \(p(x,y,z) = p(z,y) p(x \vert y)\)로도 표현할 수 있지만, 그렇게 되면 각각의 potential은 marginalize 혹은 conditionalize 될 수 없다. (?)</li>
+  <li>따라서 potential function을 확률로서 생각하지 말고, 그 값이 높으면 확률이 높으므로 서로 연결된 값이 얼마나 그럴듯한 값들을 가지고 있는지 정도로 생각하자.</li>
+</ul>
+
+<h2 id="clique-potentials-in-exponential-form">Clique Potentials in Exponential Form</h2>
+<p>clique potential이 항상 양수가 되게끔 하는 것이 불편한 경우가 있다. 예를 들어 분자의 극성을 표현할 때는 +/-로 표현하는 것이 편하겠지. 그렇기 때문에 실수 범위에서 정의되는 함수를 하나 생각하고 그 함수에 expotential 함수를 취해 양수 범위로 mapping하자.</p>
+
+\[\psi_c(x_c) = \exp\{ -\phi_c(x_c) \}\]
+
+<p>그렇게 되면 확률 분포는 Gibbs distribution을 따르게 된다.</p>
+
+\[p(x) = 
+\frac{1}{Z} \prod_{c\in C} \psi_c(x_c) = 
+\frac{1}{Z} \exp\left( -\sum_{c\in C} \phi_c(x_c) \right)\]
+
+<h1 id="왜-clique를-이용하여-확률-분포를-생각하는가">왜 clique를 이용하여 확률 분포를 생각하는가?</h1>]]></content><author><name>bear11235</name></author><category term="study" /><category term="ML-DL" /><category term="study" /><category term="ML-DL" /><category term="graph model" /><category term="bayesian network" /><category term="UG" /><category term="DAG" /><summary type="html"><![CDATA[Directed vs Undirected 적용하고자 하는 application에서 변수 간 order가 있을 수도 있고 없을 수도 있음. 오늘의 날씨와 내일의 날씨는 order가 있음. 이미지의 픽셀 정보는 order가 없음. 순서가 있는 경우에는 DAG 모델을 주로 사용하고, 순서가 없는 경우에는 Undirected Graphical Model(UG, UGM) 혹은 Markov Random Fields(MRF)를 사용한다. BN에서는 Conditional Probability Table(CPT)를 사용하여 변수 간 관계를 정했다면, UG에서는 각 변수 노드간 연결이 “얼마나 잘 어울리는가”, “그럴듯한 조합이다”의 정도를 판단한다. (?)]]></summary></entry></feed>
+>>>>>>> f1e6c0535481d9a7771e6b15b14f81117684e525
