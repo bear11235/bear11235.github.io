@@ -12,7 +12,7 @@ tags:
 - Author: FAZLE HUSSAIN
 
 ## Introduction
-Coherent structure(난류 구조)는 무질서하게 보이는 난류에서 질서를 찾고자 하는 우리의 노력이 투영된 결과로 볼 수 있다. 
+Coherent structure(난류 구조)는 무질서하게 보이는 난류에서 질서를 찾고자 하는 우리의 노력이 투영된 결과로 볼 수 있다.
 
 ## The nature of coherent structures
 ### Earlier approaches - flow visualization

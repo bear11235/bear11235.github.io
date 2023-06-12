@@ -113,23 +113,34 @@ var store = [{
         "url": "/study/ml-dl/gaussian-process/",
         "teaser": null
       },{
-<<<<<<< HEAD
-        "title": "Coherent Structures in Turbulence",
-        "excerpt":"Coherent structures and turbulence (1968) Journal of Fluid Mechanics (1986) Author: FAZLE HUSSAIN Introduction Coherent structure(난류 구조)는 무질서하게 보이는 난류에서 질서를 찾고자 하는 우리의 노력이 투영된 결과로 볼 수 있다. The nature of coherent structures Earlier approaches - flow visualization 거의 대부분의 난류 구조 연구는 유동 가시화에 기반하여 진행되었다. 이런...","categories": ["study","turbulence"],
-        "tags": [],
-        "url": "/study/turbulence/coherent-structures/",
+        "title": "Segmenting Continuous Motions with Hidden Semi-markov Models and Gaussian Processes",
+        "excerpt":"Introduction   Related Work   #asdasf -asdf00  ","categories": ["paper","paper-ML-DL"],
+        "tags": ["paper review","ML-DL","gaussian process"],
+        "url": "/paper/paper-ml-dl/bayesian-network/",
         "teaser": null
       },{
         "title": "Turbulence Equations",
         "excerpt":"Types of Turbulence Statistically Homogeneous Turbulence All statistics of fluctuating quantities are invariant under translation of the coordinate system 어디에서 난류 유동의 통계량을 측정해도 같은 값을 가짐 모든 곳에서 평균 속도에 대한 gradient는 0이어야 하고, 따라서 모든 곳에서 평균 속도는 모두 0을 가짐 Kolmogorov hypotheses: Turbulent motions on small scales...","categories": ["study","turbulence"],
         "tags": [],
         "url": "/study/turbulence/turbulence/",
-=======
-        "title": "Segmenting Continuous Motions with Hidden Semi-markov Models and Gaussian Processes",
-        "excerpt":"Introduction   Related Work   #asdasf -asdf00  ","categories": ["paper","paper-ML-DL"],
-        "tags": ["paper review","ML-DL","gaussian process"],
-        "url": "/paper/paper-ml-dl/bayesian-network/",
->>>>>>> f1e6c0535481d9a7771e6b15b14f81117684e525
+        "teaser": null
+      },{
+        "title": "Coherent Structures in Turbulence",
+        "excerpt":"Coherent structures and turbulence (1968) Journal of Fluid Mechanics (1986) Author: FAZLE HUSSAIN Introduction Coherent structure(난류 구조)는 무질서하게 보이는 난류에서 질서를 찾고자 하는 우리의 노력이 투영된 결과로 볼 수 있다. The nature of coherent structures Earlier approaches - flow visualization 거의 대부분의 난류 구조 연구는 유동 가시화에 기반하여 진행되었다. 이런...","categories": ["study","turbulence"],
+        "tags": [],
+        "url": "/study/turbulence/coherent-structures/",
+        "teaser": null
+      },{
+        "title": "[ML/DL] DL introduction",
+        "excerpt":"ML vs DL 딥러닝을 주목받게 만든 3가지 요인 Neural Network: 데이터 처리 기법 Big data: 패턴을 찾을 만한 충분한 데이터에 접근 가능하다. GPU: 수많은 연산을 처리할 수 있는 하드웨어 발전. 기존 머신러닝과의 비교 데이터가 적을 시 상대적으로 좋은 성능을 보인다. 하지만 데이터가 많을 때에는, 많은 데이터를 반영할 만큼 모델의 복잡도가...","categories": ["study","ML-DL"],
+        "tags": ["study","ML-DL"],
+        "url": "/study/ml-dl/DL-introduction/",
+        "teaser": null
+      },{
+        "title": "[ML/DL] DL - Optimization",
+        "excerpt":"Expected Risk Minimization (ERM) 여기서 risk란 loss 혹은 error의 의미로 생각하면 될듯. 즉 expected risk는 데이터 분포에서 기대되는 risk이다. 하지만 우리는 거의 모든 상황에서 데이터의 분포 \\(dP_{\\tau}(x,y)\\)를 알지 못한다. 따라서 Monte Carlo 방식으로 기대값을 구한다. ERM의 방식은 overfitting 문제에 빠지기 쉽다. 따라서 generalization을 보완할 수 있는 추가적인 항이 필요하다. \\[R(f_{\\theta},...","categories": ["study","ML-DL"],
+        "tags": ["study","ML-DL"],
+        "url": "/study/ml-dl/DL-optimization/",
         "teaser": null
       },{
     "title": "Page Not Found",
@@ -172,26 +183,22 @@ var store = [{
     "excerpt":"                              test                                                                     April 16, 2023                                                                           최대 1 분 소요                                        ","url": "http://localhost:4000/study/fluid-mechanics"
   },{
     "title": "Machine Learning / Deep Learning",
-    "excerpt":"[ML/DL] Gaussian Process 공부하기 April 28, 2023 1 분 소요 Learning Explainable AI (LIME, SHAP) 공부하기 April 23, 2023 2 분 소요 AI의 모델 Rule-based system: 사람이 일일이 프로그램하여 컴퓨터는 주어진 규칙대로 계산만 수행. Classic ML-DL: 사람이 feature를 디자인하고, 컴퓨터는 feature를 매핑한다. Deep Learning: 더욱 복잡한 feature를 모... Ensemble Method...","url": "http://localhost:4000/study/ML-DL"
+    "excerpt":"[ML/DL] DL - Optimization June 12, 2023 최대 1 분 소요 Expected Risk Minimization (ERM) 여기서 risk란 loss 혹은 error의 의미로 생각하면 될듯. 즉 expected risk는 데이터 분포에서 기대되는 risk이다. 하지만 우리는 거의 모든 상황에서 데이터의 분포 \\(dP_{\\tau}(x,y)\\)를 ... [ML/DL] DL introduction June 12, 2023 최대 1 분 소요 ML...","url": "http://localhost:4000/study/ML-DL"
   },{
     "title": "Turbomachines",
     "excerpt":"                              test                                                                     April 16, 2023                                                                           최대 1 분 소요                                        ","url": "http://localhost:4000/study/turbo-machines"
   },{
     "title": "Turbulence",
-    "excerpt":"Turbulence Equations May 12, 2023 최대 1 분 소요 Types of Turbulence Statistically Homogeneous Turbulence All statistics of fluctuating quantities are invariant under translation of the coordinate system... Coherent Structures in Turbulence May 12, 2023 1 분 소요 Coherent structures and turbulence (1968) Journal of Fluid Mechanics (1986) Author: FAZLE...","url": "http://localhost:4000/study/turbulence"
+    "excerpt":"Coherent Structures in Turbulence May 13, 2023 1 분 소요 Coherent structures and turbulence (1968) Journal of Fluid Mechanics (1986) Author: FAZLE HUSSAIN Turbulence Equations May 12, 2023 최대 1 분 소요 Types of Turbulence Statistically Homogeneous Turbulence All statistics of fluctuating quantities are invariant under translation of the coordinate...","url": "http://localhost:4000/study/turbulence"
   },{
     "title": "study",
-    "excerpt":"Turbulence Equations May 12, 2023 최대 1 분 소요 Types of Turbulence Statistically Homogeneous Turbulence All statistics of fluctuating quantities are invariant under translation of the coordinate system... Coherent Structures in Turbulence May 12, 2023 1 분 소요 Coherent structures and turbulence (1968) Journal of Fluid Mechanics (1986) Author: FAZLE...","url": "http://localhost:4000/study"
+    "excerpt":"[ML/DL] DL - Optimization June 12, 2023 최대 1 분 소요 Expected Risk Minimization (ERM) 여기서 risk란 loss 혹은 error의 의미로 생각하면 될듯. 즉 expected risk는 데이터 분포에서 기대되는 risk이다. 하지만 우리는 거의 모든 상황에서 데이터의 분포 \\(dP_{\\tau}(x,y)\\)를 ... [ML/DL] DL introduction June 12, 2023 최대 1 분 소요 ML...","url": "http://localhost:4000/study"
   },{
     "title": "Posts by Category",
     "excerpt":" ","url": "http://localhost:4000/categories/"
   },{
     "title": "Posts by Collection",
-<<<<<<< HEAD
-    "excerpt":"                                                                                                                                                                                 ","url": "http://localhost:4000/collection-archive/"
-=======
-    "excerpt":"                                                                                                                                                                         ","url": "http://localhost:4000/collection-archive/"
->>>>>>> f1e6c0535481d9a7771e6b15b14f81117684e525
+    "excerpt":"                                                                                                                                                                                                         ","url": "http://localhost:4000/collection-archive/"
   },{
     "title": "Edge Case",
     "excerpt":"Sample post listing for the category Edge Case.  ","url": "http://localhost:4000/categories/edge-case/"
@@ -367,16 +374,14 @@ var store = [{
     "title": "turbo-machines",
     "excerpt":"","url": "http://localhost:4000/categories/turbo-machines/"
   },{
-<<<<<<< HEAD
-    "title": "turbulence",
-    "excerpt":"","url": "http://localhost:4000/categories/turbulence/"
-=======
     "title": "paper",
     "excerpt":"","url": "http://localhost:4000/categories/paper/"
   },{
     "title": "paper-ML-DL",
     "excerpt":"","url": "http://localhost:4000/categories/paper-ml-dl/"
->>>>>>> f1e6c0535481d9a7771e6b15b14f81117684e525
+  },{
+    "title": "turbulence",
+    "excerpt":"","url": "http://localhost:4000/categories/turbulence/"
   },{
     "title": null,
     "excerpt":"","url": "http://localhost:4000/page2/"

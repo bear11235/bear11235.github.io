@@ -288,11 +288,7 @@
   
   <input id="ac-toc" name="accordion-toc" type="checkbox" />
   <label for="ac-toc">토글 메뉴</label>
-<<<<<<< HEAD
-  <li> 전체 글 수 (21)개 </li>
-=======
-  <li> 전체 글 수 (20)개 </li>
->>>>>>> f1e6c0535481d9a7771e6b15b14f81117684e525
+  <li> 전체 글 수 (24)개 </li>
   <ul class="nav__items">
     
       
@@ -309,7 +305,7 @@
           
           
 
-            <li><a href="/study/ML-DL">ML / DL(10)</a></li>
+            <li><a href="/study/ML-DL">ML / DL(12)</a></li>
           
           
           
